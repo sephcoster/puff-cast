@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   forecast:
@@ -25,6 +24,14 @@ jobs:
         run: |
           pip install -e .
           pip install herbie-data pyarrow
+
+      - name: Download models from release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p models
+          gh release download v0.1.0 --dir models/ --pattern "*.pkl"
+          ls -la models/
 
       - name: Generate forecast
         run: python -m puff_cast.forecast
