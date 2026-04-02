@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T13:17:57.916220+00:00",
+  "generated_at": "2026-04-02T13:55:28.576264+00:00",
   "hrrr_init": "2026-04-02T12:00:00+00:00",
   "stations": {
     "TPLM2": {
@@ -24,8 +24,8 @@
           "init_time": "2026-04-02T12:00:00+00:00"
         }
       },
-      "current_kt": 13.0,
-      "current_time": "2026-04-02T12:00:00"
+      "current_kt": 9.9,
+      "current_time": "2026-04-02T13:00:00"
     },
     "APAM2": {
       "name": "Annapolis",
@@ -49,8 +49,8 @@
           "init_time": "2026-04-02T12:00:00+00:00"
         }
       },
-      "current_kt": 8.0,
-      "current_time": "2026-04-02T12:00:00"
+      "current_kt": 6.8,
+      "current_time": "2026-04-02T13:00:00"
     },
     "SLIM2": {
       "name": "Solomons Island",
@@ -74,8 +74,8 @@
           "init_time": "2026-04-02T12:00:00+00:00"
         }
       },
-      "current_kt": 4.6,
-      "current_time": "2026-04-02T12:00:00"
+      "current_kt": 6.3,
+      "current_time": "2026-04-02T13:00:00"
     },
     "CAMM2": {
       "name": "Cambridge",
@@ -99,8 +99,8 @@
           "init_time": "2026-04-02T12:00:00+00:00"
         }
       },
-      "current_kt": 11.6,
-      "current_time": "2026-04-02T12:00:00"
+      "current_kt": 12.8,
+      "current_time": "2026-04-02T13:00:00"
     }
   }
 }
