@@ -329,13 +329,108 @@ def log_prediction(forecast: dict):
     print(f"  Logged to {log_path}")
 
 
-def generate_html(forecast: dict):
-    """Generate a simple HTML page for GitHub Pages."""
+def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
+    """
+    Check past predictions against current observations.
+
+    Loads the prediction log and finds any predictions whose valid_time
+    has now passed. Compares predicted wind speed to the actual observation.
+
+    Returns list of verification records for display on the web page.
+    """
+    log_path = LOG_DIR / "forecast_log.jsonl"
+    if not log_path.exists():
+        return []
+
+    now = datetime.now(timezone.utc)
+    verifications = []
+
+    with open(log_path) as f:
+        for line in f:
+            try:
+                pred = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            gen_time = pd.Timestamp(pred["generated_at"])
+
+            for sid, sdata in pred.get("stations", {}).items():
+                for lead_str, ldata in sdata.get("leads", {}).items():
+                    lead = int(lead_str)
+                    vt = pd.Timestamp(ldata["valid_time"])
+
+                    # Only verify predictions whose valid_time has passed
+                    if vt > pd.Timestamp(now):
+                        continue
+
+                    # Look up actual observation
+                    wspd_col = f"{sid}_WSPD"
+                    if wspd_col not in obs.columns:
+                        continue
+
+                    # Find closest observation to valid_time (within 1 hour)
+                    time_diffs = abs(obs.index - vt)
+                    closest_idx = time_diffs.argmin()
+                    if time_diffs[closest_idx] > pd.Timedelta(hours=1):
+                        continue
+
+                    actual_ms = obs.iloc[closest_idx][wspd_col]
+                    if pd.isna(actual_ms):
+                        continue
+
+                    pred_kt = ldata["wspd_kt"]
+                    actual_kt = actual_ms * KT
+                    error_kt = pred_kt - actual_kt
+
+                    verifications.append({
+                        "station": sid,
+                        "station_name": sdata.get("name", sid),
+                        "lead_hours": lead,
+                        "forecast_time": gen_time.isoformat(),
+                        "valid_time": vt.isoformat(),
+                        "predicted_kt": round(pred_kt, 1),
+                        "actual_kt": round(actual_kt, 1),
+                        "error_kt": round(error_kt, 1),
+                        "abs_error_kt": round(abs(error_kt), 1),
+                    })
+
+    # Sort by valid_time descending (most recent first)
+    verifications.sort(key=lambda x: x["valid_time"], reverse=True)
+
+    # Save verification log
+    if verifications:
+        verify_path = DOCS_DIR / "verification.json"
+        DOCS_DIR.mkdir(parents=True, exist_ok=True)
+        with open(verify_path, "w") as f:
+            json.dump(verifications, f, indent=2, default=str)
+
+    return verifications
+
+
+def _wind_color(kt):
+    """Return CSS color for wind speed in knots."""
+    if kt < 5: return "#94a3b8"
+    if kt < 10: return "#22c55e"
+    if kt < 15: return "#3b82f6"
+    if kt < 20: return "#f59e0b"
+    return "#ef4444"
+
+
+def _error_color(abs_err):
+    """Return CSS color for forecast error."""
+    if abs_err <= 1.5: return "#22c55e"   # green — excellent
+    if abs_err <= 3.0: return "#f59e0b"   # amber — decent
+    return "#ef4444"                       # red — missed
+
+
+def generate_html(forecast: dict, verifications: list[dict] | None = None):
+    """Generate HTML page with forecast + verification scorecard."""
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
     gen_time = forecast.get("generated_at", "unknown")
     hrrr_init = forecast.get("hrrr_init", "unknown")
 
+    # === Forecast table rows ===
     station_rows = ""
     for sid, data in forecast.get("stations", {}).items():
         name = data.get("name", sid)
@@ -352,17 +447,7 @@ def generate_html(forecast: dict):
             if vtime:
                 vtime = pd.Timestamp(vtime).strftime("%H:%M")
             if isinstance(wspd, (int, float)):
-                # Color-code by wind speed
-                if wspd < 5:
-                    color = "#94a3b8"  # slate
-                elif wspd < 10:
-                    color = "#22c55e"  # green
-                elif wspd < 15:
-                    color = "#3b82f6"  # blue
-                elif wspd < 20:
-                    color = "#f59e0b"  # amber
-                else:
-                    color = "#ef4444"  # red
+                color = _wind_color(wspd)
                 lead_cells += f'<td style="color:{color};font-weight:bold;font-size:1.3em">{wspd:.0f} kt<br><small style="color:#666;font-weight:normal">{vtime} UTC</small></td>'
             else:
                 lead_cells += f"<td>—</td>"
@@ -373,6 +458,83 @@ def generate_html(forecast: dict):
             <td>{current} kt<br><small>{current_time} UTC</small></td>
             {lead_cells}
         </tr>"""
+
+    # === Verification section ===
+    verify_html = ""
+    running_stats_html = ""
+    if verifications:
+        # Recent checks (last 20)
+        recent = verifications[:20]
+        verify_rows = ""
+        for v in recent:
+            vt = pd.Timestamp(v["valid_time"]).strftime("%b %d %H:%M")
+            err_color = _error_color(v["abs_error_kt"])
+            sign = "+" if v["error_kt"] > 0 else ""
+            verify_rows += f"""
+            <tr>
+                <td>{v["station_name"]}</td>
+                <td>{v["lead_hours"]}h</td>
+                <td>{vt}</td>
+                <td style="color:{_wind_color(v['predicted_kt'])}">{v["predicted_kt"]:.0f} kt</td>
+                <td style="color:{_wind_color(v['actual_kt'])}">{v["actual_kt"]:.0f} kt</td>
+                <td style="color:{err_color};font-weight:bold">{sign}{v["error_kt"]:.1f} kt</td>
+            </tr>"""
+
+        verify_html = f"""
+    <div class="section">
+        <h3>Recent Forecast Checks</h3>
+        <p class="section-desc">How did our predictions compare to what actually happened?</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Station</th>
+                    <th>Lead</th>
+                    <th>Valid Time</th>
+                    <th>Predicted</th>
+                    <th>Actual</th>
+                    <th>Error</th>
+                </tr>
+            </thead>
+            <tbody>{verify_rows}
+            </tbody>
+        </table>
+    </div>"""
+
+        # Running accuracy stats
+        df_v = pd.DataFrame(verifications)
+        if len(df_v) > 0:
+            stats_rows = ""
+            for sid in STATIONS:
+                for lead in LEAD_HOURS:
+                    mask = (df_v["station"] == sid) & (df_v["lead_hours"] == lead)
+                    if mask.sum() < 1:
+                        continue
+                    sub = df_v[mask]
+                    mae = sub["abs_error_kt"].mean()
+                    n = len(sub)
+                    station_name = STATIONS.get(sid, sid)
+                    stats_rows += f"""
+                <tr>
+                    <td>{station_name}</td>
+                    <td>{lead}h</td>
+                    <td style="color:{_error_color(mae)};font-weight:bold">{mae:.1f} kt</td>
+                    <td>{n}</td>
+                </tr>"""
+
+            if stats_rows:
+                overall_mae = df_v["abs_error_kt"].mean()
+                running_stats_html = f"""
+    <div class="section">
+        <h3>Running Accuracy — Live MAE: <span style="color:{_error_color(overall_mae)}">{overall_mae:.1f} kt</span></h3>
+        <p class="section-desc">Based on {len(df_v)} verified predictions</p>
+        <table>
+            <thead>
+                <tr><th>Station</th><th>Lead</th><th>MAE</th><th>N</th></tr>
+            </thead>
+            <tbody>{stats_rows}
+            </tbody>
+        </table>
+    </div>"""
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -390,133 +552,84 @@ def generate_html(forecast: dict):
             max-width: 900px;
             margin: 0 auto;
         }}
-        h1 {{
-            font-size: 1.8em;
-            margin-bottom: 4px;
-            color: #38bdf8;
-        }}
-        .subtitle {{
-            color: #64748b;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-        }}
+        h1 {{ font-size: 1.8em; margin-bottom: 4px; color: #38bdf8; }}
+        .subtitle {{ color: #64748b; margin-bottom: 20px; font-size: 0.9em; }}
         .meta {{
-            background: #1e293b;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.85em;
-            color: #94a3b8;
+            background: #1e293b; padding: 12px 16px; border-radius: 8px;
+            margin-bottom: 20px; font-size: 0.85em; color: #94a3b8;
         }}
         table {{
-            width: 100%;
-            border-collapse: collapse;
-            background: #1e293b;
-            border-radius: 8px;
-            overflow: hidden;
+            width: 100%; border-collapse: collapse;
+            background: #1e293b; border-radius: 8px; overflow: hidden;
         }}
         th {{
-            background: #334155;
-            padding: 12px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #94a3b8;
-            text-transform: uppercase;
+            background: #334155; padding: 10px; text-align: center;
+            font-size: 0.8em; color: #94a3b8; text-transform: uppercase;
             letter-spacing: 0.05em;
         }}
-        td {{
-            padding: 12px;
-            text-align: center;
-            border-top: 1px solid #334155;
-        }}
+        td {{ padding: 10px; text-align: center; border-top: 1px solid #334155; }}
         tr:hover {{ background: #263548; }}
+        .section {{
+            background: #1e293b; padding: 16px; border-radius: 8px; margin-top: 20px;
+        }}
+        .section h3 {{ color: #38bdf8; margin-bottom: 4px; font-size: 1em; }}
+        .section-desc {{ color: #64748b; font-size: 0.8em; margin-bottom: 12px; }}
+        .section table {{ font-size: 0.85em; }}
         .legend {{
-            margin-top: 20px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            font-size: 0.8em;
+            margin-top: 16px; display: flex; gap: 16px;
+            justify-content: center; flex-wrap: wrap; font-size: 0.8em;
         }}
-        .legend span {{
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }}
-        .dot {{
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }}
+        .legend span {{ display: inline-flex; align-items: center; gap: 4px; }}
+        .dot {{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }}
         .footer {{
-            margin-top: 30px;
-            text-align: center;
-            color: #475569;
-            font-size: 0.8em;
+            margin-top: 30px; text-align: center; color: #475569; font-size: 0.8em;
         }}
         .footer a {{ color: #38bdf8; }}
-        .accuracy {{
-            background: #1e293b;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }}
-        .accuracy h3 {{ color: #38bdf8; margin-bottom: 8px; font-size: 1em; }}
-        .accuracy table {{ font-size: 0.85em; }}
     </style>
 </head>
 <body>
-    <h1>🌊 Puff Cast</h1>
+    <h1>Puff Cast</h1>
     <p class="subtitle">ML-enhanced wind forecasts for Chesapeake Bay</p>
 
     <div class="meta">
-        Forecast generated: <strong>{pd.Timestamp(gen_time).strftime('%b %d, %Y %H:%M UTC')}</strong>
+        Forecast: <strong>{pd.Timestamp(gen_time).strftime('%b %d, %Y %H:%M UTC')}</strong>
         &nbsp;|&nbsp; HRRR init: <strong>{pd.Timestamp(hrrr_init).strftime('%H:%M UTC') if hrrr_init else '—'}</strong>
-        &nbsp;|&nbsp; Updated every 6 hours
+        &nbsp;|&nbsp; Updated every 3 hours
     </div>
 
     <table>
         <thead>
-            <tr>
-                <th>Station</th>
-                <th>Now</th>
-                <th>+3h</th>
-                <th>+6h</th>
-                <th>+12h</th>
-            </tr>
+            <tr><th>Station</th><th>Now</th><th>+3h</th><th>+6h</th><th>+12h</th></tr>
         </thead>
-        <tbody>
-            {station_rows}
+        <tbody>{station_rows}
         </tbody>
     </table>
 
     <div class="legend">
-        <span><span class="dot" style="background:#94a3b8"></span> &lt;5 kt (light)</span>
-        <span><span class="dot" style="background:#22c55e"></span> 5-10 kt (gentle)</span>
-        <span><span class="dot" style="background:#3b82f6"></span> 10-15 kt (moderate)</span>
-        <span><span class="dot" style="background:#f59e0b"></span> 15-20 kt (fresh)</span>
-        <span><span class="dot" style="background:#ef4444"></span> 20+ kt (strong)</span>
+        <span><span class="dot" style="background:#94a3b8"></span> &lt;5 kt</span>
+        <span><span class="dot" style="background:#22c55e"></span> 5-10 kt</span>
+        <span><span class="dot" style="background:#3b82f6"></span> 10-15 kt</span>
+        <span><span class="dot" style="background:#f59e0b"></span> 15-20 kt</span>
+        <span><span class="dot" style="background:#ef4444"></span> 20+ kt</span>
     </div>
 
-    <div class="accuracy">
-        <h3>Model Accuracy (vs raw NWS at 12h lead)</h3>
+    {verify_html}
+    {running_stats_html}
+
+    <div class="section">
+        <h3>Model Accuracy (backtest, 12h lead)</h3>
         <table>
-            <tr><th>Station</th><th>Our MAE</th><th>NWS MAE</th><th>Improvement</th></tr>
-            <tr><td>Annapolis</td><td>1.4 kt</td><td>4.4 kt</td><td style="color:#22c55e">70% better</td></tr>
-            <tr><td>Cambridge</td><td>2.0 kt</td><td>3.0 kt</td><td style="color:#22c55e">34% better</td></tr>
-            <tr><td>Solomons</td><td>1.9 kt</td><td>2.5 kt</td><td style="color:#22c55e">25% better</td></tr>
-            <tr><td>Thomas Point</td><td>2.4 kt</td><td>3.1 kt</td><td style="color:#22c55e">19% better</td></tr>
+            <tr><th>Station</th><th>Puff Cast</th><th>Raw NWS</th><th>Improvement</th></tr>
+            <tr><td>Annapolis</td><td>1.4 kt</td><td>4.4 kt</td><td style="color:#22c55e">70%</td></tr>
+            <tr><td>Cambridge</td><td>2.0 kt</td><td>3.0 kt</td><td style="color:#22c55e">34%</td></tr>
+            <tr><td>Solomons</td><td>1.9 kt</td><td>2.5 kt</td><td style="color:#22c55e">25%</td></tr>
+            <tr><td>Thomas Point</td><td>2.4 kt</td><td>3.1 kt</td><td style="color:#22c55e">19%</td></tr>
         </table>
     </div>
 
     <div class="footer">
-        <p>Puff Cast uses an ensemble of HRRR, GFS, and ECMWF corrected with
-        local observations from 27 stations across the Bay.</p>
-        <p style="margin-top: 8px;">
-            <a href="https://github.com/seph/puff-cast">GitHub</a> &nbsp;|&nbsp;
-            Predictions are logged for verification
-        </p>
+        <p>Ensemble of HRRR, GFS, ECMWF corrected with 27 local stations.</p>
+        <p style="margin-top: 8px;"><a href="latest.json">API</a> &nbsp;|&nbsp; <a href="verification.json">Verification data</a></p>
     </div>
 </body>
 </html>"""
@@ -525,50 +638,9 @@ def generate_html(forecast: dict):
     html_path.write_text(html)
     print(f"  HTML written to {html_path}")
 
-    # Also save forecast as JSON for programmatic access
     json_path = DOCS_DIR / "latest.json"
     with open(json_path, "w") as f:
         json.dump(forecast, f, indent=2, default=str)
-
-
-def verify_predictions():
-    """Check past predictions against actuals."""
-    log_path = LOG_DIR / "forecast_log.jsonl"
-    if not log_path.exists():
-        print("No prediction log found")
-        return
-
-    unified = pd.read_parquet(DATA_DIR / "processed" / "unified_hourly.parquet")
-
-    predictions = []
-    with open(log_path) as f:
-        for line in f:
-            predictions.append(json.loads(line))
-
-    print(f"Loaded {len(predictions)} forecast records\n")
-    print(f"{'Station':<12s} {'Lead':>4s} {'Predicted':>10s} {'Actual':>8s} {'Error':>8s}")
-    print("─" * 48)
-
-    errors = []
-    for pred in predictions:
-        for sid, sdata in pred.get("stations", {}).items():
-            for lead, ldata in sdata.get("leads", {}).items():
-                vt = pd.Timestamp(ldata["valid_time"])
-                if vt not in unified.index:
-                    continue
-                actual = unified.loc[vt, f"{sid}_WSPD"]
-                if pd.isna(actual):
-                    continue
-                pred_ms = ldata["wspd_ms"]
-                err_kt = abs(actual - pred_ms) * KT
-                errors.append({"station": sid, "lead": lead, "error_kt": err_kt})
-                print(f"{sid:<12s} {lead:>3d}h {pred_ms*KT:>9.1f} kt {actual*KT:>7.1f} kt {err_kt:>7.1f} kt")
-
-    if errors:
-        df = pd.DataFrame(errors)
-        print(f"\nOverall MAE: {df['error_kt'].mean():.2f} kt")
-        print(f"\nBy station:")
-        print(df.groupby("station")["error_kt"].mean().to_string())
 
 
 if __name__ == "__main__":
@@ -576,13 +648,20 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-    if "--verify" in sys.argv:
-        verify_predictions()
-    else:
-        forecast = generate_forecast()
-        if forecast:
-            log_prediction(forecast)
-            generate_html(forecast)
-            print("\nDone! Forecast generated and logged.")
+    forecast = generate_forecast()
+    if forecast:
+        log_prediction(forecast)
+
+        # Verify past predictions against current observations
+        print("  Verifying past predictions...")
+        obs = fetch_latest_obs()
+        verifications = verify_past_predictions(obs)
+        if verifications:
+            print(f"  Verified {len(verifications)} past predictions")
         else:
-            print("\nFailed to generate forecast.")
+            print("  No past predictions to verify yet")
+
+        generate_html(forecast, verifications)
+        print("\nDone! Forecast generated, verified, and published.")
+    else:
+        print("\nFailed to generate forecast.")

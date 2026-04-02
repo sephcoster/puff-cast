@@ -3,7 +3,7 @@ __pycache__/
 .venv/
 data/raw/
 data/processed/
-data/predictions/
+# data/predictions/ — keep this tracked for verification history
 *.egg-info/
 .ipynb_checkpoints/
 .DS_Store
