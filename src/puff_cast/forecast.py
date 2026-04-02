@@ -358,9 +358,13 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
                 for lead_str, ldata in sdata.get("leads", {}).items():
                     lead = int(lead_str)
                     vt = pd.Timestamp(ldata["valid_time"])
+                    # Strip timezone for comparison with tz-naive obs index
+                    if vt.tzinfo is not None:
+                        vt = vt.tz_localize(None)
 
                     # Only verify predictions whose valid_time has passed
-                    if vt > pd.Timestamp(now):
+                    now_naive = pd.Timestamp(now).tz_localize(None) if pd.Timestamp(now).tzinfo else pd.Timestamp(now)
+                    if vt > now_naive:
                         continue
 
                     # Look up actual observation
@@ -368,8 +372,13 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
                     if wspd_col not in obs.columns:
                         continue
 
+                    # Ensure obs index is also tz-naive
+                    obs_idx = obs.index
+                    if obs_idx.tz is not None:
+                        obs_idx = obs_idx.tz_localize(None)
+
                     # Find closest observation to valid_time (within 1 hour)
-                    time_diffs = abs(obs.index - vt)
+                    time_diffs = abs(obs_idx - vt)
                     closest_idx = time_diffs.argmin()
                     if time_diffs[closest_idx] > pd.Timedelta(hours=1):
                         continue
