@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+data/raw/
+data/processed/
+data/predictions/
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+# models/*.pkl  # Committed — needed for GitHub Actions forecasts

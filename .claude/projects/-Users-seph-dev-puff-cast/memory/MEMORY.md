@@ -1,0 +1,2 @@
+- [Project Overview](project_overview.md) — localized wind forecasting for Chesapeake Bay using NOAA data, initial RF results beat persistence by 22-25%
+- [User Profile](user_profile.md) — sailor in Annapolis, technically strong, focused on ML/prediction quality not app UI

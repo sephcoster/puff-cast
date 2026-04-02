@@ -1,0 +1,27 @@
+[project]
+name = "puff-cast"
+version = "0.1.0"
+description = "Localized marine wind forecasting for Chesapeake Bay using NOAA buoy data"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "requests>=2.31",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "jupyter>=1.0",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "xgboost>=2.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+    "black",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
