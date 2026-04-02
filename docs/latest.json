@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T05:21:56.131489+00:00",
+  "generated_at": "2026-04-02T05:43:01.097005+00:00",
   "hrrr_init": "2026-04-02T04:00:00+00:00",
   "stations": {
     "TPLM2": {
@@ -49,8 +49,8 @@
           "init_time": "2026-04-02T04:00:00+00:00"
         }
       },
-      "current_kt": 7.0,
-      "current_time": "2026-04-02T04:00:00"
+      "current_kt": 2.9,
+      "current_time": "2026-04-02T05:00:00"
     },
     "SLIM2": {
       "name": "Solomons Island",
@@ -74,8 +74,8 @@
           "init_time": "2026-04-02T04:00:00+00:00"
         }
       },
-      "current_kt": 7.3,
-      "current_time": "2026-04-02T04:00:00"
+      "current_kt": 1.9,
+      "current_time": "2026-04-02T05:00:00"
     },
     "CAMM2": {
       "name": "Cambridge",
@@ -99,8 +99,8 @@
           "init_time": "2026-04-02T04:00:00+00:00"
         }
       },
-      "current_kt": 3.8,
-      "current_time": "2026-04-02T04:00:00"
+      "current_kt": 8.0,
+      "current_time": "2026-04-02T05:00:00"
     }
   }
 }

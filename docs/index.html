@@ -14,104 +14,56 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 4px;
-            color: #38bdf8;
-        }
-        .subtitle {
-            color: #64748b;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-        }
+        h1 { font-size: 1.8em; margin-bottom: 4px; color: #38bdf8; }
+        .subtitle { color: #64748b; margin-bottom: 20px; font-size: 0.9em; }
         .meta {
-            background: #1e293b;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.85em;
-            color: #94a3b8;
+            background: #1e293b; padding: 12px 16px; border-radius: 8px;
+            margin-bottom: 20px; font-size: 0.85em; color: #94a3b8;
         }
         table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #1e293b;
-            border-radius: 8px;
-            overflow: hidden;
+            width: 100%; border-collapse: collapse;
+            background: #1e293b; border-radius: 8px; overflow: hidden;
         }
         th {
-            background: #334155;
-            padding: 12px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #94a3b8;
-            text-transform: uppercase;
+            background: #334155; padding: 10px; text-align: center;
+            font-size: 0.8em; color: #94a3b8; text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        td {
-            padding: 12px;
-            text-align: center;
-            border-top: 1px solid #334155;
-        }
+        td { padding: 10px; text-align: center; border-top: 1px solid #334155; }
         tr:hover { background: #263548; }
+        .section {
+            background: #1e293b; padding: 16px; border-radius: 8px; margin-top: 20px;
+        }
+        .section h3 { color: #38bdf8; margin-bottom: 4px; font-size: 1em; }
+        .section-desc { color: #64748b; font-size: 0.8em; margin-bottom: 12px; }
+        .section table { font-size: 0.85em; }
         .legend {
-            margin-top: 20px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            font-size: 0.8em;
+            margin-top: 16px; display: flex; gap: 16px;
+            justify-content: center; flex-wrap: wrap; font-size: 0.8em;
         }
-        .legend span {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-        }
+        .legend span { display: inline-flex; align-items: center; gap: 4px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
         .footer {
-            margin-top: 30px;
-            text-align: center;
-            color: #475569;
-            font-size: 0.8em;
+            margin-top: 30px; text-align: center; color: #475569; font-size: 0.8em;
         }
         .footer a { color: #38bdf8; }
-        .accuracy {
-            background: #1e293b;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .accuracy h3 { color: #38bdf8; margin-bottom: 8px; font-size: 1em; }
-        .accuracy table { font-size: 0.85em; }
     </style>
 </head>
 <body>
-    <h1>🌊 Puff Cast</h1>
+    <h1>Puff Cast</h1>
     <p class="subtitle">ML-enhanced wind forecasts for Chesapeake Bay</p>
 
     <div class="meta">
-        Forecast generated: <strong>Apr 02, 2026 05:21 UTC</strong>
+        Forecast: <strong>Apr 02, 2026 05:43 UTC</strong>
         &nbsp;|&nbsp; HRRR init: <strong>04:00 UTC</strong>
-        &nbsp;|&nbsp; Updated every 6 hours
+        &nbsp;|&nbsp; Updated every 3 hours
     </div>
 
     <table>
         <thead>
-            <tr>
-                <th>Station</th>
-                <th>Now</th>
-                <th>+3h</th>
-                <th>+6h</th>
-                <th>+12h</th>
-            </tr>
+            <tr><th>Station</th><th>Now</th><th>+3h</th><th>+6h</th><th>+12h</th></tr>
         </thead>
         <tbody>
-            
         <tr>
             <td><strong>Thomas Point Light</strong><br><small>TPLM2</small></td>
             <td>9.9 kt<br><small>05:00 UTC</small></td>
@@ -119,48 +71,47 @@
         </tr>
         <tr>
             <td><strong>Annapolis</strong><br><small>APAM2</small></td>
-            <td>7.0 kt<br><small>04:00 UTC</small></td>
+            <td>2.9 kt<br><small>05:00 UTC</small></td>
             <td style="color:#94a3b8;font-weight:bold;font-size:1.3em">4 kt<br><small style="color:#666;font-weight:normal">07:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">7 kt<br><small style="color:#666;font-weight:normal">10:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">6 kt<br><small style="color:#666;font-weight:normal">16:00 UTC</small></td>
         </tr>
         <tr>
             <td><strong>Solomons Island</strong><br><small>SLIM2</small></td>
-            <td>7.3 kt<br><small>04:00 UTC</small></td>
+            <td>1.9 kt<br><small>05:00 UTC</small></td>
             <td style="color:#22c55e;font-weight:bold;font-size:1.3em">6 kt<br><small style="color:#666;font-weight:normal">07:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">9 kt<br><small style="color:#666;font-weight:normal">10:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">9 kt<br><small style="color:#666;font-weight:normal">16:00 UTC</small></td>
         </tr>
         <tr>
             <td><strong>Cambridge</strong><br><small>CAMM2</small></td>
-            <td>3.8 kt<br><small>04:00 UTC</small></td>
+            <td>8.0 kt<br><small>05:00 UTC</small></td>
             <td style="color:#22c55e;font-weight:bold;font-size:1.3em">6 kt<br><small style="color:#666;font-weight:normal">07:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">8 kt<br><small style="color:#666;font-weight:normal">10:00 UTC</small></td><td style="color:#22c55e;font-weight:bold;font-size:1.3em">7 kt<br><small style="color:#666;font-weight:normal">16:00 UTC</small></td>
         </tr>
         </tbody>
     </table>
 
     <div class="legend">
-        <span><span class="dot" style="background:#94a3b8"></span> &lt;5 kt (light)</span>
-        <span><span class="dot" style="background:#22c55e"></span> 5-10 kt (gentle)</span>
-        <span><span class="dot" style="background:#3b82f6"></span> 10-15 kt (moderate)</span>
-        <span><span class="dot" style="background:#f59e0b"></span> 15-20 kt (fresh)</span>
-        <span><span class="dot" style="background:#ef4444"></span> 20+ kt (strong)</span>
+        <span><span class="dot" style="background:#94a3b8"></span> &lt;5 kt</span>
+        <span><span class="dot" style="background:#22c55e"></span> 5-10 kt</span>
+        <span><span class="dot" style="background:#3b82f6"></span> 10-15 kt</span>
+        <span><span class="dot" style="background:#f59e0b"></span> 15-20 kt</span>
+        <span><span class="dot" style="background:#ef4444"></span> 20+ kt</span>
     </div>
 
-    <div class="accuracy">
-        <h3>Model Accuracy (vs raw NWS at 12h lead)</h3>
+    
+    
+
+    <div class="section">
+        <h3>Model Accuracy (backtest, 12h lead)</h3>
         <table>
-            <tr><th>Station</th><th>Our MAE</th><th>NWS MAE</th><th>Improvement</th></tr>
-            <tr><td>Annapolis</td><td>1.4 kt</td><td>4.4 kt</td><td style="color:#22c55e">70% better</td></tr>
-            <tr><td>Cambridge</td><td>2.0 kt</td><td>3.0 kt</td><td style="color:#22c55e">34% better</td></tr>
-            <tr><td>Solomons</td><td>1.9 kt</td><td>2.5 kt</td><td style="color:#22c55e">25% better</td></tr>
-            <tr><td>Thomas Point</td><td>2.4 kt</td><td>3.1 kt</td><td style="color:#22c55e">19% better</td></tr>
+            <tr><th>Station</th><th>Puff Cast</th><th>Raw NWS</th><th>Improvement</th></tr>
+            <tr><td>Annapolis</td><td>1.4 kt</td><td>4.4 kt</td><td style="color:#22c55e">70%</td></tr>
+            <tr><td>Cambridge</td><td>2.0 kt</td><td>3.0 kt</td><td style="color:#22c55e">34%</td></tr>
+            <tr><td>Solomons</td><td>1.9 kt</td><td>2.5 kt</td><td style="color:#22c55e">25%</td></tr>
+            <tr><td>Thomas Point</td><td>2.4 kt</td><td>3.1 kt</td><td style="color:#22c55e">19%</td></tr>
         </table>
     </div>
 
     <div class="footer">
-        <p>Puff Cast uses an ensemble of HRRR, GFS, and ECMWF corrected with
-        local observations from 27 stations across the Bay.</p>
-        <p style="margin-top: 8px;">
-            <a href="https://github.com/seph/puff-cast">GitHub</a> &nbsp;|&nbsp;
-            Predictions are logged for verification
-        </p>
+        <p>Ensemble of HRRR, GFS, ECMWF corrected with 27 local stations.</p>
+        <p style="margin-top: 8px;"><a href="latest.json">API</a> &nbsp;|&nbsp; <a href="verification.json">Verification data</a></p>
     </div>
 </body>
 </html>
