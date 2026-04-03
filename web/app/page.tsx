@@ -19,6 +19,7 @@ interface StationForecast {
   leads: Record<string, LeadForecast>;
   current_kt?: number;
   current_time?: string;
+  actuals?: Record<string, number>; // hourly actuals keyed by ISO time
 }
 
 interface Forecast {
@@ -215,6 +216,13 @@ export default async function Home() {
                         </td>
                       );
                     }
+                    // Check if we have an actual observation for this valid time
+                    const vtRounded = new Date(ldata.valid_time);
+                    vtRounded.setMinutes(0, 0, 0);
+                    const vtKey = vtRounded.toISOString();
+                    const actual = data.actuals?.[vtKey];
+                    const isPast = new Date(ldata.valid_time) < new Date();
+
                     return (
                       <td key={lead} className="px-3 py-3 text-center">
                         <span
@@ -222,9 +230,23 @@ export default async function Home() {
                         >
                           {Math.round(ldata.wspd_kt)} kt
                         </span>
-                        <div className="text-xs text-slate-600">
-                          {formatTime(ldata.valid_time)}
-                        </div>
+                        {actual != null && isPast ? (
+                          <div className="mt-0.5">
+                            <span className={`text-xs ${windColor(actual)}`}>
+                              actual: {Math.round(actual)} kt
+                            </span>
+                            <span
+                              className={`text-xs ml-1 ${errorColor(Math.abs(ldata.wspd_kt - actual))}`}
+                            >
+                              ({ldata.wspd_kt - actual > 0 ? "+" : ""}
+                              {(ldata.wspd_kt - actual).toFixed(1)})
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="text-xs text-slate-600">
+                            {formatTime(ldata.valid_time)}
+                          </div>
+                        )}
                       </td>
                     );
                   })}

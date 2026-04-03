@@ -209,7 +209,7 @@ def generate_forecast() -> dict:
                     "init_time": hrrr.iloc[0]["init_time"].isoformat(),
                 }
 
-    # Get current conditions for display
+    # Get current conditions and recent hourly actuals for display
     for station in STATIONS:
         wspd_col = f"{station}_WSPD"
         if wspd_col in obs.columns and len(obs) > 0:
@@ -217,6 +217,16 @@ def generate_forecast() -> dict:
             if len(latest) > 0:
                 forecasts[station]["current_kt"] = round(latest.iloc[-1] * KT, 1)
                 forecasts[station]["current_time"] = latest.index[-1].isoformat()
+
+            # Last 24 hours of actuals (for displaying alongside past predictions)
+            recent = obs[wspd_col].dropna().last("24h")
+            if len(recent) > 0:
+                actuals = {}
+                for t, val in recent.items():
+                    # Round to nearest hour for matching
+                    hour_key = t.round("h").isoformat()
+                    actuals[hour_key] = round(val * KT, 1)
+                forecasts[station]["actuals"] = actuals
 
     # Add metadata
     result = {
