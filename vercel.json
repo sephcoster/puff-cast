@@ -1,5 +1,4 @@
 {
-  "buildCommand": "cp -r ../docs/*.json public/data/ 2>/dev/null; npm run build",
-  "rootDirectory": "web",
+  "buildCommand": "npm run build",
   "installCommand": "mkdir -p public/data && npm install"
 }
