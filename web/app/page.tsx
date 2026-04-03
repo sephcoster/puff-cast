@@ -10,6 +10,7 @@ const DOCS_DIR = existsSync(join(process.cwd(), "public", "data", "latest.json")
 interface LeadForecast {
   wspd_kt: number;
   wspd_ms: number;
+  nws_kt: number | null;
   valid_time: string;
   init_time: string;
 }
@@ -230,9 +231,14 @@ export default async function Home() {
                         >
                           {Math.round(ldata.wspd_kt)} kt
                         </span>
+                        {ldata.nws_kt != null && (
+                          <div className="text-xs text-slate-500">
+                            NWS: {Math.round(ldata.nws_kt)} kt
+                          </div>
+                        )}
                         {actual != null && isPast ? (
-                          <div className="mt-0.5">
-                            <span className={`text-xs ${windColor(actual)}`}>
+                          <div className="mt-0.5 border-t border-slate-800 pt-0.5">
+                            <span className={`text-xs font-medium ${windColor(actual)}`}>
                               actual: {Math.round(actual)} kt
                             </span>
                             <span

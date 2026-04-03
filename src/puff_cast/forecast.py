@@ -200,11 +200,18 @@ def generate_forecast() -> dict:
             if feat is not None:
                 pred_ms = model.predict(feat.fillna(-999).values.reshape(1, -1))[0]
                 pred_kt = pred_ms * KT
-                valid_time = hrrr[hrrr["lead_hours"] == lead].iloc[0]["valid_time"]
+
+                # Get raw HRRR forecast for this station/lead (the NWS baseline)
+                hrrr_sub = hrrr[
+                    (hrrr["station_id"] == station) & (hrrr["lead_hours"] == lead)
+                ]
+                hrrr_raw_kt = round(hrrr_sub.iloc[-1]["hrrr_wspd_ms"] * KT, 1) if len(hrrr_sub) > 0 else None
+                valid_time = hrrr_sub.iloc[-1]["valid_time"] if len(hrrr_sub) > 0 else hrrr[hrrr["lead_hours"] == lead].iloc[0]["valid_time"]
 
                 forecasts[station]["leads"][lead] = {
                     "wspd_kt": round(pred_kt, 1),
                     "wspd_ms": round(pred_ms, 2),
+                    "nws_kt": hrrr_raw_kt,
                     "valid_time": valid_time.isoformat(),
                     "init_time": hrrr.iloc[0]["init_time"].isoformat(),
                 }
