@@ -12,6 +12,7 @@
     "hrrr_sp_pa",
     "hrrr_fricv_ms",
     "hrrr_gust_factor",
+    "hrrr_trend",
     "APAM2_hrrr_wspd",
     "APAM2_hrrr_cape",
     "APAM2_hrrr_gust",
@@ -145,7 +146,7 @@
     "hrrr_gfs_spread",
     "gfs_ecmwf_spread"
   ],
-  "n_train": 1270,
+  "n_train": 2540,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,

@@ -1,6 +1,6 @@
 {
-  "station": "TPLM2",
-  "lead_hours": 12,
+  "station": "APAM2",
+  "lead_hours": 1,
   "features": [
     "hrrr_wspd",
     "hrrr_wspd_sq",
@@ -13,9 +13,9 @@
     "hrrr_fricv_ms",
     "hrrr_gust_factor",
     "hrrr_trend",
-    "APAM2_hrrr_wspd",
-    "APAM2_hrrr_cape",
-    "APAM2_hrrr_gust",
+    "TPLM2_hrrr_wspd",
+    "TPLM2_hrrr_cape",
+    "TPLM2_hrrr_gust",
     "BLTM2_hrrr_wspd",
     "BLTM2_hrrr_cape",
     "BLTM2_hrrr_gust",
@@ -72,8 +72,6 @@
     "target_WSPD_diff6",
     "target_PRES_diff3",
     "target_PRES_diff6",
-    "APAM2_wspd",
-    "APAM2_pres",
     "COVM2_wspd",
     "COVM2_pres",
     "CAMM2_wspd",
@@ -139,14 +137,9 @@
     "wind_current_opposing",
     "wind_current_product",
     "coops_wtmp",
-    "annapolis_air_water_diff",
-    "gfs_wspd",
-    "gfs_wdir_sin",
-    "gfs_wdir_cos",
-    "hrrr_gfs_spread",
-    "gfs_ecmwf_spread"
+    "annapolis_air_water_diff"
   ],
-  "n_train": 2536,
+  "n_train": 3248,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,
