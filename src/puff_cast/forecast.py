@@ -34,7 +34,7 @@ STATIONS = {
     "CAMM2": "Cambridge",
 }
 
-LEAD_HOURS = [3, 6, 12]
+LEAD_HOURS = [1, 3, 6, 12]
 
 
 def fetch_latest_obs() -> pd.DataFrame:
@@ -416,6 +416,55 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
     return verifications
 
 
+def build_forecast_funnels(verifications: list[dict]) -> list[dict]:
+    """
+    Group verified predictions into "funnels" — all predictions for the same
+    station + valid_time, showing how the forecast converged as lead time shrank.
+
+    Returns list of funnel records like:
+    {
+        "station": "APAM2", "station_name": "Annapolis",
+        "valid_time": "2026-04-02T17:00:00",
+        "actual_kt": 9.2,
+        "predictions": {
+            12: {"predicted_kt": 8.0, "error_kt": -1.2},
+            6:  {"predicted_kt": 9.5, "error_kt": +0.3},
+            3:  {"predicted_kt": 9.0, "error_kt": -0.2},
+            1:  {"predicted_kt": 9.1, "error_kt": -0.1},
+        }
+    }
+    """
+    if not verifications:
+        return []
+
+    # Group by (station, valid_time)
+    groups: dict[tuple[str, str], dict] = {}
+    for v in verifications:
+        key = (v["station"], v["valid_time"])
+        if key not in groups:
+            groups[key] = {
+                "station": v["station"],
+                "station_name": v["station_name"],
+                "valid_time": v["valid_time"],
+                "actual_kt": v["actual_kt"],
+                "predictions": {},
+            }
+        groups[key]["predictions"][v["lead_hours"]] = {
+            "predicted_kt": v["predicted_kt"],
+            "error_kt": v["error_kt"],
+        }
+
+    funnels = sorted(groups.values(), key=lambda x: x["valid_time"], reverse=True)
+
+    # Save funnels JSON
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    funnels_path = DOCS_DIR / "funnels.json"
+    with open(funnels_path, "w") as f:
+        json.dump(funnels, f, indent=2, default=str)
+
+    return funnels
+
+
 def _wind_color(kt):
     """Return CSS color for wind speed in knots."""
     if kt < 5: return "#94a3b8"
@@ -667,8 +716,11 @@ if __name__ == "__main__":
         verifications = verify_past_predictions(obs)
         if verifications:
             print(f"  Verified {len(verifications)} past predictions")
+            funnels = build_forecast_funnels(verifications)
+            print(f"  Built {len(funnels)} forecast funnels")
         else:
             print("  No past predictions to verify yet")
+            funnels = []
 
         generate_html(forecast, verifications)
         print("\nDone! Forecast generated, verified, and published.")

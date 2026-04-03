@@ -33,6 +33,19 @@ interface Verification {
   abs_error_kt: number;
 }
 
+interface FunnelPrediction {
+  predicted_kt: number;
+  error_kt: number;
+}
+
+interface Funnel {
+  station: string;
+  station_name: string;
+  valid_time: string;
+  actual_kt: number;
+  predictions: Record<string, FunnelPrediction>;
+}
+
 function windColor(kt: number): string {
   if (kt < 5) return "text-slate-400";
   if (kt < 10) return "text-green-400";
@@ -99,6 +112,18 @@ async function getVerifications(): Promise<Verification[]> {
   }
 }
 
+async function getFunnels(): Promise<Funnel[]> {
+  try {
+    const res = await fetch(`${GITHUB_RAW}/funnels.json`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
+  }
+}
+
 const ACCURACY_STATS = [
   { station: "Annapolis", ours: 1.4, nws: 4.4, pct: 70 },
   { station: "Cambridge", ours: 2.0, nws: 3.0, pct: 34 },
@@ -106,10 +131,13 @@ const ACCURACY_STATS = [
   { station: "Thomas Point", ours: 2.4, nws: 3.1, pct: 19 },
 ];
 
+const LEAD_ORDER = [12, 6, 3, 1];
+
 export default async function Home() {
-  const [forecast, verifications] = await Promise.all([
+  const [forecast, verifications, funnels] = await Promise.all([
     getForecast(),
     getVerifications(),
+    getFunnels(),
   ]);
 
   return (
@@ -151,6 +179,7 @@ export default async function Home() {
               <tr className="bg-slate-800 text-xs uppercase tracking-wider text-slate-500">
                 <th className="px-4 py-3 text-left">Station</th>
                 <th className="px-3 py-3 text-center">Now</th>
+                <th className="px-3 py-3 text-center">+1h</th>
                 <th className="px-3 py-3 text-center">+3h</th>
                 <th className="px-3 py-3 text-center">+6h</th>
                 <th className="px-3 py-3 text-center">+12h</th>
@@ -182,7 +211,7 @@ export default async function Home() {
                       <span className="text-slate-600">&mdash;</span>
                     )}
                   </td>
-                  {["3", "6", "12"].map((lead) => {
+                  {["1", "3", "6", "12"].map((lead) => {
                     const ldata = data.leads[lead];
                     if (!ldata) {
                       return (
@@ -234,15 +263,15 @@ export default async function Home() {
         ))}
       </div>
 
-      {/* Recent verification */}
-      {verifications.length > 0 && (
+      {/* Forecast Funnels */}
+      {funnels.length > 0 && (
         <div className="bg-slate-900 rounded-lg p-4 space-y-3">
           <div>
             <h2 className="text-sky-400 font-semibold">
-              Recent Forecast Checks
+              Forecast Funnels
             </h2>
             <p className="text-xs text-slate-500">
-              How did our predictions compare to what actually happened?
+              How did predictions converge as each hour approached?
             </p>
           </div>
           <div className="overflow-x-auto">
@@ -250,39 +279,60 @@ export default async function Home() {
               <thead>
                 <tr className="text-xs uppercase tracking-wider text-slate-500">
                   <th className="px-3 py-2 text-left">Station</th>
-                  <th className="px-2 py-2 text-center">Lead</th>
                   <th className="px-2 py-2 text-center">Time</th>
-                  <th className="px-2 py-2 text-center">Predicted</th>
+                  {LEAD_ORDER.map((l) => (
+                    <th key={l} className="px-2 py-2 text-center">
+                      {l}h pred
+                    </th>
+                  ))}
                   <th className="px-2 py-2 text-center">Actual</th>
-                  <th className="px-2 py-2 text-center">Error</th>
                 </tr>
               </thead>
               <tbody>
-                {verifications.slice(0, 16).map((v, i) => (
+                {funnels.slice(0, 20).map((f, i) => (
                   <tr
                     key={i}
                     className="border-t border-slate-800 hover:bg-slate-800/50"
                   >
-                    <td className="px-3 py-2">{v.station_name}</td>
-                    <td className="px-2 py-2 text-center">{v.lead_hours}h</td>
+                    <td className="px-3 py-2 whitespace-nowrap">
+                      {f.station_name}
+                    </td>
                     <td className="px-2 py-2 text-center text-slate-400 whitespace-nowrap">
-                      {formatDateTime(v.valid_time)}
+                      {formatDateTime(f.valid_time)}
                     </td>
-                    <td
-                      className={`px-2 py-2 text-center ${windColor(v.predicted_kt)}`}
-                    >
-                      {Math.round(v.predicted_kt)} kt
-                    </td>
-                    <td
-                      className={`px-2 py-2 text-center ${windColor(v.actual_kt)}`}
-                    >
-                      {Math.round(v.actual_kt)} kt
-                    </td>
-                    <td
-                      className={`px-2 py-2 text-center font-medium ${errorColor(v.abs_error_kt)}`}
-                    >
-                      {v.error_kt > 0 ? "+" : ""}
-                      {v.error_kt.toFixed(1)} kt
+                    {LEAD_ORDER.map((lead) => {
+                      const p = f.predictions[String(lead)];
+                      if (!p) {
+                        return (
+                          <td
+                            key={lead}
+                            className="px-2 py-2 text-center text-slate-700"
+                          >
+                            &mdash;
+                          </td>
+                        );
+                      }
+                      const sign = p.error_kt > 0 ? "+" : "";
+                      return (
+                        <td key={lead} className="px-2 py-2 text-center">
+                          <span className={windColor(p.predicted_kt)}>
+                            {Math.round(p.predicted_kt)} kt
+                          </span>
+                          <div
+                            className={`text-xs ${errorColor(Math.abs(p.error_kt))}`}
+                          >
+                            {sign}
+                            {p.error_kt.toFixed(1)}
+                          </div>
+                        </td>
+                      );
+                    })}
+                    <td className="px-2 py-2 text-center">
+                      <span
+                        className={`font-bold ${windColor(f.actual_kt)}`}
+                      >
+                        {Math.round(f.actual_kt)} kt
+                      </span>
                     </td>
                   </tr>
                 ))}
