@@ -1,5 +1,11 @@
-const GITHUB_RAW =
-  "https://raw.githubusercontent.com/sephcoster/puff-cast/main/docs";
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
+
+// In Vercel build, data is copied to public/data/ by the build script.
+// Locally, read from ../docs/
+const DOCS_DIR = existsSync(join(process.cwd(), "public", "data", "latest.json"))
+  ? join(process.cwd(), "public", "data")
+  : join(process.cwd(), "..", "docs");
 
 interface LeadForecast {
   wspd_kt: number;
@@ -88,40 +94,26 @@ function formatDateTime(iso: string): string {
   });
 }
 
-async function getForecast(): Promise<Forecast | null> {
+function readJson<T>(filename: string, fallback: T): T {
+  const path = join(DOCS_DIR, filename);
+  if (!existsSync(path)) return fallback;
   try {
-    const res = await fetch(`${GITHUB_RAW}/latest.json`, {
-      next: { revalidate: 300 },
-    });
-    if (!res.ok) return null;
-    return res.json();
+    return JSON.parse(readFileSync(path, "utf-8"));
   } catch {
-    return null;
+    return fallback;
   }
+}
+
+async function getForecast(): Promise<Forecast | null> {
+  return readJson<Forecast | null>("latest.json", null);
 }
 
 async function getVerifications(): Promise<Verification[]> {
-  try {
-    const res = await fetch(`${GITHUB_RAW}/verification.json`, {
-      next: { revalidate: 300 },
-    });
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
+  return readJson<Verification[]>("verification.json", []);
 }
 
 async function getFunnels(): Promise<Funnel[]> {
-  try {
-    const res = await fetch(`${GITHUB_RAW}/funnels.json`, {
-      next: { revalidate: 300 },
-    });
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
+  return readJson<Funnel[]>("funnels.json", []);
 }
 
 const ACCURACY_STATS = [
