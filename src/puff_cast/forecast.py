@@ -198,7 +198,7 @@ def generate_forecast() -> dict:
             )
 
             if feat is not None:
-                pred_ms = model.predict(feat.fillna(-999).values.reshape(1, -1))[0]
+                pred_ms = model.predict(pd.DataFrame([feat.fillna(-999)]))[0]
                 pred_kt = pred_ms * KT
 
                 # Get raw HRRR forecast for this station/lead (the NWS baseline)
