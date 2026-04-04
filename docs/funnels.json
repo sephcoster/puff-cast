@@ -2,6 +2,30 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-04T14:00:00",
+    "actual_kt": 12.1,
+    "predictions": {
+      "12": {
+        "predicted_kt": 8.7,
+        "error_kt": -3.4
+      },
+      "6": {
+        "predicted_kt": 7.6,
+        "error_kt": -4.5
+      },
+      "3": {
+        "predicted_kt": 8.0,
+        "error_kt": -4.1
+      },
+      "1": {
+        "predicted_kt": 3.6,
+        "error_kt": -8.5
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-04-04T13:00:00",
     "actual_kt": 15.0,
     "predictions": {
@@ -23,19 +47,19 @@
     "station": "APAM2",
     "station_name": "Annapolis",
     "valid_time": "2026-04-04T13:00:00",
-    "actual_kt": 6.0,
+    "actual_kt": 5.1,
     "predictions": {
       "6": {
         "predicted_kt": 3.3,
-        "error_kt": -2.7
+        "error_kt": -1.8
       },
       "3": {
         "predicted_kt": 3.3,
-        "error_kt": -2.7
+        "error_kt": -1.8
       },
       "1": {
         "predicted_kt": 4.2,
-        "error_kt": -1.8
+        "error_kt": -0.9
       }
     }
   },
@@ -43,19 +67,39 @@
     "station": "SLIM2",
     "station_name": "Solomons Island",
     "valid_time": "2026-04-04T13:00:00",
-    "actual_kt": 5.1,
+    "actual_kt": 7.9,
     "predictions": {
       "6": {
         "predicted_kt": 8.8,
-        "error_kt": 3.7
+        "error_kt": 0.9
       },
       "3": {
         "predicted_kt": 9.4,
-        "error_kt": 4.3
+        "error_kt": 1.5
       },
       "1": {
         "predicted_kt": 7.6,
-        "error_kt": 2.5
+        "error_kt": -0.3
+      }
+    }
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "valid_time": "2026-04-04T13:00:00",
+    "actual_kt": 7.2,
+    "predictions": {
+      "6": {
+        "predicted_kt": 3.9,
+        "error_kt": -3.3
+      },
+      "3": {
+        "predicted_kt": 5.3,
+        "error_kt": -1.9
+      },
+      "1": {
+        "predicted_kt": 2.5,
+        "error_kt": -4.7
       }
     }
   },
