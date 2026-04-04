@@ -299,13 +299,36 @@ def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols):
     feat["month_sin"] = np.sin(2 * np.pi * vt.month / 12)
     feat["month_cos"] = np.cos(2 * np.pi * vt.month / 12)
 
-    # Station observations at init time
-    if len(obs) > 0 and init_time in obs.index:
-        row = obs.loc[init_time]
+    # Station observations at init time (use nearest hour match)
+    init_naive = init_time.tz_localize(None) if hasattr(init_time, 'tz_localize') and init_time.tzinfo else init_time
+    init_hour = pd.Timestamp(init_naive).round("h")
+
+    def get_obs_row(df, t):
+        """Find closest row within 1 hour of target time."""
+        if len(df) == 0:
+            return None
+        idx = df.index
+        if idx.tz is not None:
+            idx = idx.tz_localize(None)
+        diffs = abs(idx - t)
+        closest = diffs.argmin()
+        if diffs[closest] <= pd.Timedelta(hours=1):
+            return df.iloc[closest]
+        return None
+
+    obs_row = get_obs_row(obs, init_hour)
+    if obs_row is not None:
         for var in ["WSPD", "GST", "PRES", "ATMP"]:
             col = f"{station}_{var}"
             if col in obs.columns:
-                feat[f"target_{var}"] = row.get(col, np.nan)
+                feat[f"target_{var}"] = obs_row.get(col, np.nan)
+
+        # Wind direction components
+        wdir_col = f"{station}_WDIR"
+        if wdir_col in obs.columns and not pd.isna(obs_row.get(wdir_col, np.nan)):
+            wdir_rad = np.deg2rad(obs_row[wdir_col])
+            feat["target_WDIR_sin"] = np.sin(wdir_rad)
+            feat["target_WDIR_cos"] = np.cos(wdir_rad)
 
         for sid in ["APAM2", "COVM2", "CAMM2", "SLIM2", "WASD2", "44009", "BLTM2"]:
             if sid == station:
@@ -313,11 +336,43 @@ def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols):
             for var in ["WSPD", "PRES"]:
                 col = f"{sid}_{var}"
                 if col in obs.columns:
-                    feat[f"{sid}_{var.lower()}"] = row.get(col, np.nan)
+                    feat[f"{sid}_{var.lower()}"] = obs_row.get(col, np.nan)
+
+        # Pressure gradients
+        target_pres = obs_row.get(f"{station}_PRES", np.nan)
+        if not pd.isna(target_pres):
+            for sid, label in [("44009", "ocean"), ("WASD2", "west"), ("SLIM2", "south")]:
+                pcol = f"{sid}_PRES"
+                if pcol in obs.columns:
+                    op = obs_row.get(pcol, np.nan)
+                    if not pd.isna(op):
+                        feat[f"pres_grad_{label}"] = target_pres - op
+
+        # Temperature differences
+        for sid in ["APAM2", "CAMM2", "SLIM2", "44009"]:
+            atmp_col = f"{sid}_ATMP"
+            wtmp_col = f"{sid}_WTMP"
+            if atmp_col in obs.columns and wtmp_col in obs.columns:
+                atmp = obs_row.get(atmp_col, np.nan)
+                wtmp = obs_row.get(wtmp_col, np.nan)
+                if not pd.isna(atmp) and not pd.isna(wtmp):
+                    feat[f"{sid}_temp_diff"] = atmp - wtmp
+
+        # Trends (look back 3h and 6h)
+        for var in ["WSPD", "PRES"]:
+            col = f"{station}_{var}"
+            if col in obs.columns:
+                for lag in [3, 6]:
+                    prev_row = get_obs_row(obs, init_hour - pd.Timedelta(hours=lag))
+                    if prev_row is not None:
+                        curr = obs_row.get(col, np.nan)
+                        prev = prev_row.get(col, np.nan)
+                        if not pd.isna(curr) and not pd.isna(prev):
+                            feat[f"target_{var}_diff{lag}"] = curr - prev
 
     # ASOS at init time
-    if len(asos) > 0 and init_time in asos.index:
-        arow = asos.loc[init_time]
+    asos_row = get_obs_row(asos, init_hour) if len(asos) > 0 else None
+    if asos_row is not None:
         for sid in ["KBWI", "KDCA", "KNAK", "KNHK", "KESN", "KSBY", "KDOV"]:
             for col_suffix, feat_name in [
                 ("wspd_ms", "wspd"), ("mslp", "mslp"),
@@ -325,7 +380,7 @@ def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols):
             ]:
                 col = f"{sid}_{col_suffix}"
                 if col in asos.columns:
-                    feat[f"{sid}_{feat_name}"] = arow.get(col, np.nan)
+                    feat[f"{sid}_{feat_name}"] = asos_row.get(col, np.nan)
 
     # Build DataFrame with correct column order
     feat_series = pd.Series(feat)
@@ -420,6 +475,13 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
                         "error_kt": round(error_kt, 1),
                         "abs_error_kt": round(abs(error_kt), 1),
                     })
+
+    # Deduplicate: keep only the latest verification per (station, valid_time, lead)
+    seen = {}
+    for v in verifications:
+        key = (v["station"], v["valid_time"], v["lead_hours"])
+        seen[key] = v  # last one wins
+    verifications = list(seen.values())
 
     # Sort by valid_time descending (most recent first)
     verifications.sort(key=lambda x: x["valid_time"], reverse=True)
