@@ -2,6 +2,26 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-08T12:00:00",
+    "actual_kt": 11.1,
+    "predictions": {
+      "6": {
+        "predicted_kt": 11.5,
+        "error_kt": 0.4
+      },
+      "3": {
+        "predicted_kt": 11.3,
+        "error_kt": 0.2
+      },
+      "1": {
+        "predicted_kt": 12.1,
+        "error_kt": 1.0
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-04-08T11:00:00",
     "actual_kt": 17.1,
     "predictions": {
@@ -20,22 +40,42 @@
     }
   },
   {
-    "station": "SLIM2",
-    "station_name": "Solomons Island",
+    "station": "APAM2",
+    "station_name": "Annapolis",
     "valid_time": "2026-04-08T11:00:00",
     "actual_kt": 7.0,
     "predictions": {
       "6": {
+        "predicted_kt": 5.1,
+        "error_kt": -1.9
+      },
+      "3": {
+        "predicted_kt": 7.2,
+        "error_kt": 0.2
+      },
+      "1": {
+        "predicted_kt": 6.2,
+        "error_kt": -0.8
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-08T11:00:00",
+    "actual_kt": 10.0,
+    "predictions": {
+      "6": {
         "predicted_kt": 11.0,
-        "error_kt": 4.0
+        "error_kt": 1.0
       },
       "3": {
         "predicted_kt": 9.7,
-        "error_kt": 2.7
+        "error_kt": -0.3
       },
       "1": {
         "predicted_kt": 7.5,
-        "error_kt": 0.5
+        "error_kt": -2.5
       }
     }
   },
@@ -43,19 +83,19 @@
     "station": "CAMM2",
     "station_name": "Cambridge",
     "valid_time": "2026-04-08T11:00:00",
-    "actual_kt": 6.0,
+    "actual_kt": 8.1,
     "predictions": {
       "6": {
         "predicted_kt": 8.8,
-        "error_kt": 2.8
+        "error_kt": 0.7
       },
       "3": {
         "predicted_kt": 8.6,
-        "error_kt": 2.6
+        "error_kt": 0.5
       },
       "1": {
         "predicted_kt": 7.5,
-        "error_kt": 1.5
+        "error_kt": -0.6
       }
     }
   },
