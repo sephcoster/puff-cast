@@ -8,6 +8,10 @@
       "6": {
         "predicted_kt": 6.2,
         "error_kt": 0.2
+      },
+      "1": {
+        "predicted_kt": 5.4,
+        "error_kt": -0.6
       }
     }
   },
@@ -15,11 +19,15 @@
     "station": "APAM2",
     "station_name": "Annapolis",
     "valid_time": "2026-04-09T15:00:00",
-    "actual_kt": 5.3,
+    "actual_kt": 6.0,
     "predictions": {
       "6": {
         "predicted_kt": 5.8,
-        "error_kt": 0.5
+        "error_kt": -0.2
+      },
+      "1": {
+        "predicted_kt": 4.4,
+        "error_kt": -1.6
       }
     }
   },
@@ -27,11 +35,15 @@
     "station": "SLIM2",
     "station_name": "Solomons Island",
     "valid_time": "2026-04-09T15:00:00",
-    "actual_kt": 5.8,
+    "actual_kt": 7.0,
     "predictions": {
       "6": {
         "predicted_kt": 6.0,
-        "error_kt": 0.2
+        "error_kt": -1.0
+      },
+      "1": {
+        "predicted_kt": 6.2,
+        "error_kt": -0.8
       }
     }
   },
@@ -39,10 +51,14 @@
     "station": "CAMM2",
     "station_name": "Cambridge",
     "valid_time": "2026-04-09T15:00:00",
-    "actual_kt": 5.5,
+    "actual_kt": 4.1,
     "predictions": {
       "6": {
         "predicted_kt": 6.0,
+        "error_kt": 1.9
+      },
+      "1": {
+        "predicted_kt": 4.6,
         "error_kt": 0.5
       }
     }
@@ -75,23 +91,23 @@
     "station": "APAM2",
     "station_name": "Annapolis",
     "valid_time": "2026-04-09T14:00:00",
-    "actual_kt": 5.3,
+    "actual_kt": 6.2,
     "predictions": {
       "12": {
         "predicted_kt": 6.8,
-        "error_kt": 1.5
+        "error_kt": 0.6
       },
       "6": {
         "predicted_kt": 5.9,
-        "error_kt": 0.6
+        "error_kt": -0.3
       },
       "3": {
         "predicted_kt": 5.5,
-        "error_kt": 0.2
+        "error_kt": -0.7
       },
       "1": {
         "predicted_kt": 5.2,
-        "error_kt": -0.1
+        "error_kt": -1.0
       }
     }
   },
@@ -99,23 +115,23 @@
     "station": "SLIM2",
     "station_name": "Solomons Island",
     "valid_time": "2026-04-09T14:00:00",
-    "actual_kt": 5.8,
+    "actual_kt": 5.6,
     "predictions": {
       "12": {
         "predicted_kt": 7.3,
-        "error_kt": 1.5
+        "error_kt": 1.7
       },
       "6": {
         "predicted_kt": 6.0,
-        "error_kt": 0.2
+        "error_kt": 0.4
       },
       "3": {
         "predicted_kt": 5.2,
-        "error_kt": -0.6
+        "error_kt": -0.4
       },
       "1": {
         "predicted_kt": 6.5,
-        "error_kt": 0.7
+        "error_kt": 0.9
       }
     }
   },
@@ -123,23 +139,23 @@
     "station": "CAMM2",
     "station_name": "Cambridge",
     "valid_time": "2026-04-09T14:00:00",
-    "actual_kt": 5.5,
+    "actual_kt": 5.2,
     "predictions": {
       "12": {
         "predicted_kt": 6.9,
-        "error_kt": 1.4
+        "error_kt": 1.7
       },
       "6": {
         "predicted_kt": 6.6,
-        "error_kt": 1.1
+        "error_kt": 1.4
       },
       "3": {
         "predicted_kt": 4.8,
-        "error_kt": -0.7
+        "error_kt": -0.4
       },
       "1": {
         "predicted_kt": 4.9,
-        "error_kt": -0.6
+        "error_kt": -0.3
       }
     }
   },
