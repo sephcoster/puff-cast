@@ -2,6 +2,30 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-10T23:00:00",
+    "actual_kt": 18.1,
+    "predictions": {
+      "12": {
+        "predicted_kt": 10.9,
+        "error_kt": -7.2
+      },
+      "6": {
+        "predicted_kt": 11.3,
+        "error_kt": -6.8
+      },
+      "3": {
+        "predicted_kt": 12.0,
+        "error_kt": -6.1
+      },
+      "1": {
+        "predicted_kt": 14.7,
+        "error_kt": -3.4
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-04-10T22:00:00",
     "actual_kt": 15.9,
     "predictions": {
@@ -20,6 +44,78 @@
       "1": {
         "predicted_kt": 10.7,
         "error_kt": -5.2
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-04-10T22:00:00",
+    "actual_kt": 7.2,
+    "predictions": {
+      "12": {
+        "predicted_kt": 5.7,
+        "error_kt": -1.5
+      },
+      "6": {
+        "predicted_kt": 5.6,
+        "error_kt": -1.6
+      },
+      "3": {
+        "predicted_kt": 6.6,
+        "error_kt": -0.6
+      },
+      "1": {
+        "predicted_kt": 6.4,
+        "error_kt": -0.8
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-10T22:00:00",
+    "actual_kt": 13.0,
+    "predictions": {
+      "12": {
+        "predicted_kt": 12.4,
+        "error_kt": -0.6
+      },
+      "6": {
+        "predicted_kt": 10.6,
+        "error_kt": -2.4
+      },
+      "3": {
+        "predicted_kt": 10.9,
+        "error_kt": -2.1
+      },
+      "1": {
+        "predicted_kt": 11.8,
+        "error_kt": -1.2
+      }
+    }
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "valid_time": "2026-04-10T22:00:00",
+    "actual_kt": 10.1,
+    "predictions": {
+      "12": {
+        "predicted_kt": 8.4,
+        "error_kt": -1.7
+      },
+      "6": {
+        "predicted_kt": 7.1,
+        "error_kt": -3.0
+      },
+      "3": {
+        "predicted_kt": 8.4,
+        "error_kt": -1.7
+      },
+      "1": {
+        "predicted_kt": 9.6,
+        "error_kt": -0.5
       }
     }
   },
