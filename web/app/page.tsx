@@ -253,7 +253,120 @@ export default async function Home() {
         </div>
       )}
 
-      {/* Upcoming funnels per station */}
+      {/* Next hour summary — one row per station */}
+      {(() => {
+        // For each station, find the earliest upcoming hour with at least one prediction
+        const nextRowByStation: Record<
+          string,
+          { date: Date; hoursAway: number; funnel: UpcomingFunnel } | null
+        > = {};
+        const now = new Date();
+        for (const sid of orderedStationIds) {
+          const upcoming = upcomingByStation[sid] ?? [];
+          const firstWithData = upcoming.find(
+            (f) =>
+              new Date(f.valid_time).getTime() > now.getTime() &&
+              Object.keys(f.predictions).length > 0,
+          );
+          if (firstWithData) {
+            const d = new Date(firstWithData.valid_time);
+            nextRowByStation[sid] = {
+              date: d,
+              hoursAway: (d.getTime() - now.getTime()) / 3600_000,
+              funnel: firstWithData,
+            };
+          } else {
+            nextRowByStation[sid] = null;
+          }
+        }
+        const anyNext = Object.values(nextRowByStation).some((v) => v);
+        if (!anyNext) return null;
+
+        return (
+          <div className="bg-slate-900 rounded-lg overflow-hidden">
+            <div className="bg-slate-800 px-4 py-2 text-xs uppercase tracking-wider text-slate-500">
+              Next forecast per station
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
+                    <th className="px-3 py-2 text-left">Station</th>
+                    <th className="px-3 py-2 text-left">Next hour</th>
+                    {LEAD_COLUMNS.map((l) => (
+                      <th key={l} className="px-2 py-2 text-center">
+                        T-{l}h
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {orderedStationIds.map((sid) => {
+                    const name = forecast?.stations[sid]?.name ?? sid;
+                    const entry = nextRowByStation[sid];
+                    return (
+                      <tr
+                        key={sid}
+                        className="border-t border-slate-800 hover:bg-slate-800/50"
+                      >
+                        <td className="px-3 py-2">
+                          <div className="font-medium text-slate-300">
+                            {name}
+                          </div>
+                          <div className="text-xs text-slate-600">{sid}</div>
+                        </td>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          {entry ? (
+                            <>
+                              <div className="font-medium text-slate-300">
+                                {formatDayHour(entry.date.toISOString())}
+                              </div>
+                              <div className="text-xs text-slate-600">
+                                in {Math.round(entry.hoursAway)}h
+                              </div>
+                            </>
+                          ) : (
+                            <span className="text-slate-600">—</span>
+                          )}
+                        </td>
+                        {LEAD_COLUMNS.map((lead) => {
+                          const p = entry?.funnel.predictions[String(lead)];
+                          if (!p) {
+                            return (
+                              <td
+                                key={lead}
+                                className="px-2 py-2 text-center text-slate-700"
+                              >
+                                ·
+                              </td>
+                            );
+                          }
+                          return (
+                            <td key={lead} className="px-2 py-2 text-center">
+                              <span
+                                className={`font-bold text-lg ${windColor(p.predicted_kt)}`}
+                              >
+                                {Math.round(p.predicted_kt)}
+                              </span>
+                              {p.nws_kt != null && (
+                                <div className="text-xs text-slate-600">
+                                  {Math.round(p.nws_kt)}
+                                </div>
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Upcoming funnels per station — expandable details */}
       {orderedStationIds.map((sid) => {
         const station = forecast?.stations[sid];
         const upcoming = upcomingByStation[sid] ?? [];
@@ -291,17 +404,25 @@ export default async function Home() {
         }
 
         return (
-          <div key={sid} className="bg-slate-900 rounded-lg overflow-hidden">
-            <div className="bg-slate-800 px-4 py-3 flex items-baseline justify-between">
-              <div>
+          <details
+            key={sid}
+            className="bg-slate-900 rounded-lg overflow-hidden group"
+          >
+            <summary className="bg-slate-800 px-4 py-3 flex items-baseline justify-between cursor-pointer list-none marker:content-none">
+              <div className="flex items-baseline gap-2">
+                <span className="text-slate-400 text-xs group-open:rotate-90 transition-transform inline-block">
+                  ▶
+                </span>
                 <h2 className="font-semibold text-sky-400">{name}</h2>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  Each row is a future hour. Columns show predictions made that
-                  far ahead — cells fill in right‑to‑left as the hour
-                  approaches.
-                </p>
+                <span className="text-xs text-slate-500">
+                  full 24-hour detail
+                </span>
               </div>
               <span className="text-xs text-slate-500">{sid}</span>
+            </summary>
+            <div className="px-4 py-2 text-xs text-slate-500 border-t border-slate-800">
+              Each row is a future hour. Columns show predictions made that far
+              ahead — cells fill in right‑to‑left as the hour approaches.
             </div>
 
             {/* Upcoming table — contiguous 24h window */}
@@ -312,7 +433,7 @@ export default async function Home() {
                     <th className="px-3 py-2 text-left">Hour</th>
                     {LEAD_COLUMNS.map((l) => (
                       <th key={l} className="px-2 py-2 text-center">
-                        {l}h ahead
+                        T-{l}h
                       </th>
                     ))}
                   </tr>
@@ -382,7 +503,7 @@ export default async function Home() {
                         <th className="px-3 py-2 text-left">Hour</th>
                         {LEAD_COLUMNS.filter((l) => l <= 12).map((l) => (
                           <th key={l} className="px-2 py-2 text-center">
-                            {l}h ahead
+                            T-{l}h
                           </th>
                         ))}
                         <th className="px-2 py-2 text-center">Actual</th>
@@ -443,7 +564,7 @@ export default async function Home() {
                 </div>
               </>
             )}
-          </div>
+          </details>
         );
       })}
 
