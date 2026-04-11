@@ -86,21 +86,27 @@ function formatHour(iso: string): string {
   });
 }
 
+function easternDateKey(iso: string | Date): string {
+  // YYYY-MM-DD in America/New_York — for comparing dates without TZ drift
+  const d = typeof iso === "string" ? new Date(iso) : iso;
+  return d.toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+}
+
 function formatDayHour(iso: string): string {
   const d = new Date(iso);
   const now = new Date();
-  const sameDay = d.toDateString() === now.toDateString();
-  const tomorrow = new Date(now);
-  tomorrow.setDate(now.getDate() + 1);
-  const isTomorrow = d.toDateString() === tomorrow.toDateString();
+  const dKey = easternDateKey(d);
+  const nowKey = easternDateKey(now);
+  const tomorrow = new Date(now.getTime() + 86400_000);
+  const tomorrowKey = easternDateKey(tomorrow);
 
   const hour = d.toLocaleTimeString("en-US", {
     hour: "numeric",
     timeZone: "America/New_York",
   });
 
-  if (sameDay) return `Today ${hour}`;
-  if (isTomorrow) return `Tomorrow ${hour}`;
+  if (dKey === nowKey) return `Today ${hour}`;
+  if (dKey === tomorrowKey) return `Tomorrow ${hour}`;
   return d.toLocaleString("en-US", {
     weekday: "short",
     hour: "numeric",
@@ -256,6 +262,34 @@ export default async function Home() {
 
         if (upcoming.length === 0 && backtest.length === 0) return null;
 
+        // Build contiguous 24-hour range starting at the next top-of-hour
+        const now = new Date();
+        const startHour = new Date(now);
+        startHour.setMinutes(0, 0, 0);
+        startHour.setHours(startHour.getHours() + 1);
+
+        // Map funnel entries by rounded-hour ISO so we can match them
+        const funnelByHour = new Map<string, UpcomingFunnel>();
+        for (const f of upcoming) {
+          const fh = new Date(f.valid_time);
+          fh.setMinutes(0, 0, 0);
+          funnelByHour.set(fh.toISOString(), f);
+        }
+
+        const hours: {
+          date: Date;
+          hoursAway: number;
+          funnel: UpcomingFunnel | undefined;
+        }[] = [];
+        for (let i = 0; i < 24; i++) {
+          const d = new Date(startHour.getTime() + i * 3600_000);
+          hours.push({
+            date: d,
+            hoursAway: (d.getTime() - now.getTime()) / 3600_000,
+            funnel: funnelByHour.get(d.toISOString()),
+          });
+        }
+
         return (
           <div key={sid} className="bg-slate-900 rounded-lg overflow-hidden">
             <div className="bg-slate-800 px-4 py-2 flex items-baseline justify-between">
@@ -263,82 +297,70 @@ export default async function Home() {
               <span className="text-xs text-slate-500">{sid}</span>
             </div>
 
-            {/* Upcoming table */}
-            {upcoming.length > 0 && (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
-                      <th className="px-3 py-2 text-left">When</th>
-                      {LEAD_COLUMNS.map((l) => (
-                        <th key={l} className="px-2 py-2 text-center">
-                          {l}h
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {upcoming.slice(0, 24).map((f, i) => {
-                      const vt = new Date(f.valid_time);
-                      const hoursAway =
-                        (vt.getTime() - Date.now()) / (1000 * 60 * 60);
-                      return (
-                        <tr
-                          key={i}
-                          className="border-t border-slate-800 hover:bg-slate-800/50"
-                        >
-                          <td className="px-3 py-2 whitespace-nowrap">
-                            <div className="font-medium text-slate-300">
-                              {formatDayHour(f.valid_time)}
-                            </div>
-                            <div className="text-xs text-slate-600">
-                              in {Math.round(hoursAway)}h
-                            </div>
+            {/* Upcoming table — contiguous 24h window */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
+                    <th className="px-3 py-2 text-left">When</th>
+                    {LEAD_COLUMNS.map((l) => (
+                      <th key={l} className="px-2 py-2 text-center">
+                        {l}h
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {hours.map(({ date, hoursAway, funnel }, i) => (
+                    <tr
+                      key={i}
+                      className="border-t border-slate-800 hover:bg-slate-800/50"
+                    >
+                      <td className="px-3 py-2 whitespace-nowrap">
+                        <div className="font-medium text-slate-300">
+                          {formatDayHour(date.toISOString())}
+                        </div>
+                        <div className="text-xs text-slate-600">
+                          in {Math.round(hoursAway)}h
+                        </div>
+                      </td>
+                      {LEAD_COLUMNS.map((lead) => {
+                        const p = funnel?.predictions[String(lead)];
+                        // A cell is "predictable" only when the lead is >= hoursAway.
+                        // For shorter leads than hoursAway, we haven't had a chance yet.
+                        const canPredict = lead >= hoursAway - 0.5;
+                        if (!p) {
+                          return (
+                            <td
+                              key={lead}
+                              className={`px-2 py-2 text-center ${
+                                canPredict ? "text-slate-700" : "text-slate-900"
+                              }`}
+                            >
+                              {canPredict ? "·" : ""}
+                            </td>
+                          );
+                        }
+                        return (
+                          <td key={lead} className="px-2 py-2 text-center">
+                            <span
+                              className={`font-bold ${windColor(p.predicted_kt)}`}
+                            >
+                              {Math.round(p.predicted_kt)}
+                            </span>
+                            {p.nws_kt != null && (
+                              <div className="text-xs text-slate-600">
+                                {Math.round(p.nws_kt)}
+                              </div>
+                            )}
                           </td>
-                          {LEAD_COLUMNS.map((lead) => {
-                            const p = f.predictions[String(lead)];
-                            // Only show cells where lead >= hoursAway
-                            // (otherwise we couldn't have predicted yet)
-                            const canPredict = lead >= hoursAway;
-                            if (!p) {
-                              return (
-                                <td
-                                  key={lead}
-                                  className={`px-2 py-2 text-center ${
-                                    canPredict
-                                      ? "text-slate-700"
-                                      : "text-slate-800"
-                                  }`}
-                                >
-                                  &middot;
-                                </td>
-                              );
-                            }
-                            return (
-                              <td
-                                key={lead}
-                                className="px-2 py-2 text-center"
-                              >
-                                <span
-                                  className={`font-bold ${windColor(p.predicted_kt)}`}
-                                >
-                                  {Math.round(p.predicted_kt)}
-                                </span>
-                                {p.nws_kt != null && (
-                                  <div className="text-xs text-slate-600">
-                                    {Math.round(p.nws_kt)}
-                                  </div>
-                                )}
-                              </td>
-                            );
-                          })}
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            )}
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
             {/* Backtest table */}
             {backtest.length > 0 && (
