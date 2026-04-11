@@ -292,8 +292,15 @@ export default async function Home() {
 
         return (
           <div key={sid} className="bg-slate-900 rounded-lg overflow-hidden">
-            <div className="bg-slate-800 px-4 py-2 flex items-baseline justify-between">
-              <h2 className="font-semibold text-sky-400">{name}</h2>
+            <div className="bg-slate-800 px-4 py-3 flex items-baseline justify-between">
+              <div>
+                <h2 className="font-semibold text-sky-400">{name}</h2>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Each row is a future hour. Columns show predictions made that
+                  far ahead — cells fill in right‑to‑left as the hour
+                  approaches.
+                </p>
+              </div>
               <span className="text-xs text-slate-500">{sid}</span>
             </div>
 
@@ -302,10 +309,10 @@ export default async function Home() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
-                    <th className="px-3 py-2 text-left">When</th>
+                    <th className="px-3 py-2 text-left">Hour</th>
                     {LEAD_COLUMNS.map((l) => (
                       <th key={l} className="px-2 py-2 text-center">
-                        {l}h
+                        {l}h ahead
                       </th>
                     ))}
                   </tr>
@@ -366,16 +373,16 @@ export default async function Home() {
             {backtest.length > 0 && (
               <>
                 <div className="bg-slate-800 px-4 py-2 text-xs uppercase tracking-wider text-slate-500 border-t border-slate-700">
-                  Backtest — past predictions vs actuals
+                  Past hours — what we predicted vs what actually happened
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
-                        <th className="px-3 py-2 text-left">When</th>
+                        <th className="px-3 py-2 text-left">Hour</th>
                         {LEAD_COLUMNS.filter((l) => l <= 12).map((l) => (
                           <th key={l} className="px-2 py-2 text-center">
-                            {l}h
+                            {l}h ahead
                           </th>
                         ))}
                         <th className="px-2 py-2 text-center">Actual</th>
@@ -440,20 +447,39 @@ export default async function Home() {
         );
       })}
 
-      {/* Wind speed legend */}
-      <div className="flex flex-wrap gap-4 justify-center text-xs">
-        {[
-          [1, "<5 kt"],
-          [7, "5-10 kt"],
-          [12, "10-15 kt"],
-          [17, "15-20 kt"],
-          [25, "20+ kt"],
-        ].map(([kt, label]) => (
-          <span key={label} className="flex items-center gap-1.5">
-            <span className={`w-2 h-2 rounded-full ${windDot(kt as number)}`} />
-            {label}
+      {/* Cell legend */}
+      <div className="bg-slate-900 rounded-lg px-4 py-3 text-xs text-slate-400 space-y-2">
+        <div className="flex items-center gap-3">
+          <div className="flex flex-col items-center leading-none">
+            <span className="font-bold text-base text-green-400">7</span>
+            <span className="text-[10px] text-slate-600">10</span>
+          </div>
+          <div>
+            <span className="font-bold text-slate-300">Large number</span> = our
+            prediction in knots &nbsp;·&nbsp;{" "}
+            <span className="text-slate-600">smaller number</span> = raw NWS
+            HRRR
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-3 pt-1 border-t border-slate-800">
+          <span className="text-slate-500 uppercase tracking-wider text-[10px]">
+            Wind:
           </span>
-        ))}
+          {[
+            [1, "<5 kt"],
+            [7, "5-10"],
+            [12, "10-15"],
+            [17, "15-20"],
+            [25, "20+"],
+          ].map(([kt, label]) => (
+            <span key={label} className="flex items-center gap-1.5">
+              <span
+                className={`w-2 h-2 rounded-full ${windDot(kt as number)}`}
+              />
+              {label}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Model accuracy */}
