@@ -34,7 +34,7 @@ STATIONS = {
     "CAMM2": "Cambridge",
 }
 
-LEAD_HOURS = [1, 3, 6, 12]
+LEAD_HOURS = [1, 3, 6, 12, 18, 24]
 
 
 def fetch_latest_obs() -> pd.DataFrame:
@@ -545,6 +545,81 @@ def build_forecast_funnels(verifications: list[dict]) -> list[dict]:
     return funnels
 
 
+def build_upcoming_funnels() -> list[dict]:
+    """
+    Group predictions from the forecast log into "upcoming funnels" — all
+    predictions for station + future valid_time, showing how the forecast
+    converges as each hour approaches.
+
+    For each upcoming hour, finds the latest prediction at each lead time
+    from the forecast log. Returns sorted by valid_time ascending (nearest first).
+
+    Returns list like:
+    {
+        "station": "APAM2", "station_name": "Annapolis",
+        "valid_time": "2026-04-05T18:00:00+00:00",
+        "predictions": {
+            "24": {"predicted_kt": 12.0, "nws_kt": 15.0, "generated_at": "..."},
+            "12": {"predicted_kt": 13.5, "nws_kt": 14.2, "generated_at": "..."},
+            ...
+        }
+    }
+    """
+    log_path = LOG_DIR / "forecast_log.jsonl"
+    if not log_path.exists():
+        return []
+
+    now = datetime.now(timezone.utc)
+
+    # Group by (station, valid_time), keeping latest prediction per lead
+    groups: dict[tuple[str, str], dict] = {}
+
+    with open(log_path) as f:
+        for line in f:
+            try:
+                pred = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            gen_time = pd.Timestamp(pred["generated_at"])
+
+            for sid, sdata in pred.get("stations", {}).items():
+                for lead_str, ldata in sdata.get("leads", {}).items():
+                    vt = pd.Timestamp(ldata["valid_time"])
+
+                    # Only include future predictions
+                    if vt <= pd.Timestamp(now):
+                        continue
+
+                    key = (sid, ldata["valid_time"])
+                    if key not in groups:
+                        groups[key] = {
+                            "station": sid,
+                            "station_name": sdata.get("name", sid),
+                            "valid_time": ldata["valid_time"],
+                            "predictions": {},
+                        }
+
+                    # Keep most recent forecast for this lead
+                    existing = groups[key]["predictions"].get(lead_str)
+                    if existing is None or gen_time > pd.Timestamp(existing["generated_at"]):
+                        groups[key]["predictions"][lead_str] = {
+                            "predicted_kt": ldata["wspd_kt"],
+                            "nws_kt": ldata.get("nws_kt"),
+                            "generated_at": pred["generated_at"],
+                        }
+
+    # Sort by valid_time ascending (soonest first)
+    upcoming = sorted(groups.values(), key=lambda x: x["valid_time"])
+
+    # Save JSON
+    DOCS_DIR.mkdir(parents=True, exist_ok=True)
+    with open(DOCS_DIR / "upcoming_funnels.json", "w") as f:
+        json.dump(upcoming, f, indent=2, default=str)
+
+    return upcoming
+
+
 def _wind_color(kt):
     """Return CSS color for wind speed in knots."""
     if kt < 5: return "#94a3b8"
@@ -797,10 +872,14 @@ if __name__ == "__main__":
         if verifications:
             print(f"  Verified {len(verifications)} past predictions")
             funnels = build_forecast_funnels(verifications)
-            print(f"  Built {len(funnels)} forecast funnels")
+            print(f"  Built {len(funnels)} backtest funnels")
         else:
             print("  No past predictions to verify yet")
             funnels = []
+
+        # Build upcoming funnels from the full prediction log
+        upcoming = build_upcoming_funnels()
+        print(f"  Built {len(upcoming)} upcoming funnels")
 
         generate_html(forecast, verifications)
         print("\nDone! Forecast generated, verified, and published.")

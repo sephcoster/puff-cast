@@ -33,7 +33,7 @@ BEST_PARAMS = {
 }
 
 STATIONS = ["TPLM2", "APAM2", "SLIM2", "CAMM2"]
-LEAD_HOURS = [1, 3, 6, 12]
+LEAD_HOURS = [1, 3, 6, 12, 18, 24]
 
 
 def train_and_save_all():

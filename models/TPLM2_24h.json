@@ -1,6 +1,6 @@
 {
   "station": "TPLM2",
-  "lead_hours": 6,
+  "lead_hours": 24,
   "features": [
     "hrrr_wspd",
     "hrrr_wspd_sq",
@@ -139,14 +139,9 @@
     "wind_current_opposing",
     "wind_current_product",
     "coops_wtmp",
-    "annapolis_air_water_diff",
-    "gfs_wspd",
-    "gfs_wdir_sin",
-    "gfs_wdir_cos",
-    "hrrr_gfs_spread",
-    "gfs_ecmwf_spread"
+    "annapolis_air_water_diff"
   ],
-  "n_train": 5080,
+  "n_train": 1356,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,

@@ -146,7 +146,7 @@
     "hrrr_gfs_spread",
     "gfs_ecmwf_spread"
   ],
-  "n_train": 2540,
+  "n_train": 5080,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,

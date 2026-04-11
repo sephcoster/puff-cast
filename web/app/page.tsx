@@ -20,7 +20,7 @@ interface StationForecast {
   leads: Record<string, LeadForecast>;
   current_kt?: number;
   current_time?: string;
-  actuals?: Record<string, number>; // hourly actuals keyed by ISO time
+  actuals?: Record<string, number>;
 }
 
 interface Forecast {
@@ -29,30 +29,33 @@ interface Forecast {
   stations: Record<string, StationForecast>;
 }
 
-interface Verification {
-  station: string;
-  station_name: string;
-  lead_hours: number;
-  forecast_time: string;
-  valid_time: string;
-  predicted_kt: number;
-  actual_kt: number;
-  error_kt: number;
-  abs_error_kt: number;
-}
-
 interface FunnelPrediction {
   predicted_kt: number;
   error_kt: number;
 }
 
-interface Funnel {
+interface BacktestFunnel {
   station: string;
   station_name: string;
   valid_time: string;
   actual_kt: number;
   predictions: Record<string, FunnelPrediction>;
 }
+
+interface UpcomingPrediction {
+  predicted_kt: number;
+  nws_kt: number | null;
+  generated_at: string;
+}
+
+interface UpcomingFunnel {
+  station: string;
+  station_name: string;
+  valid_time: string;
+  predictions: Record<string, UpcomingPrediction>;
+}
+
+// -- helpers --------------------------------------------------------------
 
 function windColor(kt: number): string {
   if (kt < 5) return "text-slate-400";
@@ -76,18 +79,37 @@ function errorColor(absErr: number): string {
   return "text-red-400";
 }
 
-function formatTime(iso: string): string {
-  const d = new Date(iso);
-  return d.toLocaleTimeString("en-US", {
+function formatHour(iso: string): string {
+  return new Date(iso).toLocaleTimeString("en-US", {
     hour: "numeric",
-    minute: "2-digit",
     timeZone: "America/New_York",
   });
 }
 
-function formatDateTime(iso: string): string {
+function formatDayHour(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString("en-US", {
+  const now = new Date();
+  const sameDay = d.toDateString() === now.toDateString();
+  const tomorrow = new Date(now);
+  tomorrow.setDate(now.getDate() + 1);
+  const isTomorrow = d.toDateString() === tomorrow.toDateString();
+
+  const hour = d.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    timeZone: "America/New_York",
+  });
+
+  if (sameDay) return `Today ${hour}`;
+  if (isTomorrow) return `Tomorrow ${hour}`;
+  return d.toLocaleString("en-US", {
+    weekday: "short",
+    hour: "numeric",
+    timeZone: "America/New_York",
+  });
+}
+
+function formatUpdated(iso: string): string {
+  return new Date(iso).toLocaleString("en-US", {
     month: "short",
     day: "numeric",
     hour: "numeric",
@@ -106,18 +128,6 @@ function readJson<T>(filename: string, fallback: T): T {
   }
 }
 
-async function getForecast(): Promise<Forecast | null> {
-  return readJson<Forecast | null>("latest.json", null);
-}
-
-async function getVerifications(): Promise<Verification[]> {
-  return readJson<Verification[]>("verification.json", []);
-}
-
-async function getFunnels(): Promise<Funnel[]> {
-  return readJson<Funnel[]>("funnels.json", []);
-}
-
 const ACCURACY_STATS = [
   { station: "Annapolis", ours: 1.4, nws: 4.4, pct: 70 },
   { station: "Cambridge", ours: 2.0, nws: 3.0, pct: 34 },
@@ -125,17 +135,54 @@ const ACCURACY_STATS = [
   { station: "Thomas Point", ours: 2.4, nws: 3.1, pct: 19 },
 ];
 
-const LEAD_ORDER = [12, 6, 3, 1];
+const LEAD_COLUMNS = [24, 18, 12, 6, 3, 1];
+const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
+
+// -- page -----------------------------------------------------------------
 
 export default async function Home() {
-  const [forecast, verifications, funnels] = await Promise.all([
-    getForecast(),
-    getVerifications(),
-    getFunnels(),
-  ]);
+  const forecast = readJson<Forecast | null>("latest.json", null);
+  const backtestFunnels = readJson<BacktestFunnel[]>("funnels.json", []);
+  const upcomingFunnels = readJson<UpcomingFunnel[]>(
+    "upcoming_funnels.json",
+    [],
+  );
+
+  // Group upcoming by station
+  const upcomingByStation: Record<string, UpcomingFunnel[]> = {};
+  for (const f of upcomingFunnels) {
+    if (!upcomingByStation[f.station]) upcomingByStation[f.station] = [];
+    upcomingByStation[f.station].push(f);
+  }
+  // Sort each station's upcoming by valid_time ascending
+  for (const sid in upcomingByStation) {
+    upcomingByStation[sid].sort(
+      (a, b) =>
+        new Date(a.valid_time).getTime() - new Date(b.valid_time).getTime(),
+    );
+  }
+
+  // Group backtest funnels by station (most recent first)
+  const backtestByStation: Record<string, BacktestFunnel[]> = {};
+  for (const f of backtestFunnels) {
+    if (!backtestByStation[f.station]) backtestByStation[f.station] = [];
+    backtestByStation[f.station].push(f);
+  }
+  for (const sid in backtestByStation) {
+    backtestByStation[sid].sort(
+      (a, b) =>
+        new Date(b.valid_time).getTime() - new Date(a.valid_time).getTime(),
+    );
+  }
+
+  const stationIds = Object.keys(forecast?.stations ?? {});
+  const orderedStationIds = [
+    ...STATION_ORDER.filter((s) => stationIds.includes(s)),
+    ...stationIds.filter((s) => !STATION_ORDER.includes(s)),
+  ];
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+    <main className="max-w-5xl mx-auto px-4 py-8 space-y-6">
       {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-sky-400">Puff Cast</h1>
@@ -150,14 +197,14 @@ export default async function Home() {
           <span>
             Updated:{" "}
             <span className="text-slate-300">
-              {formatDateTime(forecast.generated_at)}
+              {formatUpdated(forecast.generated_at)}
             </span>
           </span>
           {forecast.hrrr_init && (
             <span>
               HRRR init:{" "}
               <span className="text-slate-300">
-                {formatTime(forecast.hrrr_init)}
+                {formatHour(forecast.hrrr_init)}
               </span>
             </span>
           )}
@@ -165,208 +212,236 @@ export default async function Home() {
         </div>
       )}
 
-      {/* Forecast table */}
-      {forecast ? (
+      {/* Current conditions summary */}
+      {forecast && (
         <div className="bg-slate-900 rounded-lg overflow-hidden">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-slate-800 text-xs uppercase tracking-wider text-slate-500">
-                <th className="px-4 py-3 text-left">Station</th>
-                <th className="px-3 py-3 text-center">Now</th>
-                <th className="px-3 py-3 text-center">+1h</th>
-                <th className="px-3 py-3 text-center">+3h</th>
-                <th className="px-3 py-3 text-center">+6h</th>
-                <th className="px-3 py-3 text-center">+12h</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(forecast.stations).map(([sid, data]) => (
-                <tr
-                  key={sid}
-                  className="border-t border-slate-800 hover:bg-slate-800/50"
-                >
-                  <td className="px-4 py-3">
-                    <div className="font-medium">{data.name}</div>
-                    <div className="text-xs text-slate-500">{sid}</div>
-                  </td>
-                  <td className="px-3 py-3 text-center">
-                    {data.current_kt != null ? (
-                      <div>
-                        <span className={windColor(data.current_kt)}>
-                          {Math.round(data.current_kt)} kt
+          <div className="bg-slate-800 px-4 py-2 text-xs uppercase tracking-wider text-slate-500">
+            Current conditions
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
+            {orderedStationIds.map((sid) => {
+              const s = forecast.stations[sid];
+              return (
+                <div key={sid} className="bg-slate-900 px-4 py-3">
+                  <div className="text-xs text-slate-500">{s.name}</div>
+                  {s.current_kt != null ? (
+                    <div>
+                      <span
+                        className={`text-2xl font-bold ${windColor(s.current_kt)}`}
+                      >
+                        {Math.round(s.current_kt)} kt
+                      </span>
+                      {s.current_time && (
+                        <span className="text-xs text-slate-600 ml-2">
+                          {formatHour(s.current_time)}
                         </span>
-                        {data.current_time && (
-                          <div className="text-xs text-slate-600">
-                            {formatTime(data.current_time)}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-slate-600">&mdash;</span>
-                    )}
-                  </td>
-                  {["1", "3", "6", "12"].map((lead) => {
-                    const ldata = data.leads[lead];
-                    if (!ldata) {
-                      return (
-                        <td
-                          key={lead}
-                          className="px-3 py-3 text-center text-slate-600"
-                        >
-                          &mdash;
-                        </td>
-                      );
-                    }
-                    // Check if we have an actual observation for this valid time
-                    const vtRounded = new Date(ldata.valid_time);
-                    vtRounded.setMinutes(0, 0, 0);
-                    const vtKey = vtRounded.toISOString();
-                    const actual = data.actuals?.[vtKey];
-                    const isPast = new Date(ldata.valid_time) < new Date();
-
-                    return (
-                      <td key={lead} className="px-3 py-3 text-center">
-                        <span
-                          className={`text-lg font-bold ${windColor(ldata.wspd_kt)}`}
-                        >
-                          {Math.round(ldata.wspd_kt)} kt
-                        </span>
-                        {ldata.nws_kt != null && (
-                          <div className="text-xs text-slate-500">
-                            NWS: {Math.round(ldata.nws_kt)} kt
-                          </div>
-                        )}
-                        {actual != null && isPast ? (
-                          <div className="mt-0.5 border-t border-slate-800 pt-0.5">
-                            <span className={`text-xs font-medium ${windColor(actual)}`}>
-                              actual: {Math.round(actual)} kt
-                            </span>
-                            <span
-                              className={`text-xs ml-1 ${errorColor(Math.abs(ldata.wspd_kt - actual))}`}
-                            >
-                              ({ldata.wspd_kt - actual > 0 ? "+" : ""}
-                              {(ldata.wspd_kt - actual).toFixed(1)})
-                            </span>
-                          </div>
-                        ) : (
-                          <div className="text-xs text-slate-600">
-                            {formatTime(ldata.valid_time)}
-                          </div>
-                        )}
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="bg-slate-900 rounded-lg p-8 text-center text-slate-500">
-          Loading forecast...
+                      )}
+                    </div>
+                  ) : (
+                    <span className="text-slate-600">no data</span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
+
+      {/* Upcoming funnels per station */}
+      {orderedStationIds.map((sid) => {
+        const station = forecast?.stations[sid];
+        const upcoming = upcomingByStation[sid] ?? [];
+        const backtest = backtestByStation[sid] ?? [];
+        const name = station?.name ?? sid;
+
+        if (upcoming.length === 0 && backtest.length === 0) return null;
+
+        return (
+          <div key={sid} className="bg-slate-900 rounded-lg overflow-hidden">
+            <div className="bg-slate-800 px-4 py-2 flex items-baseline justify-between">
+              <h2 className="font-semibold text-sky-400">{name}</h2>
+              <span className="text-xs text-slate-500">{sid}</span>
+            </div>
+
+            {/* Upcoming table */}
+            {upcoming.length > 0 && (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
+                      <th className="px-3 py-2 text-left">When</th>
+                      {LEAD_COLUMNS.map((l) => (
+                        <th key={l} className="px-2 py-2 text-center">
+                          {l}h
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {upcoming.slice(0, 24).map((f, i) => {
+                      const vt = new Date(f.valid_time);
+                      const hoursAway =
+                        (vt.getTime() - Date.now()) / (1000 * 60 * 60);
+                      return (
+                        <tr
+                          key={i}
+                          className="border-t border-slate-800 hover:bg-slate-800/50"
+                        >
+                          <td className="px-3 py-2 whitespace-nowrap">
+                            <div className="font-medium text-slate-300">
+                              {formatDayHour(f.valid_time)}
+                            </div>
+                            <div className="text-xs text-slate-600">
+                              in {Math.round(hoursAway)}h
+                            </div>
+                          </td>
+                          {LEAD_COLUMNS.map((lead) => {
+                            const p = f.predictions[String(lead)];
+                            // Only show cells where lead >= hoursAway
+                            // (otherwise we couldn't have predicted yet)
+                            const canPredict = lead >= hoursAway;
+                            if (!p) {
+                              return (
+                                <td
+                                  key={lead}
+                                  className={`px-2 py-2 text-center ${
+                                    canPredict
+                                      ? "text-slate-700"
+                                      : "text-slate-800"
+                                  }`}
+                                >
+                                  &middot;
+                                </td>
+                              );
+                            }
+                            return (
+                              <td
+                                key={lead}
+                                className="px-2 py-2 text-center"
+                              >
+                                <span
+                                  className={`font-bold ${windColor(p.predicted_kt)}`}
+                                >
+                                  {Math.round(p.predicted_kt)}
+                                </span>
+                                {p.nws_kt != null && (
+                                  <div className="text-xs text-slate-600">
+                                    {Math.round(p.nws_kt)}
+                                  </div>
+                                )}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {/* Backtest table */}
+            {backtest.length > 0 && (
+              <>
+                <div className="bg-slate-800 px-4 py-2 text-xs uppercase tracking-wider text-slate-500 border-t border-slate-700">
+                  Backtest — past predictions vs actuals
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
+                        <th className="px-3 py-2 text-left">When</th>
+                        {LEAD_COLUMNS.filter((l) => l <= 12).map((l) => (
+                          <th key={l} className="px-2 py-2 text-center">
+                            {l}h
+                          </th>
+                        ))}
+                        <th className="px-2 py-2 text-center">Actual</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {backtest.slice(0, 12).map((f, i) => (
+                        <tr
+                          key={i}
+                          className="border-t border-slate-800 hover:bg-slate-800/50"
+                        >
+                          <td className="px-3 py-2 whitespace-nowrap text-slate-400">
+                            {formatDayHour(f.valid_time)}
+                          </td>
+                          {LEAD_COLUMNS.filter((l) => l <= 12).map((lead) => {
+                            const p = f.predictions[String(lead)];
+                            if (!p) {
+                              return (
+                                <td
+                                  key={lead}
+                                  className="px-2 py-2 text-center text-slate-700"
+                                >
+                                  &middot;
+                                </td>
+                              );
+                            }
+                            const sign = p.error_kt > 0 ? "+" : "";
+                            return (
+                              <td
+                                key={lead}
+                                className="px-2 py-2 text-center"
+                              >
+                                <span
+                                  className={`font-medium ${windColor(p.predicted_kt)}`}
+                                >
+                                  {Math.round(p.predicted_kt)}
+                                </span>
+                                <div
+                                  className={`text-xs ${errorColor(Math.abs(p.error_kt))}`}
+                                >
+                                  {sign}
+                                  {p.error_kt.toFixed(1)}
+                                </div>
+                              </td>
+                            );
+                          })}
+                          <td className="px-2 py-2 text-center">
+                            <span
+                              className={`font-bold ${windColor(f.actual_kt)}`}
+                            >
+                              {Math.round(f.actual_kt)}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </>
+            )}
+          </div>
+        );
+      })}
 
       {/* Wind speed legend */}
       <div className="flex flex-wrap gap-4 justify-center text-xs">
         {[
-          ["slate-400", "<5 kt"],
-          ["green-400", "5-10 kt"],
-          ["blue-400", "10-15 kt"],
-          ["amber-400", "15-20 kt"],
-          ["red-400", "20+ kt"],
-        ].map(([color, label]) => (
+          [1, "<5 kt"],
+          [7, "5-10 kt"],
+          [12, "10-15 kt"],
+          [17, "15-20 kt"],
+          [25, "20+ kt"],
+        ].map(([kt, label]) => (
           <span key={label} className="flex items-center gap-1.5">
-            <span className={`w-2 h-2 rounded-full ${windDot(parseInt(label!))}`} />
+            <span className={`w-2 h-2 rounded-full ${windDot(kt as number)}`} />
             {label}
           </span>
         ))}
       </div>
 
-      {/* Forecast Funnels */}
-      {funnels.length > 0 && (
-        <div className="bg-slate-900 rounded-lg p-4 space-y-3">
-          <div>
-            <h2 className="text-sky-400 font-semibold">
-              Forecast Funnels
-            </h2>
-            <p className="text-xs text-slate-500">
-              How did predictions converge as each hour approached?
-            </p>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="text-xs uppercase tracking-wider text-slate-500">
-                  <th className="px-3 py-2 text-left">Station</th>
-                  <th className="px-2 py-2 text-center">Time</th>
-                  {LEAD_ORDER.map((l) => (
-                    <th key={l} className="px-2 py-2 text-center">
-                      {l}h pred
-                    </th>
-                  ))}
-                  <th className="px-2 py-2 text-center">Actual</th>
-                </tr>
-              </thead>
-              <tbody>
-                {funnels.slice(0, 20).map((f, i) => (
-                  <tr
-                    key={i}
-                    className="border-t border-slate-800 hover:bg-slate-800/50"
-                  >
-                    <td className="px-3 py-2 whitespace-nowrap">
-                      {f.station_name}
-                    </td>
-                    <td className="px-2 py-2 text-center text-slate-400 whitespace-nowrap">
-                      {formatDateTime(f.valid_time)}
-                    </td>
-                    {LEAD_ORDER.map((lead) => {
-                      const p = f.predictions[String(lead)];
-                      if (!p) {
-                        return (
-                          <td
-                            key={lead}
-                            className="px-2 py-2 text-center text-slate-700"
-                          >
-                            &mdash;
-                          </td>
-                        );
-                      }
-                      const sign = p.error_kt > 0 ? "+" : "";
-                      return (
-                        <td key={lead} className="px-2 py-2 text-center">
-                          <span className={windColor(p.predicted_kt)}>
-                            {Math.round(p.predicted_kt)} kt
-                          </span>
-                          <div
-                            className={`text-xs ${errorColor(Math.abs(p.error_kt))}`}
-                          >
-                            {sign}
-                            {p.error_kt.toFixed(1)}
-                          </div>
-                        </td>
-                      );
-                    })}
-                    <td className="px-2 py-2 text-center">
-                      <span
-                        className={`font-bold ${windColor(f.actual_kt)}`}
-                      >
-                        {Math.round(f.actual_kt)} kt
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
       {/* Model accuracy */}
       <div className="bg-slate-900 rounded-lg p-4 space-y-3">
-        <h2 className="text-sky-400 font-semibold">
-          Model Accuracy (backtest, 12h lead)
-        </h2>
+        <div>
+          <h2 className="text-sky-400 font-semibold">Model Accuracy</h2>
+          <p className="text-xs text-slate-500">
+            Backtest at 12h lead — our predictions vs raw NWS HRRR
+          </p>
+        </div>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs uppercase tracking-wider text-slate-500">
@@ -399,6 +474,11 @@ export default async function Home() {
         <p>
           Ensemble of HRRR, GFS, ECMWF corrected with 27 local stations across
           the Bay.
+        </p>
+        <p>
+          Each row is a future hour. Columns are lead times — when the
+          prediction was made. Numbers show our prediction (large) and NWS
+          (small) in knots.
         </p>
       </footer>
     </main>

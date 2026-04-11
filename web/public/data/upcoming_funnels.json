@@ -1,0 +1,98 @@
+[
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-11T17:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 10.5,
+        "nws_kt": 15.0,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-04-11T17:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 6.8,
+        "nws_kt": 11.1,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-11T17:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 9.2,
+        "nws_kt": 9.9,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "valid_time": "2026-04-11T17:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 9.2,
+        "nws_kt": 11.5,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-11T20:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 10.1,
+        "nws_kt": 12.7,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-04-11T20:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 6.4,
+        "nws_kt": 11.3,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-11T20:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 7.3,
+        "nws_kt": 8.0,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "valid_time": "2026-04-11T20:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 7.1,
+        "nws_kt": 8.9,
+        "generated_at": "2026-04-11T15:08:25.963374+00:00"
+      }
+    }
+  }
+]

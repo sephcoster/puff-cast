@@ -141,7 +141,7 @@
     "coops_wtmp",
     "annapolis_air_water_diff"
   ],
-  "n_train": 2524,
+  "n_train": 5048,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,
