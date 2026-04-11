@@ -1,6 +1,6 @@
 {
   "station": "CAMM2",
-  "lead_hours": 1,
+  "lead_hours": 18,
   "features": [
     "hrrr_wspd",
     "hrrr_wspd_sq",
@@ -139,7 +139,7 @@
     "coops_wtmp",
     "annapolis_air_water_diff"
   ],
-  "n_train": 6460,
+  "n_train": 1347,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,

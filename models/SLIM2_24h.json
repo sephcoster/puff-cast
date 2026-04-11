@@ -1,6 +1,6 @@
 {
-  "station": "CAMM2",
-  "lead_hours": 1,
+  "station": "SLIM2",
+  "lead_hours": 24,
   "features": [
     "hrrr_wspd",
     "hrrr_wspd_sq",
@@ -22,9 +22,9 @@
     "BLTM2_hrrr_wspd",
     "BLTM2_hrrr_cape",
     "BLTM2_hrrr_gust",
-    "SLIM2_hrrr_wspd",
-    "SLIM2_hrrr_cape",
-    "SLIM2_hrrr_gust",
+    "CAMM2_hrrr_wspd",
+    "CAMM2_hrrr_cape",
+    "CAMM2_hrrr_gust",
     "COVM2_hrrr_wspd",
     "COVM2_hrrr_cape",
     "COVM2_hrrr_gust",
@@ -76,8 +76,8 @@
     "APAM2_pres",
     "COVM2_wspd",
     "COVM2_pres",
-    "SLIM2_wspd",
-    "SLIM2_pres",
+    "CAMM2_wspd",
+    "CAMM2_pres",
     "WASD2_wspd",
     "WASD2_pres",
     "44009_wspd",
@@ -139,7 +139,7 @@
     "coops_wtmp",
     "annapolis_air_water_diff"
   ],
-  "n_train": 6460,
+  "n_train": 1344,
   "train_date_range": "all available data",
   "params": {
     "n_estimators": 1000,
