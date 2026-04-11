@@ -3,12 +3,23 @@
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
     "lead_hours": 1,
+    "forecast_time": "2026-04-11T16:31:14.870171+00:00",
+    "valid_time": "2026-04-11T16:00:00",
+    "predicted_kt": 11.1,
+    "actual_kt": 18.1,
+    "error_kt": -7.0,
+    "abs_error_kt": 7.0
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 1,
     "forecast_time": "2026-04-11T15:08:25.963374+00:00",
     "valid_time": "2026-04-11T15:00:00",
     "predicted_kt": 12.6,
-    "actual_kt": 17.1,
-    "error_kt": -4.5,
-    "abs_error_kt": 4.5
+    "actual_kt": 19.1,
+    "error_kt": -6.5,
+    "abs_error_kt": 6.5
   },
   {
     "station": "APAM2",
@@ -17,9 +28,9 @@
     "forecast_time": "2026-04-11T15:08:25.963374+00:00",
     "valid_time": "2026-04-11T15:00:00",
     "predicted_kt": 9.0,
-    "actual_kt": 9.3,
-    "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "actual_kt": 7.3,
+    "error_kt": 1.7,
+    "abs_error_kt": 1.7
   },
   {
     "station": "SLIM2",
@@ -28,9 +39,9 @@
     "forecast_time": "2026-04-11T15:08:25.963374+00:00",
     "valid_time": "2026-04-11T15:00:00",
     "predicted_kt": 10.2,
-    "actual_kt": 12.5,
-    "error_kt": -2.3,
-    "abs_error_kt": 2.3
+    "actual_kt": 9.9,
+    "error_kt": 0.3,
+    "abs_error_kt": 0.3
   },
   {
     "station": "CAMM2",
@@ -39,9 +50,9 @@
     "forecast_time": "2026-04-11T15:08:25.963374+00:00",
     "valid_time": "2026-04-11T15:00:00",
     "predicted_kt": 9.8,
-    "actual_kt": 12.0,
-    "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "actual_kt": 11.4,
+    "error_kt": -1.6,
+    "abs_error_kt": 1.6
   },
   {
     "station": "TPLM2",
