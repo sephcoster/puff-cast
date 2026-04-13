@@ -1,5 +1,6 @@
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
+import WindChartWrapper from "./components/WindChartWrapper";
 
 // In Vercel build, data is copied to public/data/ by the build script.
 // Locally, read from ../docs/
@@ -439,6 +440,85 @@ export default async function Home() {
           });
         }
 
+        // Build chart data: past actuals + future predictions
+        const chartData: Array<{
+          time: string;
+          timeLabel: string;
+          actual?: number;
+          puffcast?: number;
+          nws?: number;
+          puffDir?: string;
+          nwsDir?: string;
+        }> = [];
+
+        // Past actuals (from station.actuals)
+        const actuals = station?.actuals ?? {};
+        const actualTimes = Object.keys(actuals).sort();
+        for (const t of actualTimes) {
+          chartData.push({
+            time: t,
+            timeLabel: formatHour(t),
+            actual: actuals[t],
+          });
+        }
+
+        // Future predictions (from upcoming funnels — use shortest lead = most recent prediction)
+        for (const h of hours) {
+          if (!h.funnel) continue;
+          const preds = h.funnel.predictions;
+          // Find the prediction with the shortest lead (most refined)
+          const sortedLeads = Object.keys(preds)
+            .map(Number)
+            .sort((a, b) => a - b);
+          if (sortedLeads.length === 0) continue;
+          const bestLead = String(sortedLeads[0]);
+          const best = preds[bestLead];
+          chartData.push({
+            time: h.date.toISOString(),
+            timeLabel: formatHour(h.date.toISOString()),
+            puffcast: best.predicted_kt,
+            nws: best.nws_kt ?? undefined,
+            puffDir: best.dir_cardinal,
+            nwsDir: best.nws_dir_cardinal,
+          });
+        }
+
+        // Also add past predictions from backtest funnels (use shortest lead for the line)
+        for (const bf of backtest.slice(0, 24)) {
+          const sortedLeads = Object.keys(bf.predictions)
+            .map(Number)
+            .sort((a, b) => a - b);
+          if (sortedLeads.length === 0) continue;
+          const bestLead = String(sortedLeads[0]);
+          const best = bf.predictions[bestLead];
+          // Check if we already have this time from actuals
+          const existing = chartData.find(
+            (d) =>
+              d.time ===
+              new Date(bf.valid_time).toISOString(),
+          );
+          if (existing) {
+            existing.puffcast = best.predicted_kt;
+          } else {
+            chartData.push({
+              time: new Date(bf.valid_time).toISOString(),
+              timeLabel: formatHour(bf.valid_time),
+              actual: bf.actual_kt,
+              puffcast: best.predicted_kt,
+            });
+          }
+        }
+
+        // Sort chart data by time
+        chartData.sort(
+          (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime(),
+        );
+
+        // Find the "now" label for the reference line
+        const nowForChart = new Date();
+        nowForChart.setMinutes(0, 0, 0);
+        const nowLabel = formatHour(nowForChart.toISOString());
+
         return (
           <details
             key={sid}
@@ -456,6 +536,20 @@ export default async function Home() {
               </div>
               <span className="text-xs text-slate-500">{sid}</span>
             </summary>
+            {/* Wind speed timeline chart */}
+            {chartData.length > 3 && (
+              <div className="px-4 pt-4 pb-2 border-t border-slate-800">
+                <div className="text-xs text-slate-500 mb-2">
+                  Wind speed timeline — white: actual, green: Puff Cast, amber: NWS
+                </div>
+                <WindChartWrapper
+                  data={chartData}
+                  station={name}
+                  nowLabel={nowLabel}
+                />
+              </div>
+            )}
+
             <div className="px-4 py-2 text-xs text-slate-500 border-t border-slate-800">
               Each row is a future hour. Columns show predictions made that far
               ahead — cells fill in right‑to‑left as the hour approaches.
