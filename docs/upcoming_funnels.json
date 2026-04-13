@@ -103,9 +103,9 @@
         "nws_dir_cardinal": "S"
       },
       "3": {
-        "predicted_kt": 14.1,
+        "predicted_kt": 14.4,
         "nws_kt": 15.1,
-        "generated_at": "2026-04-13T10:00:02.858926+00:00",
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
         "dir_cardinal": "SE",
         "dir_arrow": "\u2196",
         "nws_dir_cardinal": "S"
@@ -136,9 +136,9 @@
         "nws_dir_cardinal": "S"
       },
       "3": {
-        "predicted_kt": 5.0,
+        "predicted_kt": 4.9,
         "nws_kt": 9.4,
-        "generated_at": "2026-04-13T10:00:02.858926+00:00",
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
         "dir_cardinal": "S",
         "dir_arrow": "\u2191",
         "nws_dir_cardinal": "S"
@@ -171,7 +171,7 @@
       "3": {
         "predicted_kt": 16.7,
         "nws_kt": 12.6,
-        "generated_at": "2026-04-13T10:00:02.858926+00:00",
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
         "dir_cardinal": "SW",
         "dir_arrow": "\u2197",
         "nws_dir_cardinal": "SSW"
@@ -202,9 +202,9 @@
         "nws_dir_cardinal": "SSW"
       },
       "3": {
-        "predicted_kt": 10.4,
+        "predicted_kt": 10.5,
         "nws_kt": 14.7,
-        "generated_at": "2026-04-13T10:00:02.858926+00:00",
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
         "dir_cardinal": "SSW",
         "dir_arrow": "\u2191",
         "nws_dir_cardinal": "SSW"
@@ -356,6 +356,14 @@
         "dir_cardinal": "SSE",
         "dir_arrow": "\u2191",
         "nws_dir_cardinal": "S"
+      },
+      "6": {
+        "predicted_kt": 18.1,
+        "nws_kt": 15.2,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "S",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SSW"
       }
     }
   },
@@ -373,6 +381,14 @@
         "predicted_kt": 8.0,
         "nws_kt": 12.1,
         "generated_at": "2026-04-13T04:26:39.700731+00:00",
+        "dir_cardinal": "SSW",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SW"
+      },
+      "6": {
+        "predicted_kt": 8.7,
+        "nws_kt": 13.7,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
         "dir_cardinal": "SSW",
         "dir_arrow": "\u2191",
         "nws_dir_cardinal": "SW"
@@ -396,6 +412,14 @@
         "dir_cardinal": "SW",
         "dir_arrow": "\u2197",
         "nws_dir_cardinal": "SW"
+      },
+      "6": {
+        "predicted_kt": 16.2,
+        "nws_kt": 14.0,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "SW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SW"
       }
     }
   },
@@ -414,6 +438,14 @@
         "nws_kt": 15.4,
         "generated_at": "2026-04-13T04:26:39.700731+00:00",
         "dir_cardinal": "SW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SSW"
+      },
+      "6": {
+        "predicted_kt": 13.4,
+        "nws_kt": 16.4,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "WSW",
         "dir_arrow": "\u2197",
         "nws_dir_cardinal": "SSW"
       }
@@ -619,6 +651,14 @@
         "dir_cardinal": "SSW",
         "dir_arrow": "\u2191",
         "nws_dir_cardinal": "SW"
+      },
+      "12": {
+        "predicted_kt": 14.1,
+        "nws_kt": 10.5,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "S",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SSW"
       }
     }
   },
@@ -633,6 +673,14 @@
         "generated_at": "2026-04-13T04:26:39.700731+00:00",
         "dir_cardinal": "SW",
         "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SW"
+      },
+      "12": {
+        "predicted_kt": 8.9,
+        "nws_kt": 11.7,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "SSW",
+        "dir_arrow": "\u2191",
         "nws_dir_cardinal": "SW"
       }
     }
@@ -649,6 +697,14 @@
         "dir_cardinal": "WSW",
         "dir_arrow": "\u2192",
         "nws_dir_cardinal": "WSW"
+      },
+      "12": {
+        "predicted_kt": 13.3,
+        "nws_kt": 10.4,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "WSW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SW"
       }
     }
   },
@@ -664,6 +720,14 @@
         "dir_cardinal": "W",
         "dir_arrow": "\u2192",
         "nws_dir_cardinal": "WSW"
+      },
+      "12": {
+        "predicted_kt": 10.0,
+        "nws_kt": 8.7,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "WSW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SW"
       }
     }
   },
@@ -724,6 +788,66 @@
         "dir_cardinal": "WSW",
         "dir_arrow": "\u2192",
         "nws_dir_cardinal": "WSW"
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-14T03:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 9.6,
+        "nws_kt": 2.0,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "W",
+        "dir_arrow": "\u2192",
+        "nws_dir_cardinal": "WNW"
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-04-14T03:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 4.2,
+        "nws_kt": 9.9,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "NE",
+        "dir_arrow": "\u2199",
+        "nws_dir_cardinal": "NE"
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-14T03:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 8.7,
+        "nws_kt": 6.0,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "SSW",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SSW"
+      }
+    }
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "valid_time": "2026-04-14T03:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 6.8,
+        "nws_kt": 7.9,
+        "generated_at": "2026-04-13T10:55:12.838217+00:00",
+        "dir_cardinal": "SW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SSW"
       }
     }
   }
