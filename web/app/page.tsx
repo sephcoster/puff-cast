@@ -145,12 +145,96 @@ function readJson<T>(filename: string, fallback: T): T {
   }
 }
 
-const ACCURACY_STATS = [
-  { station: "Annapolis", ours: 1.4, nws: 4.4, pct: 70 },
-  { station: "Cambridge", ours: 2.0, nws: 3.0, pct: 34 },
-  { station: "Solomons", ours: 1.9, nws: 2.5, pct: 25 },
-  { station: "Thomas Point", ours: 2.4, nws: 3.1, pct: 19 },
-];
+interface VerificationRecord {
+  station: string;
+  station_name: string;
+  lead_hours: number;
+  error_kt: number;
+  abs_error_kt: number;
+  nws_kt?: number;
+  nws_error_kt?: number;
+}
+
+const STATION_NAMES: Record<string, string> = {
+  APAM2: "Annapolis",
+  TPLM2: "Thomas Point",
+  SLIM2: "Solomons",
+  CAMM2: "Cambridge",
+};
+
+function computeAccuracyStats(verifications: VerificationRecord[]) {
+  const leads = [1, 3, 6, 12, 18, 24];
+  const stations = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
+
+  // Per-station overall
+  const overall: Array<{
+    station: string;
+    ours: number;
+    nws: number | null;
+    pct: number | null;
+    n: number;
+  }> = [];
+
+  for (const sid of stations) {
+    const sv = verifications.filter((v) => v.station === sid);
+    if (sv.length === 0) continue;
+    const ourMae =
+      sv.reduce((s, v) => s + Math.abs(v.error_kt), 0) / sv.length;
+    const nwsVals = sv.filter((v) => v.nws_error_kt != null);
+    const nwsMae =
+      nwsVals.length > 0
+        ? nwsVals.reduce((s, v) => s + Math.abs(v.nws_error_kt!), 0) /
+          nwsVals.length
+        : null;
+    const pct =
+      nwsMae != null ? Math.round(((nwsMae - ourMae) / nwsMae) * 100) : null;
+    overall.push({
+      station: STATION_NAMES[sid] ?? sid,
+      ours: Math.round(ourMae * 10) / 10,
+      nws: nwsMae != null ? Math.round(nwsMae * 10) / 10 : null,
+      pct,
+      n: sv.length,
+    });
+  }
+
+  // Per-station, per-lead
+  const byLead: Array<{
+    station: string;
+    lead: number;
+    ours: number;
+    nws: number | null;
+    winner: string;
+    n: number;
+  }> = [];
+
+  for (const sid of stations) {
+    for (const lead of leads) {
+      const sv = verifications.filter(
+        (v) => v.station === sid && v.lead_hours === lead,
+      );
+      if (sv.length < 2) continue;
+      const ourMae =
+        sv.reduce((s, v) => s + Math.abs(v.error_kt), 0) / sv.length;
+      const nwsVals = sv.filter((v) => v.nws_error_kt != null);
+      const nwsMae =
+        nwsVals.length > 0
+          ? nwsVals.reduce((s, v) => s + Math.abs(v.nws_error_kt!), 0) /
+            nwsVals.length
+          : null;
+      byLead.push({
+        station: STATION_NAMES[sid] ?? sid,
+        lead,
+        ours: Math.round(ourMae * 10) / 10,
+        nws: nwsMae != null ? Math.round(nwsMae * 10) / 10 : null,
+        winner:
+          nwsMae == null ? "—" : ourMae < nwsMae ? "Puff Cast" : "NWS",
+        n: sv.length,
+      });
+    }
+  }
+
+  return { overall, byLead, total: verifications.length };
+}
 
 const LEAD_COLUMNS = [24, 18, 12, 6, 3, 1];
 const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
@@ -159,6 +243,7 @@ const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
 
 export default async function Home() {
   const forecast = readJson<Forecast | null>("latest.json", null);
+  const verifications = readJson<VerificationRecord[]>("verification.json", []);
   const backtestFunnels = readJson<BacktestFunnel[]>("funnels.json", []);
   const upcomingFunnels = readJson<UpcomingFunnel[]>(
     "upcoming_funnels.json",
@@ -754,40 +839,120 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Model accuracy */}
-      <div className="bg-slate-900 rounded-lg p-4 space-y-3">
-        <div>
-          <h2 className="text-sky-400 font-semibold">Model Accuracy</h2>
-          <p className="text-xs text-slate-500">
-            Backtest at 12h lead — our predictions vs raw NWS HRRR
-          </p>
-        </div>
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-xs uppercase tracking-wider text-slate-500">
-              <th className="px-3 py-2 text-left">Station</th>
-              <th className="px-2 py-2 text-center">Puff Cast</th>
-              <th className="px-2 py-2 text-center">Raw NWS</th>
-              <th className="px-2 py-2 text-center">Improvement</th>
-            </tr>
-          </thead>
-          <tbody>
-            {ACCURACY_STATS.map((s) => (
-              <tr
-                key={s.station}
-                className="border-t border-slate-800 hover:bg-slate-800/50"
-              >
-                <td className="px-3 py-2">{s.station}</td>
-                <td className="px-2 py-2 text-center">{s.ours} kt</td>
-                <td className="px-2 py-2 text-center">{s.nws} kt</td>
-                <td className="px-2 py-2 text-center text-green-400 font-medium">
-                  {s.pct}%
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* Live model accuracy */}
+      {(() => {
+        const stats = computeAccuracyStats(verifications);
+        if (stats.total === 0) return null;
+        return (
+          <div className="bg-slate-900 rounded-lg p-4 space-y-4">
+            <div>
+              <h2 className="text-sky-400 font-semibold">
+                Live Accuracy — {stats.total} verified predictions
+              </h2>
+              <p className="text-xs text-slate-500">
+                Measured against actual NDBC observations as each forecast hour
+                passes
+              </p>
+            </div>
+
+            {/* Overall by station */}
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs uppercase tracking-wider text-slate-500">
+                  <th className="px-3 py-2 text-left">Station</th>
+                  <th className="px-2 py-2 text-center">Puff Cast MAE</th>
+                  <th className="px-2 py-2 text-center">NWS MAE</th>
+                  <th className="px-2 py-2 text-center">vs NWS</th>
+                  <th className="px-2 py-2 text-center">n</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stats.overall.map((s) => (
+                  <tr
+                    key={s.station}
+                    className="border-t border-slate-800 hover:bg-slate-800/50"
+                  >
+                    <td className="px-3 py-2 font-medium">{s.station}</td>
+                    <td className="px-2 py-2 text-center">{s.ours} kt</td>
+                    <td className="px-2 py-2 text-center">
+                      {s.nws != null ? `${s.nws} kt` : "—"}
+                    </td>
+                    <td
+                      className={`px-2 py-2 text-center font-medium ${
+                        s.pct != null && s.pct > 0
+                          ? "text-green-400"
+                          : s.pct != null && s.pct < 0
+                            ? "text-red-400"
+                            : "text-slate-500"
+                      }`}
+                    >
+                      {s.pct != null
+                        ? s.pct > 0
+                          ? `+${s.pct}% better`
+                          : `${s.pct}%`
+                        : "—"}
+                    </td>
+                    <td className="px-2 py-2 text-center text-slate-500">
+                      {s.n}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* By lead time */}
+            <details className="group">
+              <summary className="cursor-pointer text-xs text-slate-400 hover:text-slate-300 list-none flex items-center gap-1">
+                <span className="group-open:rotate-90 transition-transform inline-block">
+                  ▶
+                </span>
+                Accuracy by lead time
+              </summary>
+              <table className="w-full text-sm mt-2">
+                <thead>
+                  <tr className="text-xs uppercase tracking-wider text-slate-500">
+                    <th className="px-3 py-2 text-left">Station</th>
+                    <th className="px-2 py-2 text-center">Lead</th>
+                    <th className="px-2 py-2 text-center">Ours</th>
+                    <th className="px-2 py-2 text-center">NWS</th>
+                    <th className="px-2 py-2 text-center">Winner</th>
+                    <th className="px-2 py-2 text-center">n</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stats.byLead.map((s, i) => (
+                    <tr
+                      key={i}
+                      className="border-t border-slate-800 hover:bg-slate-800/50"
+                    >
+                      <td className="px-3 py-1">{s.station}</td>
+                      <td className="px-2 py-1 text-center">{s.lead}h</td>
+                      <td className="px-2 py-1 text-center">{s.ours}</td>
+                      <td className="px-2 py-1 text-center">
+                        {s.nws ?? "—"}
+                      </td>
+                      <td
+                        className={`px-2 py-1 text-center text-xs font-medium ${
+                          s.winner === "Puff Cast"
+                            ? "text-green-400"
+                            : s.winner === "NWS"
+                              ? "text-red-400"
+                              : "text-slate-600"
+                        }`}
+                      >
+                        {s.winner}
+                      </td>
+                      <td className="px-2 py-1 text-center text-slate-600">
+                        {s.n}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </details>
+          </div>
+        );
+      })()}
 
       {/* Footer */}
       <footer className="text-center text-xs text-slate-600 space-y-1 pb-8">
