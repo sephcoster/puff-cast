@@ -38,6 +38,8 @@ interface Forecast {
 interface FunnelPrediction {
   predicted_kt: number;
   error_kt: number;
+  nws_kt?: number;
+  nws_error_kt?: number;
 }
 
 interface BacktestFunnel {
@@ -481,6 +483,9 @@ export default async function Home() {
           const row = getOrCreate(bf.valid_time);
           row.puffcast = best.predicted_kt;
           row.actual = bf.actual_kt;
+          if (best.nws_kt != null) {
+            row.nws = best.nws_kt;
+          }
         }
 
         // Future predictions (from upcoming funnels — use shortest lead)

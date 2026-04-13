@@ -3,12 +3,274 @@
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
     "lead_hours": 18,
+    "forecast_time": "2026-04-12T10:31:54.307967+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 8.1,
+    "actual_kt": 15.9,
+    "error_kt": -7.8,
+    "abs_error_kt": 7.8,
+    "nws_kt": 15.9,
+    "nws_error_kt": -0.0
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-12T10:31:54.307967+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 3.9,
+    "actual_kt": 7.5,
+    "error_kt": -3.6,
+    "abs_error_kt": 3.6,
+    "nws_kt": 13.4,
+    "nws_error_kt": 5.9
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-12T10:31:54.307967+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 7.3,
+    "actual_kt": 10.0,
+    "error_kt": -2.7,
+    "abs_error_kt": 2.7,
+    "nws_kt": 8.2,
+    "nws_error_kt": -1.8
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-12T10:31:54.307967+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 5.5,
+    "actual_kt": 10.0,
+    "error_kt": -4.5,
+    "abs_error_kt": 4.5,
+    "nws_kt": 10.2,
+    "nws_error_kt": 0.2
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 12,
+    "forecast_time": "2026-04-12T16:31:37.780379+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 11.2,
+    "actual_kt": 15.9,
+    "error_kt": -4.7,
+    "abs_error_kt": 4.7,
+    "nws_kt": 12.1,
+    "nws_error_kt": -3.8
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 12,
+    "forecast_time": "2026-04-12T16:31:37.780379+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 4.5,
+    "actual_kt": 7.5,
+    "error_kt": -3.0,
+    "abs_error_kt": 3.0,
+    "nws_kt": 11.3,
+    "nws_error_kt": 3.8
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 12,
+    "forecast_time": "2026-04-12T16:31:37.780379+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.2,
+    "actual_kt": 10.0,
+    "error_kt": -0.8,
+    "abs_error_kt": 0.8,
+    "nws_kt": 7.3,
+    "nws_error_kt": -2.7
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "lead_hours": 12,
+    "forecast_time": "2026-04-12T16:31:37.780379+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 8.5,
+    "actual_kt": 10.0,
+    "error_kt": -1.5,
+    "abs_error_kt": 1.5,
+    "nws_kt": 8.4,
+    "nws_error_kt": -1.6
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-12T22:30:59.857278+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 10.9,
+    "actual_kt": 15.9,
+    "error_kt": -5.0,
+    "abs_error_kt": 5.0,
+    "nws_kt": 11.2,
+    "nws_error_kt": -4.7
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-12T22:30:59.857278+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 4.8,
+    "actual_kt": 7.5,
+    "error_kt": -2.7,
+    "abs_error_kt": 2.7,
+    "nws_kt": 10.4,
+    "nws_error_kt": 2.9
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-12T22:30:59.857278+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.0,
+    "actual_kt": 10.0,
+    "error_kt": -1.0,
+    "abs_error_kt": 1.0,
+    "nws_kt": 6.7,
+    "nws_error_kt": -3.3
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-12T22:30:59.857278+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 8.0,
+    "actual_kt": 10.0,
+    "error_kt": -2.0,
+    "abs_error_kt": 2.0,
+    "nws_kt": 8.1,
+    "nws_error_kt": -1.9
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-13T01:05:35.698304+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 12.8,
+    "actual_kt": 15.9,
+    "error_kt": -3.1,
+    "abs_error_kt": 3.1,
+    "nws_kt": 10.4,
+    "nws_error_kt": -5.5
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-13T01:05:35.698304+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 7.3,
+    "actual_kt": 7.5,
+    "error_kt": -0.2,
+    "abs_error_kt": 0.2,
+    "nws_kt": 9.0,
+    "nws_error_kt": 1.5
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-13T01:05:35.698304+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.1,
+    "actual_kt": 10.0,
+    "error_kt": -0.9,
+    "abs_error_kt": 0.9,
+    "nws_kt": 4.5,
+    "nws_error_kt": -5.5
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-13T01:05:35.698304+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.5,
+    "actual_kt": 10.0,
+    "error_kt": -0.5,
+    "abs_error_kt": 0.5,
+    "nws_kt": 8.1,
+    "nws_error_kt": -1.9
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-13T03:01:15.272982+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 12.1,
+    "actual_kt": 15.9,
+    "error_kt": -3.8,
+    "abs_error_kt": 3.8,
+    "nws_kt": 9.0,
+    "nws_error_kt": -6.9
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-13T03:01:15.272982+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 6.2,
+    "actual_kt": 7.5,
+    "error_kt": -1.3,
+    "abs_error_kt": 1.3,
+    "nws_kt": 6.7,
+    "nws_error_kt": -0.8
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-13T03:01:15.272982+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.0,
+    "actual_kt": 10.0,
+    "error_kt": -1.0,
+    "abs_error_kt": 1.0,
+    "nws_kt": 7.0,
+    "nws_error_kt": -3.0
+  },
+  {
+    "station": "CAMM2",
+    "station_name": "Cambridge",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-13T03:01:15.272982+00:00",
+    "valid_time": "2026-04-13T03:00:00",
+    "predicted_kt": 9.2,
+    "actual_kt": 10.0,
+    "error_kt": -0.8,
+    "abs_error_kt": 0.8,
+    "nws_kt": 7.9,
+    "nws_error_kt": -2.1
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 18,
     "forecast_time": "2026-04-12T09:34:34.944463+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 8.5,
     "actual_kt": 15.9,
     "error_kt": -7.4,
-    "abs_error_kt": 7.4
+    "abs_error_kt": 7.4,
+    "nws_kt": 14.5,
+    "nws_error_kt": -1.4
   },
   {
     "station": "APAM2",
@@ -17,9 +279,11 @@
     "forecast_time": "2026-04-12T09:34:34.944463+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 5.1,
-    "actual_kt": 8.0,
-    "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "actual_kt": 7.5,
+    "error_kt": -2.4,
+    "abs_error_kt": 2.4,
+    "nws_kt": 13.0,
+    "nws_error_kt": 5.5
   },
   {
     "station": "SLIM2",
@@ -28,9 +292,11 @@
     "forecast_time": "2026-04-12T09:34:34.944463+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 8.0,
-    "actual_kt": 8.9,
-    "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "actual_kt": 10.0,
+    "error_kt": -2.0,
+    "abs_error_kt": 2.0,
+    "nws_kt": 10.1,
+    "nws_error_kt": 0.1
   },
   {
     "station": "CAMM2",
@@ -39,9 +305,11 @@
     "forecast_time": "2026-04-12T09:34:34.944463+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 5.7,
-    "actual_kt": 9.9,
-    "error_kt": -4.2,
-    "abs_error_kt": 4.2
+    "actual_kt": 10.0,
+    "error_kt": -4.3,
+    "abs_error_kt": 4.3,
+    "nws_kt": 10.4,
+    "nws_error_kt": 0.4
   },
   {
     "station": "TPLM2",
@@ -52,7 +320,9 @@
     "predicted_kt": 12.6,
     "actual_kt": 15.9,
     "error_kt": -3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 12.4,
+    "nws_error_kt": -3.5
   },
   {
     "station": "APAM2",
@@ -61,9 +331,11 @@
     "forecast_time": "2026-04-12T15:31:42.999560+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 5.4,
-    "actual_kt": 8.0,
-    "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "actual_kt": 7.5,
+    "error_kt": -2.1,
+    "abs_error_kt": 2.1,
+    "nws_kt": 11.5,
+    "nws_error_kt": 4.0
   },
   {
     "station": "SLIM2",
@@ -72,9 +344,11 @@
     "forecast_time": "2026-04-12T15:31:42.999560+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 11.9,
-    "actual_kt": 8.9,
-    "error_kt": 3.0,
-    "abs_error_kt": 3.0
+    "actual_kt": 10.0,
+    "error_kt": 1.9,
+    "abs_error_kt": 1.9,
+    "nws_kt": 9.2,
+    "nws_error_kt": -0.8
   },
   {
     "station": "CAMM2",
@@ -83,9 +357,11 @@
     "forecast_time": "2026-04-12T15:31:42.999560+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 10.0,
-    "actual_kt": 9.9,
-    "error_kt": 0.1,
-    "abs_error_kt": 0.1
+    "actual_kt": 10.0,
+    "error_kt": 0.0,
+    "abs_error_kt": 0.0,
+    "nws_kt": 9.6,
+    "nws_error_kt": -0.4
   },
   {
     "station": "TPLM2",
@@ -96,7 +372,9 @@
     "predicted_kt": 10.2,
     "actual_kt": 15.9,
     "error_kt": -5.7,
-    "abs_error_kt": 5.7
+    "abs_error_kt": 5.7,
+    "nws_kt": 10.5,
+    "nws_error_kt": -5.4
   },
   {
     "station": "APAM2",
@@ -105,9 +383,11 @@
     "forecast_time": "2026-04-12T21:31:07.335266+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 4.6,
-    "actual_kt": 8.0,
-    "error_kt": -3.4,
-    "abs_error_kt": 3.4
+    "actual_kt": 7.5,
+    "error_kt": -2.9,
+    "abs_error_kt": 2.9,
+    "nws_kt": 10.0,
+    "nws_error_kt": 2.5
   },
   {
     "station": "SLIM2",
@@ -116,9 +396,11 @@
     "forecast_time": "2026-04-12T21:31:07.335266+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 9.2,
-    "actual_kt": 8.9,
-    "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "actual_kt": 10.0,
+    "error_kt": -0.8,
+    "abs_error_kt": 0.8,
+    "nws_kt": 6.8,
+    "nws_error_kt": -3.2
   },
   {
     "station": "CAMM2",
@@ -127,9 +409,11 @@
     "forecast_time": "2026-04-12T21:31:07.335266+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 5.8,
-    "actual_kt": 9.9,
-    "error_kt": -4.1,
-    "abs_error_kt": 4.1
+    "actual_kt": 10.0,
+    "error_kt": -4.2,
+    "abs_error_kt": 4.2,
+    "nws_kt": 7.3,
+    "nws_error_kt": -2.7
   },
   {
     "station": "TPLM2",
@@ -140,7 +424,9 @@
     "predicted_kt": 12.0,
     "actual_kt": 15.9,
     "error_kt": -3.9,
-    "abs_error_kt": 3.9
+    "abs_error_kt": 3.9,
+    "nws_kt": 11.1,
+    "nws_error_kt": -4.8
   },
   {
     "station": "APAM2",
@@ -149,9 +435,11 @@
     "forecast_time": "2026-04-13T02:48:24.357623+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 7.2,
-    "actual_kt": 8.0,
-    "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "actual_kt": 7.5,
+    "error_kt": -0.3,
+    "abs_error_kt": 0.3,
+    "nws_kt": 9.3,
+    "nws_error_kt": 1.8
   },
   {
     "station": "SLIM2",
@@ -160,9 +448,11 @@
     "forecast_time": "2026-04-13T02:48:24.357623+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 9.4,
-    "actual_kt": 8.9,
-    "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "actual_kt": 10.0,
+    "error_kt": -0.6,
+    "abs_error_kt": 0.6,
+    "nws_kt": 6.6,
+    "nws_error_kt": -3.4
   },
   {
     "station": "CAMM2",
@@ -171,9 +461,11 @@
     "forecast_time": "2026-04-13T02:48:24.357623+00:00",
     "valid_time": "2026-04-13T02:00:00",
     "predicted_kt": 9.3,
-    "actual_kt": 9.9,
-    "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "actual_kt": 10.0,
+    "error_kt": -0.7,
+    "abs_error_kt": 0.7,
+    "nws_kt": 7.2,
+    "nws_error_kt": -2.8
   },
   {
     "station": "TPLM2",
@@ -184,7 +476,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 19.1,
     "error_kt": -11.3,
-    "abs_error_kt": 11.3
+    "abs_error_kt": 11.3,
+    "nws_kt": 15.0,
+    "nws_error_kt": -4.1
   },
   {
     "station": "APAM2",
@@ -195,7 +489,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 8.8,
     "error_kt": -3.8,
-    "abs_error_kt": 3.8
+    "abs_error_kt": 3.8,
+    "nws_kt": 12.8,
+    "nws_error_kt": 4.0
   },
   {
     "station": "SLIM2",
@@ -206,7 +502,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 10.4,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 9.8,
+    "nws_error_kt": -0.6
   },
   {
     "station": "CAMM2",
@@ -217,7 +515,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 10.3,
     "error_kt": -4.9,
-    "abs_error_kt": 4.9
+    "abs_error_kt": 4.9,
+    "nws_kt": 9.3,
+    "nws_error_kt": -1.0
   },
   {
     "station": "TPLM2",
@@ -228,7 +528,9 @@
     "predicted_kt": 12.6,
     "actual_kt": 19.1,
     "error_kt": -6.5,
-    "abs_error_kt": 6.5
+    "abs_error_kt": 6.5,
+    "nws_kt": 15.0,
+    "nws_error_kt": -4.1
   },
   {
     "station": "APAM2",
@@ -239,7 +541,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 8.8,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 13.2,
+    "nws_error_kt": 4.4
   },
   {
     "station": "SLIM2",
@@ -250,7 +554,9 @@
     "predicted_kt": 13.9,
     "actual_kt": 10.4,
     "error_kt": 3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 9.9,
+    "nws_error_kt": -0.5
   },
   {
     "station": "CAMM2",
@@ -261,7 +567,9 @@
     "predicted_kt": 10.9,
     "actual_kt": 10.3,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 10.4,
+    "nws_error_kt": 0.1
   },
   {
     "station": "TPLM2",
@@ -272,7 +580,9 @@
     "predicted_kt": 11.2,
     "actual_kt": 19.1,
     "error_kt": -7.9,
-    "abs_error_kt": 7.9
+    "abs_error_kt": 7.9,
+    "nws_kt": 10.8,
+    "nws_error_kt": -8.3
   },
   {
     "station": "APAM2",
@@ -283,7 +593,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 8.8,
     "error_kt": -3.1,
-    "abs_error_kt": 3.1
+    "abs_error_kt": 3.1,
+    "nws_kt": 10.2,
+    "nws_error_kt": 1.4
   },
   {
     "station": "SLIM2",
@@ -294,7 +606,9 @@
     "predicted_kt": 10.2,
     "actual_kt": 10.4,
     "error_kt": -0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 8.1,
+    "nws_error_kt": -2.3
   },
   {
     "station": "CAMM2",
@@ -305,7 +619,9 @@
     "predicted_kt": 8.4,
     "actual_kt": 10.3,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 8.2,
+    "nws_error_kt": -2.1
   },
   {
     "station": "TPLM2",
@@ -316,7 +632,9 @@
     "predicted_kt": 10.3,
     "actual_kt": 19.1,
     "error_kt": -8.8,
-    "abs_error_kt": 8.8
+    "abs_error_kt": 8.8,
+    "nws_kt": 11.3,
+    "nws_error_kt": -7.8
   },
   {
     "station": "APAM2",
@@ -327,7 +645,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 8.8,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 9.7,
+    "nws_error_kt": 0.9
   },
   {
     "station": "SLIM2",
@@ -338,7 +658,9 @@
     "predicted_kt": 11.9,
     "actual_kt": 10.4,
     "error_kt": 1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 8.0,
+    "nws_error_kt": -2.4
   },
   {
     "station": "CAMM2",
@@ -349,7 +671,9 @@
     "predicted_kt": 8.8,
     "actual_kt": 10.3,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 7.2,
+    "nws_error_kt": -3.1
   },
   {
     "station": "TPLM2",
@@ -360,7 +684,9 @@
     "predicted_kt": 17.5,
     "actual_kt": 19.1,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 10.9,
+    "nws_error_kt": -8.2
   },
   {
     "station": "APAM2",
@@ -371,7 +697,9 @@
     "predicted_kt": 9.7,
     "actual_kt": 8.8,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 10.0,
+    "nws_error_kt": 1.2
   },
   {
     "station": "SLIM2",
@@ -382,7 +710,9 @@
     "predicted_kt": 12.3,
     "actual_kt": 10.4,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 8.1,
+    "nws_error_kt": -2.3
   },
   {
     "station": "CAMM2",
@@ -393,7 +723,9 @@
     "predicted_kt": 9.1,
     "actual_kt": 10.3,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 7.6,
+    "nws_error_kt": -2.7
   },
   {
     "station": "TPLM2",
@@ -404,7 +736,9 @@
     "predicted_kt": 7.7,
     "actual_kt": 21.0,
     "error_kt": -13.3,
-    "abs_error_kt": 13.3
+    "abs_error_kt": 13.3,
+    "nws_kt": 14.5,
+    "nws_error_kt": -6.5
   },
   {
     "station": "APAM2",
@@ -415,7 +749,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 9.6,
     "error_kt": -4.5,
-    "abs_error_kt": 4.5
+    "abs_error_kt": 4.5,
+    "nws_kt": 12.9,
+    "nws_error_kt": 3.3
   },
   {
     "station": "SLIM2",
@@ -426,7 +762,9 @@
     "predicted_kt": 8.6,
     "actual_kt": 12.1,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 9.8,
+    "nws_error_kt": -2.3
   },
   {
     "station": "CAMM2",
@@ -437,7 +775,9 @@
     "predicted_kt": 5.5,
     "actual_kt": 10.1,
     "error_kt": -4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 7.9,
+    "nws_error_kt": -2.2
   },
   {
     "station": "TPLM2",
@@ -448,7 +788,9 @@
     "predicted_kt": 12.1,
     "actual_kt": 21.0,
     "error_kt": -8.9,
-    "abs_error_kt": 8.9
+    "abs_error_kt": 8.9,
+    "nws_kt": 14.4,
+    "nws_error_kt": -6.6
   },
   {
     "station": "APAM2",
@@ -459,7 +801,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 9.6,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 13.7,
+    "nws_error_kt": 4.1
   },
   {
     "station": "SLIM2",
@@ -470,7 +814,9 @@
     "predicted_kt": 14.2,
     "actual_kt": 12.1,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 10.3,
+    "nws_error_kt": -1.8
   },
   {
     "station": "CAMM2",
@@ -481,7 +827,9 @@
     "predicted_kt": 11.4,
     "actual_kt": 10.1,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 9.6,
+    "nws_error_kt": -0.5
   },
   {
     "station": "TPLM2",
@@ -492,7 +840,9 @@
     "predicted_kt": 11.0,
     "actual_kt": 21.0,
     "error_kt": -10.0,
-    "abs_error_kt": 10.0
+    "abs_error_kt": 10.0,
+    "nws_kt": 12.3,
+    "nws_error_kt": -8.7
   },
   {
     "station": "APAM2",
@@ -503,7 +853,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 9.6,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 11.6,
+    "nws_error_kt": 2.0
   },
   {
     "station": "SLIM2",
@@ -514,7 +866,9 @@
     "predicted_kt": 12.3,
     "actual_kt": 12.1,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 9.0,
+    "nws_error_kt": -3.1
   },
   {
     "station": "CAMM2",
@@ -525,7 +879,9 @@
     "predicted_kt": 7.7,
     "actual_kt": 10.1,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 8.0,
+    "nws_error_kt": -2.1
   },
   {
     "station": "TPLM2",
@@ -536,7 +892,9 @@
     "predicted_kt": 9.4,
     "actual_kt": 21.0,
     "error_kt": -11.6,
-    "abs_error_kt": 11.6
+    "abs_error_kt": 11.6,
+    "nws_kt": 11.7,
+    "nws_error_kt": -9.3
   },
   {
     "station": "APAM2",
@@ -547,7 +905,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 9.6,
     "error_kt": -2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 11.0,
+    "nws_error_kt": 1.4
   },
   {
     "station": "SLIM2",
@@ -558,7 +918,9 @@
     "predicted_kt": 11.5,
     "actual_kt": 12.1,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 7.3,
+    "nws_error_kt": -4.8
   },
   {
     "station": "CAMM2",
@@ -569,7 +931,9 @@
     "predicted_kt": 8.8,
     "actual_kt": 10.1,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 6.2,
+    "nws_error_kt": -3.9
   },
   {
     "station": "TPLM2",
@@ -580,7 +944,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 20.0,
     "error_kt": -13.0,
-    "abs_error_kt": 13.0
+    "abs_error_kt": 13.0,
+    "nws_kt": 15.7,
+    "nws_error_kt": -4.3
   },
   {
     "station": "APAM2",
@@ -591,7 +957,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 10.0,
     "error_kt": -4.9,
-    "abs_error_kt": 4.9
+    "abs_error_kt": 4.9,
+    "nws_kt": 13.9,
+    "nws_error_kt": 3.9
   },
   {
     "station": "SLIM2",
@@ -602,7 +970,9 @@
     "predicted_kt": 9.3,
     "actual_kt": 12.6,
     "error_kt": -3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 11.0,
+    "nws_error_kt": -1.6
   },
   {
     "station": "CAMM2",
@@ -613,7 +983,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 10.0,
     "error_kt": -4.3,
-    "abs_error_kt": 4.3
+    "abs_error_kt": 4.3,
+    "nws_kt": 9.9,
+    "nws_error_kt": -0.1
   },
   {
     "station": "TPLM2",
@@ -624,7 +996,9 @@
     "predicted_kt": 12.4,
     "actual_kt": 20.0,
     "error_kt": -7.6,
-    "abs_error_kt": 7.6
+    "abs_error_kt": 7.6,
+    "nws_kt": 16.0,
+    "nws_error_kt": -4.0
   },
   {
     "station": "APAM2",
@@ -635,7 +1009,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 10.0,
     "error_kt": -4.0,
-    "abs_error_kt": 4.0
+    "abs_error_kt": 4.0,
+    "nws_kt": 14.4,
+    "nws_error_kt": 4.4
   },
   {
     "station": "SLIM2",
@@ -646,7 +1022,9 @@
     "predicted_kt": 14.9,
     "actual_kt": 12.6,
     "error_kt": 2.3,
-    "abs_error_kt": 2.3
+    "abs_error_kt": 2.3,
+    "nws_kt": 11.7,
+    "nws_error_kt": -0.9
   },
   {
     "station": "CAMM2",
@@ -657,7 +1035,9 @@
     "predicted_kt": 11.1,
     "actual_kt": 10.0,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 11.0,
+    "nws_error_kt": 1.0
   },
   {
     "station": "TPLM2",
@@ -668,7 +1048,9 @@
     "predicted_kt": 11.0,
     "actual_kt": 20.0,
     "error_kt": -9.0,
-    "abs_error_kt": 9.0
+    "abs_error_kt": 9.0,
+    "nws_kt": 15.2,
+    "nws_error_kt": -4.8
   },
   {
     "station": "APAM2",
@@ -679,7 +1061,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 10.0,
     "error_kt": -3.1,
-    "abs_error_kt": 3.1
+    "abs_error_kt": 3.1,
+    "nws_kt": 13.8,
+    "nws_error_kt": 3.8
   },
   {
     "station": "SLIM2",
@@ -690,7 +1074,9 @@
     "predicted_kt": 12.6,
     "actual_kt": 12.6,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 10.4,
+    "nws_error_kt": -2.2
   },
   {
     "station": "CAMM2",
@@ -701,7 +1087,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 10.0,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 9.3,
+    "nws_error_kt": -0.7
   },
   {
     "station": "TPLM2",
@@ -712,7 +1100,9 @@
     "predicted_kt": 10.5,
     "actual_kt": 20.0,
     "error_kt": -9.5,
-    "abs_error_kt": 9.5
+    "abs_error_kt": 9.5,
+    "nws_kt": 14.8,
+    "nws_error_kt": -5.2
   },
   {
     "station": "APAM2",
@@ -723,7 +1113,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 10.0,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 13.0,
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -734,7 +1126,9 @@
     "predicted_kt": 12.5,
     "actual_kt": 12.6,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 9.1,
+    "nws_error_kt": -3.5
   },
   {
     "station": "CAMM2",
@@ -745,7 +1139,9 @@
     "predicted_kt": 10.4,
     "actual_kt": 10.0,
     "error_kt": 0.4,
-    "abs_error_kt": 0.4
+    "abs_error_kt": 0.4,
+    "nws_kt": 8.4,
+    "nws_error_kt": -1.6
   },
   {
     "station": "TPLM2",
@@ -756,7 +1152,9 @@
     "predicted_kt": 13.8,
     "actual_kt": 20.0,
     "error_kt": -6.2,
-    "abs_error_kt": 6.2
+    "abs_error_kt": 6.2,
+    "nws_kt": 15.0,
+    "nws_error_kt": -5.0
   },
   {
     "station": "APAM2",
@@ -767,7 +1165,9 @@
     "predicted_kt": 8.5,
     "actual_kt": 10.0,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 13.9,
+    "nws_error_kt": 3.9
   },
   {
     "station": "SLIM2",
@@ -778,7 +1178,9 @@
     "predicted_kt": 14.2,
     "actual_kt": 12.6,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 10.5,
+    "nws_error_kt": -2.1
   },
   {
     "station": "CAMM2",
@@ -789,7 +1191,9 @@
     "predicted_kt": 10.4,
     "actual_kt": 10.0,
     "error_kt": 0.4,
-    "abs_error_kt": 0.4
+    "abs_error_kt": 0.4,
+    "nws_kt": 9.4,
+    "nws_error_kt": -0.6
   },
   {
     "station": "TPLM2",
@@ -800,7 +1204,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 15.9,
     "error_kt": -8.8,
-    "abs_error_kt": 8.8
+    "abs_error_kt": 8.8,
+    "nws_kt": 16.8,
+    "nws_error_kt": 0.9
   },
   {
     "station": "APAM2",
@@ -811,7 +1217,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 9.2,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 15.0,
+    "nws_error_kt": 5.8
   },
   {
     "station": "SLIM2",
@@ -822,7 +1230,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 14.2,
     "error_kt": -5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 12.4,
+    "nws_error_kt": -1.8
   },
   {
     "station": "CAMM2",
@@ -833,7 +1243,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 11.6,
     "error_kt": -4.8,
-    "abs_error_kt": 4.8
+    "abs_error_kt": 4.8,
+    "nws_kt": 12.1,
+    "nws_error_kt": 0.5
   },
   {
     "station": "TPLM2",
@@ -844,7 +1256,9 @@
     "predicted_kt": 11.4,
     "actual_kt": 15.9,
     "error_kt": -4.5,
-    "abs_error_kt": 4.5
+    "abs_error_kt": 4.5,
+    "nws_kt": 15.9,
+    "nws_error_kt": -0.0
   },
   {
     "station": "APAM2",
@@ -855,7 +1269,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 9.2,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 15.2,
+    "nws_error_kt": 6.0
   },
   {
     "station": "SLIM2",
@@ -866,7 +1282,9 @@
     "predicted_kt": 15.4,
     "actual_kt": 14.2,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 12.5,
+    "nws_error_kt": -1.7
   },
   {
     "station": "CAMM2",
@@ -877,7 +1295,9 @@
     "predicted_kt": 11.1,
     "actual_kt": 11.6,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 12.8,
+    "nws_error_kt": 1.2
   },
   {
     "station": "TPLM2",
@@ -888,7 +1308,9 @@
     "predicted_kt": 11.6,
     "actual_kt": 15.9,
     "error_kt": -4.3,
-    "abs_error_kt": 4.3
+    "abs_error_kt": 4.3,
+    "nws_kt": 17.8,
+    "nws_error_kt": 1.9
   },
   {
     "station": "APAM2",
@@ -899,7 +1321,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 9.2,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 14.9,
+    "nws_error_kt": 5.7
   },
   {
     "station": "SLIM2",
@@ -910,7 +1334,9 @@
     "predicted_kt": 14.7,
     "actual_kt": 14.2,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 11.6,
+    "nws_error_kt": -2.6
   },
   {
     "station": "CAMM2",
@@ -921,7 +1347,9 @@
     "predicted_kt": 8.9,
     "actual_kt": 11.6,
     "error_kt": -2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 12.2,
+    "nws_error_kt": 0.6
   },
   {
     "station": "TPLM2",
@@ -932,7 +1360,9 @@
     "predicted_kt": 12.2,
     "actual_kt": 15.9,
     "error_kt": -3.7,
-    "abs_error_kt": 3.7
+    "abs_error_kt": 3.7,
+    "nws_kt": 18.4,
+    "nws_error_kt": 2.5
   },
   {
     "station": "APAM2",
@@ -943,7 +1373,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 9.2,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 15.6,
+    "nws_error_kt": 6.4
   },
   {
     "station": "SLIM2",
@@ -954,7 +1386,9 @@
     "predicted_kt": 12.4,
     "actual_kt": 14.2,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 11.3,
+    "nws_error_kt": -2.9
   },
   {
     "station": "CAMM2",
@@ -965,7 +1399,9 @@
     "predicted_kt": 10.3,
     "actual_kt": 11.6,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 10.9,
+    "nws_error_kt": -0.7
   },
   {
     "station": "TPLM2",
@@ -976,7 +1412,9 @@
     "predicted_kt": 14.5,
     "actual_kt": 15.9,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 18.8,
+    "nws_error_kt": 2.9
   },
   {
     "station": "APAM2",
@@ -987,7 +1425,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 9.2,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 15.1,
+    "nws_error_kt": 5.9
   },
   {
     "station": "SLIM2",
@@ -998,7 +1438,9 @@
     "predicted_kt": 14.7,
     "actual_kt": 14.2,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 12.4,
+    "nws_error_kt": -1.8
   },
   {
     "station": "CAMM2",
@@ -1009,7 +1451,9 @@
     "predicted_kt": 12.4,
     "actual_kt": 11.6,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 11.7,
+    "nws_error_kt": 0.1
   },
   {
     "station": "TPLM2",
@@ -1020,7 +1464,9 @@
     "predicted_kt": 10.9,
     "actual_kt": 15.9,
     "error_kt": -5.0,
-    "abs_error_kt": 5.0
+    "abs_error_kt": 5.0,
+    "nws_kt": 13.1,
+    "nws_error_kt": -2.8
   },
   {
     "station": "APAM2",
@@ -1031,7 +1477,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 8.8,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 12.0,
+    "nws_error_kt": 3.2
   },
   {
     "station": "SLIM2",
@@ -1042,7 +1490,9 @@
     "predicted_kt": 13.6,
     "actual_kt": 15.2,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 12.0,
+    "nws_error_kt": -3.2
   },
   {
     "station": "CAMM2",
@@ -1053,7 +1503,9 @@
     "predicted_kt": 10.0,
     "actual_kt": 13.0,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 11.6,
+    "nws_error_kt": -1.4
   },
   {
     "station": "TPLM2",
@@ -1064,7 +1516,9 @@
     "predicted_kt": 10.3,
     "actual_kt": 15.9,
     "error_kt": -5.6,
-    "abs_error_kt": 5.6
+    "abs_error_kt": 5.6,
+    "nws_kt": 16.0,
+    "nws_error_kt": 0.1
   },
   {
     "station": "APAM2",
@@ -1075,7 +1529,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 8.8,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 13.5,
+    "nws_error_kt": 4.7
   },
   {
     "station": "SLIM2",
@@ -1086,7 +1542,9 @@
     "predicted_kt": 15.1,
     "actual_kt": 15.2,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 11.9,
+    "nws_error_kt": -3.3
   },
   {
     "station": "CAMM2",
@@ -1097,7 +1555,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 13.0,
     "error_kt": -4.0,
-    "abs_error_kt": 4.0
+    "abs_error_kt": 4.0,
+    "nws_kt": 12.8,
+    "nws_error_kt": -0.2
   },
   {
     "station": "TPLM2",
@@ -1108,7 +1568,9 @@
     "predicted_kt": 11.3,
     "actual_kt": 15.9,
     "error_kt": -4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 16.0,
+    "nws_error_kt": 0.1
   },
   {
     "station": "APAM2",
@@ -1119,7 +1581,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 8.8,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 14.2,
+    "nws_error_kt": 5.4
   },
   {
     "station": "SLIM2",
@@ -1130,7 +1594,9 @@
     "predicted_kt": 14.3,
     "actual_kt": 15.2,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 11.4,
+    "nws_error_kt": -3.8
   },
   {
     "station": "CAMM2",
@@ -1141,7 +1607,9 @@
     "predicted_kt": 9.8,
     "actual_kt": 13.0,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 11.5,
+    "nws_error_kt": -1.5
   },
   {
     "station": "TPLM2",
@@ -1152,7 +1620,9 @@
     "predicted_kt": 14.7,
     "actual_kt": 15.9,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 15.3,
+    "nws_error_kt": -0.6
   },
   {
     "station": "APAM2",
@@ -1163,7 +1633,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 8.8,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 13.8,
+    "nws_error_kt": 5.0
   },
   {
     "station": "SLIM2",
@@ -1174,7 +1646,9 @@
     "predicted_kt": 16.3,
     "actual_kt": 15.2,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 11.9,
+    "nws_error_kt": -3.3
   },
   {
     "station": "CAMM2",
@@ -1185,7 +1659,9 @@
     "predicted_kt": 12.4,
     "actual_kt": 13.0,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 11.3,
+    "nws_error_kt": -1.7
   },
   {
     "station": "TPLM2",
@@ -1196,7 +1672,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 17.1,
     "error_kt": -11.7,
-    "abs_error_kt": 11.7
+    "abs_error_kt": 11.7,
+    "nws_kt": 13.5,
+    "nws_error_kt": -3.6
   },
   {
     "station": "APAM2",
@@ -1207,7 +1685,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 9.8,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 12.3,
+    "nws_error_kt": 2.5
   },
   {
     "station": "SLIM2",
@@ -1218,7 +1698,9 @@
     "predicted_kt": 8.4,
     "actual_kt": 17.9,
     "error_kt": -9.5,
-    "abs_error_kt": 9.5
+    "abs_error_kt": 9.5,
+    "nws_kt": 11.9,
+    "nws_error_kt": -6.0
   },
   {
     "station": "CAMM2",
@@ -1229,7 +1711,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 13.4,
     "error_kt": -6.8,
-    "abs_error_kt": 6.8
+    "abs_error_kt": 6.8,
+    "nws_kt": 11.1,
+    "nws_error_kt": -2.3
   },
   {
     "station": "TPLM2",
@@ -1240,7 +1724,9 @@
     "predicted_kt": 10.0,
     "actual_kt": 17.1,
     "error_kt": -7.1,
-    "abs_error_kt": 7.1
+    "abs_error_kt": 7.1,
+    "nws_kt": 11.9,
+    "nws_error_kt": -5.2
   },
   {
     "station": "APAM2",
@@ -1251,7 +1737,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 9.8,
     "error_kt": -3.4,
-    "abs_error_kt": 3.4
+    "abs_error_kt": 3.4,
+    "nws_kt": 11.4,
+    "nws_error_kt": 1.6
   },
   {
     "station": "SLIM2",
@@ -1262,7 +1750,9 @@
     "predicted_kt": 12.8,
     "actual_kt": 17.9,
     "error_kt": -5.1,
-    "abs_error_kt": 5.1
+    "abs_error_kt": 5.1,
+    "nws_kt": 10.6,
+    "nws_error_kt": -7.3
   },
   {
     "station": "CAMM2",
@@ -1273,7 +1763,9 @@
     "predicted_kt": 9.9,
     "actual_kt": 13.4,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 10.1,
+    "nws_error_kt": -3.3
   },
   {
     "station": "TPLM2",
@@ -1284,7 +1776,9 @@
     "predicted_kt": 10.5,
     "actual_kt": 17.1,
     "error_kt": -6.6,
-    "abs_error_kt": 6.6
+    "abs_error_kt": 6.6,
+    "nws_kt": 12.3,
+    "nws_error_kt": -4.8
   },
   {
     "station": "APAM2",
@@ -1295,7 +1789,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 9.8,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 11.8,
+    "nws_error_kt": 2.0
   },
   {
     "station": "SLIM2",
@@ -1306,7 +1802,9 @@
     "predicted_kt": 15.0,
     "actual_kt": 17.9,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 11.0,
+    "nws_error_kt": -6.9
   },
   {
     "station": "CAMM2",
@@ -1317,7 +1815,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 13.4,
     "error_kt": -4.7,
-    "abs_error_kt": 4.7
+    "abs_error_kt": 4.7,
+    "nws_kt": 11.4,
+    "nws_error_kt": -2.0
   },
   {
     "station": "TPLM2",
@@ -1328,7 +1828,9 @@
     "predicted_kt": 10.6,
     "actual_kt": 17.1,
     "error_kt": -6.5,
-    "abs_error_kt": 6.5
+    "abs_error_kt": 6.5,
+    "nws_kt": 15.2,
+    "nws_error_kt": -1.9
   },
   {
     "station": "APAM2",
@@ -1339,7 +1841,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 9.8,
     "error_kt": -2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 14.2,
+    "nws_error_kt": 4.4
   },
   {
     "station": "SLIM2",
@@ -1350,7 +1854,9 @@
     "predicted_kt": 12.7,
     "actual_kt": 17.9,
     "error_kt": -5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 11.3,
+    "nws_error_kt": -6.6
   },
   {
     "station": "CAMM2",
@@ -1361,7 +1867,9 @@
     "predicted_kt": 9.9,
     "actual_kt": 13.4,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 11.4,
+    "nws_error_kt": -2.0
   },
   {
     "station": "TPLM2",
@@ -1372,7 +1880,9 @@
     "predicted_kt": 14.1,
     "actual_kt": 17.1,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 14.8,
+    "nws_error_kt": -2.3
   },
   {
     "station": "APAM2",
@@ -1383,7 +1893,9 @@
     "predicted_kt": 8.8,
     "actual_kt": 9.8,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 14.3,
+    "nws_error_kt": 4.5
   },
   {
     "station": "SLIM2",
@@ -1394,7 +1906,9 @@
     "predicted_kt": 16.1,
     "actual_kt": 17.9,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 10.6,
+    "nws_error_kt": -7.3
   },
   {
     "station": "CAMM2",
@@ -1405,7 +1919,9 @@
     "predicted_kt": 11.5,
     "actual_kt": 13.4,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 9.4,
+    "nws_error_kt": -4.0
   },
   {
     "station": "TPLM2",
@@ -1416,7 +1932,9 @@
     "predicted_kt": 10.5,
     "actual_kt": 18.1,
     "error_kt": -7.6,
-    "abs_error_kt": 7.6
+    "abs_error_kt": 7.6,
+    "nws_kt": 9.1,
+    "nws_error_kt": -9.0
   },
   {
     "station": "APAM2",
@@ -1427,7 +1945,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 10.0,
     "error_kt": -3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 10.3,
+    "nws_error_kt": 0.3
   },
   {
     "station": "SLIM2",
@@ -1438,7 +1958,9 @@
     "predicted_kt": 11.8,
     "actual_kt": 18.4,
     "error_kt": -6.6,
-    "abs_error_kt": 6.6
+    "abs_error_kt": 6.6,
+    "nws_kt": 10.7,
+    "nws_error_kt": -7.7
   },
   {
     "station": "CAMM2",
@@ -1449,7 +1971,9 @@
     "predicted_kt": 9.6,
     "actual_kt": 12.3,
     "error_kt": -2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 10.2,
+    "nws_error_kt": -2.1
   },
   {
     "station": "TPLM2",
@@ -1460,7 +1984,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 18.1,
     "error_kt": -8.6,
-    "abs_error_kt": 8.6
+    "abs_error_kt": 8.6,
+    "nws_kt": 9.7,
+    "nws_error_kt": -8.4
   },
   {
     "station": "APAM2",
@@ -1471,7 +1997,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 10.0,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 10.9,
+    "nws_error_kt": 0.9
   },
   {
     "station": "SLIM2",
@@ -1482,7 +2010,9 @@
     "predicted_kt": 13.3,
     "actual_kt": 18.4,
     "error_kt": -5.1,
-    "abs_error_kt": 5.1
+    "abs_error_kt": 5.1,
+    "nws_kt": 10.7,
+    "nws_error_kt": -7.7
   },
   {
     "station": "CAMM2",
@@ -1493,7 +2023,9 @@
     "predicted_kt": 8.6,
     "actual_kt": 12.3,
     "error_kt": -3.7,
-    "abs_error_kt": 3.7
+    "abs_error_kt": 3.7,
+    "nws_kt": 10.1,
+    "nws_error_kt": -2.2
   },
   {
     "station": "TPLM2",
@@ -1504,7 +2036,9 @@
     "predicted_kt": 9.2,
     "actual_kt": 18.1,
     "error_kt": -8.9,
-    "abs_error_kt": 8.9
+    "abs_error_kt": 8.9,
+    "nws_kt": 11.6,
+    "nws_error_kt": -6.5
   },
   {
     "station": "APAM2",
@@ -1515,7 +2049,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 10.0,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 11.1,
+    "nws_error_kt": 1.1
   },
   {
     "station": "SLIM2",
@@ -1526,7 +2062,9 @@
     "predicted_kt": 12.7,
     "actual_kt": 18.4,
     "error_kt": -5.7,
-    "abs_error_kt": 5.7
+    "abs_error_kt": 5.7,
+    "nws_kt": 11.3,
+    "nws_error_kt": -7.1
   },
   {
     "station": "CAMM2",
@@ -1537,7 +2075,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 12.3,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 10.7,
+    "nws_error_kt": -1.6
   },
   {
     "station": "TPLM2",
@@ -1548,7 +2088,9 @@
     "predicted_kt": 12.8,
     "actual_kt": 18.1,
     "error_kt": -5.3,
-    "abs_error_kt": 5.3
+    "abs_error_kt": 5.3,
+    "nws_kt": 11.5,
+    "nws_error_kt": -6.6
   },
   {
     "station": "APAM2",
@@ -1559,7 +2101,9 @@
     "predicted_kt": 8.6,
     "actual_kt": 10.0,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 11.9,
+    "nws_error_kt": 1.9
   },
   {
     "station": "SLIM2",
@@ -1570,7 +2114,9 @@
     "predicted_kt": 16.1,
     "actual_kt": 18.4,
     "error_kt": -2.3,
-    "abs_error_kt": 2.3
+    "abs_error_kt": 2.3,
+    "nws_kt": 11.1,
+    "nws_error_kt": -7.3
   },
   {
     "station": "CAMM2",
@@ -1581,7 +2127,9 @@
     "predicted_kt": 10.8,
     "actual_kt": 12.3,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 10.2,
+    "nws_error_kt": -2.1
   },
   {
     "station": "TPLM2",
@@ -1592,7 +2140,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 17.1,
     "error_kt": -11.2,
-    "abs_error_kt": 11.2
+    "abs_error_kt": 11.2,
+    "nws_kt": 8.7,
+    "nws_error_kt": -8.4
   },
   {
     "station": "APAM2",
@@ -1603,7 +2153,9 @@
     "predicted_kt": 4.3,
     "actual_kt": 10.0,
     "error_kt": -5.7,
-    "abs_error_kt": 5.7
+    "abs_error_kt": 5.7,
+    "nws_kt": 9.6,
+    "nws_error_kt": -0.4
   },
   {
     "station": "SLIM2",
@@ -1614,7 +2166,9 @@
     "predicted_kt": 10.2,
     "actual_kt": 16.5,
     "error_kt": -6.3,
-    "abs_error_kt": 6.3
+    "abs_error_kt": 6.3,
+    "nws_kt": 12.0,
+    "nws_error_kt": -4.5
   },
   {
     "station": "CAMM2",
@@ -1625,7 +2179,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 10.8,
     "error_kt": -3.9,
-    "abs_error_kt": 3.9
+    "abs_error_kt": 3.9,
+    "nws_kt": 7.4,
+    "nws_error_kt": -3.4
   },
   {
     "station": "TPLM2",
@@ -1636,7 +2192,9 @@
     "predicted_kt": 9.8,
     "actual_kt": 17.1,
     "error_kt": -7.3,
-    "abs_error_kt": 7.3
+    "abs_error_kt": 7.3,
+    "nws_kt": 8.3,
+    "nws_error_kt": -8.8
   },
   {
     "station": "APAM2",
@@ -1647,7 +2205,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 10.0,
     "error_kt": -3.7,
-    "abs_error_kt": 3.7
+    "abs_error_kt": 3.7,
+    "nws_kt": 7.0,
+    "nws_error_kt": -3.0
   },
   {
     "station": "SLIM2",
@@ -1658,7 +2218,9 @@
     "predicted_kt": 11.6,
     "actual_kt": 16.5,
     "error_kt": -4.9,
-    "abs_error_kt": 4.9
+    "abs_error_kt": 4.9,
+    "nws_kt": 9.1,
+    "nws_error_kt": -7.4
   },
   {
     "station": "CAMM2",
@@ -1669,7 +2231,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 10.8,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 7.7,
+    "nws_error_kt": -3.1
   },
   {
     "station": "TPLM2",
@@ -1680,7 +2244,9 @@
     "predicted_kt": 10.0,
     "actual_kt": 17.1,
     "error_kt": -7.1,
-    "abs_error_kt": 7.1
+    "abs_error_kt": 7.1,
+    "nws_kt": 11.2,
+    "nws_error_kt": -5.9
   },
   {
     "station": "APAM2",
@@ -1691,7 +2257,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 10.0,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 9.8,
+    "nws_error_kt": -0.2
   },
   {
     "station": "SLIM2",
@@ -1702,7 +2270,9 @@
     "predicted_kt": 12.0,
     "actual_kt": 16.5,
     "error_kt": -4.5,
-    "abs_error_kt": 4.5
+    "abs_error_kt": 4.5,
+    "nws_kt": 9.9,
+    "nws_error_kt": -6.6
   },
   {
     "station": "CAMM2",
@@ -1713,7 +2283,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 10.8,
     "error_kt": -4.3,
-    "abs_error_kt": 4.3
+    "abs_error_kt": 4.3,
+    "nws_kt": 6.7,
+    "nws_error_kt": -4.1
   },
   {
     "station": "TPLM2",
@@ -1724,7 +2296,9 @@
     "predicted_kt": 8.2,
     "actual_kt": 17.1,
     "error_kt": -8.9,
-    "abs_error_kt": 8.9
+    "abs_error_kt": 8.9,
+    "nws_kt": 9.0,
+    "nws_error_kt": -8.1
   },
   {
     "station": "APAM2",
@@ -1735,7 +2309,9 @@
     "predicted_kt": 7.4,
     "actual_kt": 10.0,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 11.3,
+    "nws_error_kt": 1.3
   },
   {
     "station": "SLIM2",
@@ -1746,7 +2322,9 @@
     "predicted_kt": 11.9,
     "actual_kt": 16.5,
     "error_kt": -4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 10.1,
+    "nws_error_kt": -6.4
   },
   {
     "station": "CAMM2",
@@ -1757,7 +2335,9 @@
     "predicted_kt": 9.7,
     "actual_kt": 10.8,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 10.6,
+    "nws_error_kt": -0.2
   },
   {
     "station": "TPLM2",
@@ -1768,7 +2348,9 @@
     "predicted_kt": 12.9,
     "actual_kt": 17.1,
     "error_kt": -4.2,
-    "abs_error_kt": 4.2
+    "abs_error_kt": 4.2,
+    "nws_kt": 11.9,
+    "nws_error_kt": -5.2
   },
   {
     "station": "APAM2",
@@ -1779,7 +2361,9 @@
     "predicted_kt": 7.9,
     "actual_kt": 10.0,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 11.5,
+    "nws_error_kt": 1.5
   },
   {
     "station": "SLIM2",
@@ -1790,7 +2374,9 @@
     "predicted_kt": 14.6,
     "actual_kt": 16.5,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 11.4,
+    "nws_error_kt": -5.1
   },
   {
     "station": "CAMM2",
@@ -1801,7 +2387,9 @@
     "predicted_kt": 9.7,
     "actual_kt": 10.8,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 11.9,
+    "nws_error_kt": 1.1
   },
   {
     "station": "TPLM2",
@@ -1812,7 +2400,9 @@
     "predicted_kt": 9.8,
     "actual_kt": 15.0,
     "error_kt": -5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 5.7,
+    "nws_error_kt": -9.3
   },
   {
     "station": "APAM2",
@@ -1823,7 +2413,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 9.0,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 5.2,
+    "nws_error_kt": -3.8
   },
   {
     "station": "SLIM2",
@@ -1834,7 +2426,9 @@
     "predicted_kt": 10.4,
     "actual_kt": 15.6,
     "error_kt": -5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 8.7,
+    "nws_error_kt": -6.9
   },
   {
     "station": "CAMM2",
@@ -1845,7 +2439,9 @@
     "predicted_kt": 7.9,
     "actual_kt": 9.9,
     "error_kt": -2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 5.8,
+    "nws_error_kt": -4.1
   },
   {
     "station": "TPLM2",
@@ -1856,7 +2452,9 @@
     "predicted_kt": 8.3,
     "actual_kt": 15.0,
     "error_kt": -6.7,
-    "abs_error_kt": 6.7
+    "abs_error_kt": 6.7,
+    "nws_kt": 7.8,
+    "nws_error_kt": -7.2
   },
   {
     "station": "APAM2",
@@ -1867,7 +2465,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 9.0,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 9.6,
+    "nws_error_kt": 0.6
   },
   {
     "station": "SLIM2",
@@ -1878,7 +2478,9 @@
     "predicted_kt": 10.5,
     "actual_kt": 15.6,
     "error_kt": -5.1,
-    "abs_error_kt": 5.1
+    "abs_error_kt": 5.1,
+    "nws_kt": 8.5,
+    "nws_error_kt": -7.1
   },
   {
     "station": "CAMM2",
@@ -1889,7 +2491,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 9.9,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 7.1,
+    "nws_error_kt": -2.8
   },
   {
     "station": "TPLM2",
@@ -1900,7 +2504,9 @@
     "predicted_kt": 7.2,
     "actual_kt": 15.0,
     "error_kt": -7.8,
-    "abs_error_kt": 7.8
+    "abs_error_kt": 7.8,
+    "nws_kt": 11.1,
+    "nws_error_kt": -3.9
   },
   {
     "station": "APAM2",
@@ -1911,7 +2517,9 @@
     "predicted_kt": 7.4,
     "actual_kt": 9.0,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 8.4,
+    "nws_error_kt": -0.6
   },
   {
     "station": "SLIM2",
@@ -1922,7 +2530,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 15.6,
     "error_kt": -5.5,
-    "abs_error_kt": 5.5
+    "abs_error_kt": 5.5,
+    "nws_kt": 8.0,
+    "nws_error_kt": -7.6
   },
   {
     "station": "CAMM2",
@@ -1933,7 +2543,9 @@
     "predicted_kt": 8.1,
     "actual_kt": 9.9,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 6.1,
+    "nws_error_kt": -3.8
   },
   {
     "station": "TPLM2",
@@ -1944,7 +2556,9 @@
     "predicted_kt": 9.1,
     "actual_kt": 15.0,
     "error_kt": -5.9,
-    "abs_error_kt": 5.9
+    "abs_error_kt": 5.9,
+    "nws_kt": 9.9,
+    "nws_error_kt": -5.1
   },
   {
     "station": "APAM2",
@@ -1955,7 +2569,9 @@
     "predicted_kt": 7.2,
     "actual_kt": 9.0,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 7.0,
+    "nws_error_kt": -2.0
   },
   {
     "station": "SLIM2",
@@ -1966,7 +2582,9 @@
     "predicted_kt": 14.3,
     "actual_kt": 15.6,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 10.1,
+    "nws_error_kt": -5.5
   },
   {
     "station": "CAMM2",
@@ -1977,7 +2595,9 @@
     "predicted_kt": 9.7,
     "actual_kt": 9.9,
     "error_kt": -0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 5.7,
+    "nws_error_kt": -4.2
   },
   {
     "station": "TPLM2",
@@ -1988,7 +2608,9 @@
     "predicted_kt": 4.5,
     "actual_kt": 11.1,
     "error_kt": -6.6,
-    "abs_error_kt": 6.6
+    "abs_error_kt": 6.6,
+    "nws_kt": 2.5,
+    "nws_error_kt": -8.6
   },
   {
     "station": "APAM2",
@@ -1999,7 +2621,9 @@
     "predicted_kt": 3.9,
     "actual_kt": 8.0,
     "error_kt": -4.1,
-    "abs_error_kt": 4.1
+    "abs_error_kt": 4.1,
+    "nws_kt": 4.0,
+    "nws_error_kt": -4.0
   },
   {
     "station": "SLIM2",
@@ -2010,7 +2634,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 14.8,
     "error_kt": -9.0,
-    "abs_error_kt": 9.0
+    "abs_error_kt": 9.0,
+    "nws_kt": 6.0,
+    "nws_error_kt": -8.8
   },
   {
     "station": "CAMM2",
@@ -2021,7 +2647,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 9.7,
     "error_kt": -4.1,
-    "abs_error_kt": 4.1
+    "abs_error_kt": 4.1,
+    "nws_kt": 4.0,
+    "nws_error_kt": -5.7
   },
   {
     "station": "TPLM2",
@@ -2032,7 +2660,9 @@
     "predicted_kt": 9.3,
     "actual_kt": 11.1,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 4.8,
+    "nws_error_kt": -6.3
   },
   {
     "station": "APAM2",
@@ -2043,7 +2673,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 8.0,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 5.5,
+    "nws_error_kt": -2.5
   },
   {
     "station": "SLIM2",
@@ -2054,7 +2686,9 @@
     "predicted_kt": 9.8,
     "actual_kt": 14.8,
     "error_kt": -5.0,
-    "abs_error_kt": 5.0
+    "abs_error_kt": 5.0,
+    "nws_kt": 7.8,
+    "nws_error_kt": -7.0
   },
   {
     "station": "CAMM2",
@@ -2065,7 +2699,9 @@
     "predicted_kt": 7.6,
     "actual_kt": 9.7,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 4.9,
+    "nws_error_kt": -4.8
   },
   {
     "station": "TPLM2",
@@ -2076,7 +2712,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 11.1,
     "error_kt": -4.4,
-    "abs_error_kt": 4.4
+    "abs_error_kt": 4.4,
+    "nws_kt": 6.2,
+    "nws_error_kt": -4.9
   },
   {
     "station": "APAM2",
@@ -2087,7 +2725,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 8.0,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 6.6,
+    "nws_error_kt": -1.4
   },
   {
     "station": "SLIM2",
@@ -2098,7 +2738,9 @@
     "predicted_kt": 7.5,
     "actual_kt": 14.8,
     "error_kt": -7.3,
-    "abs_error_kt": 7.3
+    "abs_error_kt": 7.3,
+    "nws_kt": 6.9,
+    "nws_error_kt": -7.9
   },
   {
     "station": "CAMM2",
@@ -2109,7 +2751,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 9.7,
     "error_kt": -3.6,
-    "abs_error_kt": 3.6
+    "abs_error_kt": 3.6,
+    "nws_kt": 5.0,
+    "nws_error_kt": -4.7
   },
   {
     "station": "TPLM2",
@@ -2120,7 +2764,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 11.1,
     "error_kt": -5.4,
-    "abs_error_kt": 5.4
+    "abs_error_kt": 5.4,
+    "nws_kt": 6.1,
+    "nws_error_kt": -5.0
   },
   {
     "station": "APAM2",
@@ -2131,7 +2777,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 8.0,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 8.0,
+    "nws_error_kt": 0.0
   },
   {
     "station": "SLIM2",
@@ -2142,7 +2790,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 14.8,
     "error_kt": -5.3,
-    "abs_error_kt": 5.3
+    "abs_error_kt": 5.3,
+    "nws_kt": 8.0,
+    "nws_error_kt": -6.8
   },
   {
     "station": "CAMM2",
@@ -2153,7 +2803,9 @@
     "predicted_kt": 8.1,
     "actual_kt": 9.7,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 8.2,
+    "nws_error_kt": -1.5
   },
   {
     "station": "TPLM2",
@@ -2164,7 +2816,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 11.1,
     "error_kt": -3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 8.1,
+    "nws_error_kt": -3.0
   },
   {
     "station": "APAM2",
@@ -2175,7 +2829,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 8.0,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 7.1,
+    "nws_error_kt": -0.9
   },
   {
     "station": "SLIM2",
@@ -2186,7 +2842,9 @@
     "predicted_kt": 13.9,
     "actual_kt": 14.8,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 9.8,
+    "nws_error_kt": -5.0
   },
   {
     "station": "CAMM2",
@@ -2197,7 +2855,9 @@
     "predicted_kt": 8.3,
     "actual_kt": 9.7,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 7.4,
+    "nws_error_kt": -2.3
   },
   {
     "station": "TPLM2",
@@ -2208,7 +2868,9 @@
     "predicted_kt": 4.6,
     "actual_kt": 7.0,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 5.4,
+    "nws_error_kt": -1.6
   },
   {
     "station": "APAM2",
@@ -2219,7 +2881,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 7.3,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 5.4,
+    "nws_error_kt": -1.9
   },
   {
     "station": "SLIM2",
@@ -2230,7 +2894,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 14.8,
     "error_kt": -8.8,
-    "abs_error_kt": 8.8
+    "abs_error_kt": 8.8,
+    "nws_kt": 6.9,
+    "nws_error_kt": -7.9
   },
   {
     "station": "CAMM2",
@@ -2241,7 +2907,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 9.2,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 5.9,
+    "nws_error_kt": -3.3
   },
   {
     "station": "TPLM2",
@@ -2252,7 +2920,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 7.0,
     "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 3.7,
+    "nws_error_kt": -3.3
   },
   {
     "station": "APAM2",
@@ -2263,7 +2933,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 7.3,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 3.8,
+    "nws_error_kt": -3.5
   },
   {
     "station": "SLIM2",
@@ -2274,7 +2946,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 14.8,
     "error_kt": -8.1,
-    "abs_error_kt": 8.1
+    "abs_error_kt": 8.1,
+    "nws_kt": 6.2,
+    "nws_error_kt": -8.6
   },
   {
     "station": "CAMM2",
@@ -2285,7 +2959,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 9.2,
     "error_kt": -2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 6.5,
+    "nws_error_kt": -2.7
   },
   {
     "station": "TPLM2",
@@ -2296,7 +2972,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 7.0,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 4.2,
+    "nws_error_kt": -2.8
   },
   {
     "station": "APAM2",
@@ -2307,7 +2985,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 7.3,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 3.4,
+    "nws_error_kt": -3.9
   },
   {
     "station": "SLIM2",
@@ -2318,7 +2998,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 14.8,
     "error_kt": -4.7,
-    "abs_error_kt": 4.7
+    "abs_error_kt": 4.7,
+    "nws_kt": 8.7,
+    "nws_error_kt": -6.1
   },
   {
     "station": "CAMM2",
@@ -2329,7 +3011,9 @@
     "predicted_kt": 7.2,
     "actual_kt": 9.2,
     "error_kt": -2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 8.1,
+    "nws_error_kt": -1.1
   },
   {
     "station": "TPLM2",
@@ -2340,7 +3024,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 7.0,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 5.0,
+    "nws_error_kt": -2.0
   },
   {
     "station": "APAM2",
@@ -2351,7 +3037,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 7.3,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 8.3,
+    "nws_error_kt": 1.0
   },
   {
     "station": "SLIM2",
@@ -2362,7 +3050,9 @@
     "predicted_kt": 9.4,
     "actual_kt": 14.8,
     "error_kt": -5.4,
-    "abs_error_kt": 5.4
+    "abs_error_kt": 5.4,
+    "nws_kt": 8.8,
+    "nws_error_kt": -6.0
   },
   {
     "station": "CAMM2",
@@ -2373,7 +3063,9 @@
     "predicted_kt": 8.4,
     "actual_kt": 9.2,
     "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 8.1,
+    "nws_error_kt": -1.1
   },
   {
     "station": "TPLM2",
@@ -2384,7 +3076,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 2.9,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 7.2,
+    "nws_error_kt": 4.3
   },
   {
     "station": "APAM2",
@@ -2395,7 +3089,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 6.3,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 8.0,
+    "nws_error_kt": 1.7
   },
   {
     "station": "SLIM2",
@@ -2406,7 +3102,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 10.4,
     "error_kt": -4.2,
-    "abs_error_kt": 4.2
+    "abs_error_kt": 4.2,
+    "nws_kt": 6.1,
+    "nws_error_kt": -4.3
   },
   {
     "station": "CAMM2",
@@ -2417,7 +3115,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 8.7,
     "error_kt": -2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 7.8,
+    "nws_error_kt": -0.9
   },
   {
     "station": "TPLM2",
@@ -2428,7 +3128,9 @@
     "predicted_kt": 10.7,
     "actual_kt": 2.9,
     "error_kt": 7.8,
-    "abs_error_kt": 7.8
+    "abs_error_kt": 7.8,
+    "nws_kt": 9.0,
+    "nws_error_kt": 6.1
   },
   {
     "station": "APAM2",
@@ -2439,7 +3141,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 6.3,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 8.6,
+    "nws_error_kt": 2.3
   },
   {
     "station": "SLIM2",
@@ -2450,7 +3154,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 10.4,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 8.2,
+    "nws_error_kt": -2.2
   },
   {
     "station": "CAMM2",
@@ -2461,7 +3167,9 @@
     "predicted_kt": 8.2,
     "actual_kt": 8.7,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 7.4,
+    "nws_error_kt": -1.3
   },
   {
     "station": "TPLM2",
@@ -2472,7 +3180,9 @@
     "predicted_kt": 7.9,
     "actual_kt": 2.9,
     "error_kt": 5.0,
-    "abs_error_kt": 5.0
+    "abs_error_kt": 5.0,
+    "nws_kt": 5.8,
+    "nws_error_kt": 2.9
   },
   {
     "station": "APAM2",
@@ -2483,7 +3193,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 6.3,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 6.1,
+    "nws_error_kt": -0.2
   },
   {
     "station": "SLIM2",
@@ -2494,7 +3206,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 10.4,
     "error_kt": -3.4,
-    "abs_error_kt": 3.4
+    "abs_error_kt": 3.4,
+    "nws_kt": 4.9,
+    "nws_error_kt": -5.5
   },
   {
     "station": "CAMM2",
@@ -2505,7 +3219,9 @@
     "predicted_kt": 7.2,
     "actual_kt": 8.7,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 8.2,
+    "nws_error_kt": -0.5
   },
   {
     "station": "TPLM2",
@@ -2516,7 +3232,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 2.9,
     "error_kt": 1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 3.5,
+    "nws_error_kt": 0.6
   },
   {
     "station": "APAM2",
@@ -2527,7 +3245,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 6.3,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 3.6,
+    "nws_error_kt": -2.7
   },
   {
     "station": "SLIM2",
@@ -2538,7 +3258,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 10.4,
     "error_kt": -5.4,
-    "abs_error_kt": 5.4
+    "abs_error_kt": 5.4,
+    "nws_kt": 5.6,
+    "nws_error_kt": -4.8
   },
   {
     "station": "CAMM2",
@@ -2549,7 +3271,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 8.7,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 6.6,
+    "nws_error_kt": -2.1
   },
   {
     "station": "TPLM2",
@@ -2560,7 +3284,9 @@
     "predicted_kt": 7.5,
     "actual_kt": 2.9,
     "error_kt": 4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 7.7,
+    "nws_error_kt": 4.8
   },
   {
     "station": "APAM2",
@@ -2571,7 +3297,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 6.3,
     "error_kt": -2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 4.8,
+    "nws_error_kt": -1.5
   },
   {
     "station": "SLIM2",
@@ -2582,7 +3310,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 10.4,
     "error_kt": -4.0,
-    "abs_error_kt": 4.0
+    "abs_error_kt": 4.0,
+    "nws_kt": 6.5,
+    "nws_error_kt": -3.9
   },
   {
     "station": "CAMM2",
@@ -2593,7 +3323,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 8.7,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 6.0,
+    "nws_error_kt": -2.7
   },
   {
     "station": "TPLM2",
@@ -2604,7 +3336,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 7.0,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 11.7,
+    "nws_error_kt": 4.7
   },
   {
     "station": "APAM2",
@@ -2615,7 +3349,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 3.4,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 11.4,
+    "nws_error_kt": 8.0
   },
   {
     "station": "SLIM2",
@@ -2626,7 +3362,9 @@
     "predicted_kt": 7.6,
     "actual_kt": 6.6,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 8.3,
+    "nws_error_kt": 1.7
   },
   {
     "station": "CAMM2",
@@ -2637,7 +3375,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 6.9,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 8.5,
+    "nws_error_kt": 1.6
   },
   {
     "station": "TPLM2",
@@ -2648,7 +3388,9 @@
     "predicted_kt": 8.9,
     "actual_kt": 7.0,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 9.7,
+    "nws_error_kt": 2.7
   },
   {
     "station": "APAM2",
@@ -2659,7 +3401,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 3.4,
     "error_kt": 2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 9.3,
+    "nws_error_kt": 5.9
   },
   {
     "station": "SLIM2",
@@ -2670,7 +3414,9 @@
     "predicted_kt": 5.5,
     "actual_kt": 6.6,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 4.5,
+    "nws_error_kt": -2.1
   },
   {
     "station": "CAMM2",
@@ -2681,7 +3427,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 6.9,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 6.0,
+    "nws_error_kt": -0.9
   },
   {
     "station": "TPLM2",
@@ -2692,7 +3440,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 7.0,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 6.8,
+    "nws_error_kt": -0.2
   },
   {
     "station": "APAM2",
@@ -2703,7 +3453,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 3.4,
     "error_kt": 2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 7.2,
+    "nws_error_kt": 3.8
   },
   {
     "station": "SLIM2",
@@ -2714,7 +3466,9 @@
     "predicted_kt": 4.0,
     "actual_kt": 6.6,
     "error_kt": -2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 4.5,
+    "nws_error_kt": -2.1
   },
   {
     "station": "CAMM2",
@@ -2725,7 +3479,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 6.9,
     "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 6.2,
+    "nws_error_kt": -0.7
   },
   {
     "station": "TPLM2",
@@ -2736,7 +3492,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 7.0,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 6.9,
+    "nws_error_kt": -0.1
   },
   {
     "station": "APAM2",
@@ -2747,7 +3505,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 3.4,
     "error_kt": 2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 7.2,
+    "nws_error_kt": 3.8
   },
   {
     "station": "SLIM2",
@@ -2758,7 +3518,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 6.6,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 4.3,
+    "nws_error_kt": -2.3
   },
   {
     "station": "CAMM2",
@@ -2769,7 +3531,9 @@
     "predicted_kt": 5.2,
     "actual_kt": 6.9,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 6.1,
+    "nws_error_kt": -0.8
   },
   {
     "station": "TPLM2",
@@ -2780,7 +3544,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 9.9,
     "error_kt": -4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 12.8,
+    "nws_error_kt": 2.9
   },
   {
     "station": "APAM2",
@@ -2791,7 +3557,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 6.6,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 12.1,
+    "nws_error_kt": 5.5
   },
   {
     "station": "SLIM2",
@@ -2802,7 +3570,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 8.3,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 9.0,
+    "nws_error_kt": 0.7
   },
   {
     "station": "CAMM2",
@@ -2813,7 +3583,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 5.1,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 8.9,
+    "nws_error_kt": 3.8
   },
   {
     "station": "TPLM2",
@@ -2824,7 +3596,9 @@
     "predicted_kt": 7.7,
     "actual_kt": 9.9,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 8.9,
+    "nws_error_kt": -1.0
   },
   {
     "station": "APAM2",
@@ -2835,7 +3609,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 6.6,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 8.3,
+    "nws_error_kt": 1.7
   },
   {
     "station": "SLIM2",
@@ -2846,7 +3622,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 8.3,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 5.4,
+    "nws_error_kt": -2.9
   },
   {
     "station": "CAMM2",
@@ -2857,7 +3635,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 5.1,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 6.8,
+    "nws_error_kt": 1.7
   },
   {
     "station": "TPLM2",
@@ -2868,7 +3648,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 9.9,
     "error_kt": -6.1,
-    "abs_error_kt": 6.1
+    "abs_error_kt": 6.1,
+    "nws_kt": 3.7,
+    "nws_error_kt": -6.2
   },
   {
     "station": "APAM2",
@@ -2879,7 +3661,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 6.6,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 4.4,
+    "nws_error_kt": -2.2
   },
   {
     "station": "SLIM2",
@@ -2890,7 +3674,9 @@
     "predicted_kt": 3.1,
     "actual_kt": 8.3,
     "error_kt": -5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 3.5,
+    "nws_error_kt": -4.8
   },
   {
     "station": "CAMM2",
@@ -2901,7 +3687,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 5.1,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 4.5,
+    "nws_error_kt": -0.6
   },
   {
     "station": "TPLM2",
@@ -2912,7 +3700,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 9.9,
     "error_kt": -3.4,
-    "abs_error_kt": 3.4
+    "abs_error_kt": 3.4,
+    "nws_kt": 6.5,
+    "nws_error_kt": -3.4
   },
   {
     "station": "APAM2",
@@ -2923,7 +3713,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 6.6,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 5.8,
+    "nws_error_kt": -0.8
   },
   {
     "station": "SLIM2",
@@ -2934,7 +3726,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 8.3,
     "error_kt": -4.8,
-    "abs_error_kt": 4.8
+    "abs_error_kt": 4.8,
+    "nws_kt": 3.6,
+    "nws_error_kt": -4.7
   },
   {
     "station": "CAMM2",
@@ -2945,7 +3739,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 5.1,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 2.4,
+    "nws_error_kt": -2.7
   },
   {
     "station": "TPLM2",
@@ -2956,7 +3752,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 7.0,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 12.8,
+    "nws_error_kt": 5.8
   },
   {
     "station": "APAM2",
@@ -2967,7 +3765,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 5.3,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 14.3,
+    "nws_error_kt": 9.0
   },
   {
     "station": "SLIM2",
@@ -2978,7 +3778,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 4.5,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 3.4,
+    "nws_error_kt": -1.1
   },
   {
     "station": "CAMM2",
@@ -2989,7 +3791,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 6.6,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 8.5,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -3000,7 +3804,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 7.0,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 9.2,
+    "nws_error_kt": 2.2
   },
   {
     "station": "APAM2",
@@ -3011,7 +3817,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 5.3,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 8.8,
+    "nws_error_kt": 3.5
   },
   {
     "station": "SLIM2",
@@ -3022,7 +3830,9 @@
     "predicted_kt": 5.5,
     "actual_kt": 4.5,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 5.2,
+    "nws_error_kt": 0.7
   },
   {
     "station": "CAMM2",
@@ -3033,7 +3843,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 6.6,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 6.0,
+    "nws_error_kt": -0.6
   },
   {
     "station": "TPLM2",
@@ -3044,7 +3856,9 @@
     "predicted_kt": 4.0,
     "actual_kt": 7.0,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 5.2,
+    "nws_error_kt": -1.8
   },
   {
     "station": "APAM2",
@@ -3055,7 +3869,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 5.3,
     "error_kt": -0.4,
-    "abs_error_kt": 0.4
+    "abs_error_kt": 0.4,
+    "nws_kt": 6.8,
+    "nws_error_kt": 1.5
   },
   {
     "station": "SLIM2",
@@ -3066,7 +3882,9 @@
     "predicted_kt": 2.4,
     "actual_kt": 4.5,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 4.4,
+    "nws_error_kt": -0.1
   },
   {
     "station": "CAMM2",
@@ -3077,7 +3895,9 @@
     "predicted_kt": 4.5,
     "actual_kt": 6.6,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 4.0,
+    "nws_error_kt": -2.6
   },
   {
     "station": "TPLM2",
@@ -3088,7 +3908,9 @@
     "predicted_kt": 8.1,
     "actual_kt": 7.0,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 4.2,
+    "nws_error_kt": -2.8
   },
   {
     "station": "APAM2",
@@ -3099,7 +3921,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 5.3,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 5.9,
+    "nws_error_kt": 0.6
   },
   {
     "station": "SLIM2",
@@ -3110,7 +3934,9 @@
     "predicted_kt": 2.3,
     "actual_kt": 4.5,
     "error_kt": -2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 3.3,
+    "nws_error_kt": -1.2
   },
   {
     "station": "CAMM2",
@@ -3121,7 +3947,9 @@
     "predicted_kt": 3.3,
     "actual_kt": 6.6,
     "error_kt": -3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 3.2,
+    "nws_error_kt": -3.4
   },
   {
     "station": "TPLM2",
@@ -3132,7 +3960,9 @@
     "predicted_kt": 5.5,
     "actual_kt": 8.0,
     "error_kt": -2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 10.0,
+    "nws_error_kt": 2.0
   },
   {
     "station": "APAM2",
@@ -3143,7 +3973,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 4.7,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 10.7,
+    "nws_error_kt": 6.0
   },
   {
     "station": "SLIM2",
@@ -3154,7 +3986,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 0.9,
     "error_kt": 3.9,
-    "abs_error_kt": 3.9
+    "abs_error_kt": 3.9,
+    "nws_kt": 6.9,
+    "nws_error_kt": 6.0
   },
   {
     "station": "CAMM2",
@@ -3165,7 +3999,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 5.0,
     "error_kt": 0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 6.1,
+    "nws_error_kt": 1.1
   },
   {
     "station": "TPLM2",
@@ -3176,7 +4012,9 @@
     "predicted_kt": 7.3,
     "actual_kt": 8.0,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 12.5,
+    "nws_error_kt": 4.5
   },
   {
     "station": "APAM2",
@@ -3187,7 +4025,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 4.7,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 12.9,
+    "nws_error_kt": 8.2
   },
   {
     "station": "SLIM2",
@@ -3198,7 +4038,9 @@
     "predicted_kt": 4.3,
     "actual_kt": 0.9,
     "error_kt": 3.4,
-    "abs_error_kt": 3.4
+    "abs_error_kt": 3.4,
+    "nws_kt": 4.8,
+    "nws_error_kt": 3.9
   },
   {
     "station": "CAMM2",
@@ -3209,7 +4051,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 5.0,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 5.3,
+    "nws_error_kt": 0.3
   },
   {
     "station": "TPLM2",
@@ -3220,7 +4064,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 8.0,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 7.5,
+    "nws_error_kt": -0.5
   },
   {
     "station": "APAM2",
@@ -3231,7 +4077,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 4.7,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 6.7,
+    "nws_error_kt": 2.0
   },
   {
     "station": "SLIM2",
@@ -3242,7 +4090,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 0.9,
     "error_kt": 2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 4.3,
+    "nws_error_kt": 3.4
   },
   {
     "station": "CAMM2",
@@ -3253,7 +4103,9 @@
     "predicted_kt": 3.9,
     "actual_kt": 5.0,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 3.2,
+    "nws_error_kt": -1.8
   },
   {
     "station": "TPLM2",
@@ -3264,7 +4116,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 8.0,
     "error_kt": -4.3,
-    "abs_error_kt": 4.3
+    "abs_error_kt": 4.3,
+    "nws_kt": 4.3,
+    "nws_error_kt": -3.7
   },
   {
     "station": "APAM2",
@@ -3275,7 +4129,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 4.7,
     "error_kt": 0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 6.2,
+    "nws_error_kt": 1.5
   },
   {
     "station": "SLIM2",
@@ -3286,7 +4142,9 @@
     "predicted_kt": 2.9,
     "actual_kt": 0.9,
     "error_kt": 2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 2.7,
+    "nws_error_kt": 1.8
   },
   {
     "station": "CAMM2",
@@ -3297,7 +4155,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 5.0,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 1.1,
+    "nws_error_kt": -3.9
   },
   {
     "station": "TPLM2",
@@ -3308,7 +4168,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 8.0,
     "error_kt": -4.8,
-    "abs_error_kt": 4.8
+    "abs_error_kt": 4.8,
+    "nws_kt": 6.1,
+    "nws_error_kt": -1.9
   },
   {
     "station": "APAM2",
@@ -3319,7 +4181,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 4.7,
     "error_kt": -0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 6.4,
+    "nws_error_kt": 1.7
   },
   {
     "station": "SLIM2",
@@ -3330,7 +4194,9 @@
     "predicted_kt": 2.5,
     "actual_kt": 0.9,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 3.6,
+    "nws_error_kt": 2.7
   },
   {
     "station": "CAMM2",
@@ -3341,7 +4207,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 5.0,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 3.7,
+    "nws_error_kt": -1.3
   },
   {
     "station": "TPLM2",
@@ -3352,7 +4220,9 @@
     "predicted_kt": 5.5,
     "actual_kt": 0.0,
     "error_kt": 5.5,
-    "abs_error_kt": 5.5
+    "abs_error_kt": 5.5,
+    "nws_kt": 11.4,
+    "nws_error_kt": 11.4
   },
   {
     "station": "APAM2",
@@ -3363,7 +4233,9 @@
     "predicted_kt": 2.6,
     "actual_kt": 2.9,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 11.2,
+    "nws_error_kt": 8.3
   },
   {
     "station": "SLIM2",
@@ -3374,7 +4246,9 @@
     "predicted_kt": 4.5,
     "actual_kt": 1.6,
     "error_kt": 2.9,
-    "abs_error_kt": 2.9
+    "abs_error_kt": 2.9,
+    "nws_kt": 4.5,
+    "nws_error_kt": 2.9
   },
   {
     "station": "CAMM2",
@@ -3385,7 +4259,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 5.8,
     "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 6.3,
+    "nws_error_kt": 0.5
   },
   {
     "station": "TPLM2",
@@ -3396,7 +4272,9 @@
     "predicted_kt": 7.2,
     "actual_kt": 0.0,
     "error_kt": 7.2,
-    "abs_error_kt": 7.2
+    "abs_error_kt": 7.2,
+    "nws_kt": 12.1,
+    "nws_error_kt": 12.1
   },
   {
     "station": "APAM2",
@@ -3407,7 +4285,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 2.9,
     "error_kt": 2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 12.0,
+    "nws_error_kt": 9.1
   },
   {
     "station": "SLIM2",
@@ -3418,7 +4298,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 1.6,
     "error_kt": 3.1,
-    "abs_error_kt": 3.1
+    "abs_error_kt": 3.1,
+    "nws_kt": 3.5,
+    "nws_error_kt": 1.9
   },
   {
     "station": "CAMM2",
@@ -3429,7 +4311,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 5.8,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 3.4,
+    "nws_error_kt": -2.4
   },
   {
     "station": "TPLM2",
@@ -3440,7 +4324,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 0.0,
     "error_kt": 3.8,
-    "abs_error_kt": 3.8
+    "abs_error_kt": 3.8,
+    "nws_kt": 5.5,
+    "nws_error_kt": 5.5
   },
   {
     "station": "APAM2",
@@ -3451,7 +4337,9 @@
     "predicted_kt": 4.0,
     "actual_kt": 2.9,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 5.9,
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -3462,7 +4350,9 @@
     "predicted_kt": 2.3,
     "actual_kt": 1.6,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 2.3,
+    "nws_error_kt": 0.7
   },
   {
     "station": "CAMM2",
@@ -3473,7 +4363,9 @@
     "predicted_kt": 3.3,
     "actual_kt": 5.8,
     "error_kt": -2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 3.5,
+    "nws_error_kt": -2.3
   },
   {
     "station": "TPLM2",
@@ -3484,7 +4376,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 0.0,
     "error_kt": 5.4,
-    "abs_error_kt": 5.4
+    "abs_error_kt": 5.4,
+    "nws_kt": 2.8,
+    "nws_error_kt": 2.8
   },
   {
     "station": "APAM2",
@@ -3495,7 +4389,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 2.9,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 5.7,
+    "nws_error_kt": 2.8
   },
   {
     "station": "SLIM2",
@@ -3506,7 +4402,9 @@
     "predicted_kt": 2.9,
     "actual_kt": 1.6,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 3.2,
+    "nws_error_kt": 1.6
   },
   {
     "station": "CAMM2",
@@ -3517,7 +4415,9 @@
     "predicted_kt": 2.8,
     "actual_kt": 5.8,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 4.0,
+    "nws_error_kt": -1.8
   },
   {
     "station": "TPLM2",
@@ -3528,7 +4428,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 5.1,
     "error_kt": 1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 10.6,
+    "nws_error_kt": 5.5
   },
   {
     "station": "APAM2",
@@ -3539,7 +4441,9 @@
     "predicted_kt": 4.5,
     "actual_kt": 2.3,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 8.6,
+    "nws_error_kt": 6.3
   },
   {
     "station": "SLIM2",
@@ -3550,7 +4454,9 @@
     "predicted_kt": 3.9,
     "actual_kt": 2.0,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 3.4,
+    "nws_error_kt": 1.4
   },
   {
     "station": "CAMM2",
@@ -3561,7 +4467,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 3.2,
     "error_kt": 2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 3.8,
+    "nws_error_kt": 0.6
   },
   {
     "station": "TPLM2",
@@ -3572,7 +4480,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 5.1,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 6.3,
+    "nws_error_kt": 1.2
   },
   {
     "station": "APAM2",
@@ -3583,7 +4493,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 2.3,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 5.9,
+    "nws_error_kt": 3.6
   },
   {
     "station": "SLIM2",
@@ -3594,7 +4506,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 2.0,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 0.8,
+    "nws_error_kt": -1.2
   },
   {
     "station": "CAMM2",
@@ -3605,7 +4519,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 3.2,
     "error_kt": 0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 3.7,
+    "nws_error_kt": 0.5
   },
   {
     "station": "TPLM2",
@@ -3616,7 +4532,9 @@
     "predicted_kt": 3.9,
     "actual_kt": 5.1,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 5.5,
+    "nws_error_kt": 0.4
   },
   {
     "station": "APAM2",
@@ -3627,7 +4545,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 2.3,
     "error_kt": 2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 2.2,
+    "nws_error_kt": -0.1
   },
   {
     "station": "SLIM2",
@@ -3638,7 +4558,9 @@
     "predicted_kt": 2.3,
     "actual_kt": 2.0,
     "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 3.0,
+    "nws_error_kt": 1.0
   },
   {
     "station": "CAMM2",
@@ -3649,7 +4571,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 3.2,
     "error_kt": -0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 2.3,
+    "nws_error_kt": -0.9
   },
   {
     "station": "TPLM2",
@@ -3660,7 +4584,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 5.1,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 5.8,
+    "nws_error_kt": 0.7
   },
   {
     "station": "APAM2",
@@ -3671,7 +4597,9 @@
     "predicted_kt": 2.9,
     "actual_kt": 2.3,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 4.3,
+    "nws_error_kt": 2.0
   },
   {
     "station": "SLIM2",
@@ -3682,7 +4610,9 @@
     "predicted_kt": 2.7,
     "actual_kt": 2.0,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 0.8,
+    "nws_error_kt": -1.2
   },
   {
     "station": "CAMM2",
@@ -3693,7 +4623,9 @@
     "predicted_kt": 2.2,
     "actual_kt": 3.2,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 2.1,
+    "nws_error_kt": -1.1
   },
   {
     "station": "TPLM2",
@@ -3704,7 +4636,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 2.9,
     "error_kt": 3.7,
-    "abs_error_kt": 3.7
+    "abs_error_kt": 3.7,
+    "nws_kt": 7.1,
+    "nws_error_kt": 4.2
   },
   {
     "station": "APAM2",
@@ -3715,7 +4649,9 @@
     "predicted_kt": 4.0,
     "actual_kt": 2.3,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 8.0,
+    "nws_error_kt": 5.7
   },
   {
     "station": "SLIM2",
@@ -3726,7 +4662,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 2.0,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 3.4,
+    "nws_error_kt": 1.4
   },
   {
     "station": "CAMM2",
@@ -3737,7 +4675,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 0.6,
     "error_kt": 4.3,
-    "abs_error_kt": 4.3
+    "abs_error_kt": 4.3,
+    "nws_kt": 3.2,
+    "nws_error_kt": 2.6
   },
   {
     "station": "TPLM2",
@@ -3748,7 +4688,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 2.9,
     "error_kt": 3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 4.7,
+    "nws_error_kt": 1.8
   },
   {
     "station": "APAM2",
@@ -3759,7 +4701,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 2.3,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 4.5,
+    "nws_error_kt": 2.2
   },
   {
     "station": "SLIM2",
@@ -3770,7 +4714,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 2.0,
     "error_kt": 1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 1.6,
+    "nws_error_kt": -0.4
   },
   {
     "station": "CAMM2",
@@ -3781,7 +4727,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 0.6,
     "error_kt": 3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 2.6,
+    "nws_error_kt": 2.0
   },
   {
     "station": "TPLM2",
@@ -3792,7 +4740,9 @@
     "predicted_kt": 4.1,
     "actual_kt": 2.9,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 6.3,
+    "nws_error_kt": 3.4
   },
   {
     "station": "APAM2",
@@ -3803,7 +4753,9 @@
     "predicted_kt": 4.4,
     "actual_kt": 2.3,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 5.7,
+    "nws_error_kt": 3.4
   },
   {
     "station": "SLIM2",
@@ -3814,7 +4766,9 @@
     "predicted_kt": 4.2,
     "actual_kt": 2.0,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 2.3,
+    "nws_error_kt": 0.3
   },
   {
     "station": "CAMM2",
@@ -3825,7 +4779,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 0.6,
     "error_kt": 4.2,
-    "abs_error_kt": 4.2
+    "abs_error_kt": 4.2,
+    "nws_kt": 2.3,
+    "nws_error_kt": 1.7
   },
   {
     "station": "TPLM2",
@@ -3836,7 +4792,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 2.9,
     "error_kt": 2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 5.7,
+    "nws_error_kt": 2.8
   },
   {
     "station": "APAM2",
@@ -3847,7 +4805,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 2.3,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 6.8,
+    "nws_error_kt": 4.5
   },
   {
     "station": "SLIM2",
@@ -3858,7 +4818,9 @@
     "predicted_kt": 2.6,
     "actual_kt": 2.0,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 1.6,
+    "nws_error_kt": -0.4
   },
   {
     "station": "CAMM2",
@@ -3869,7 +4831,9 @@
     "predicted_kt": 2.0,
     "actual_kt": 0.6,
     "error_kt": 1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 2.5,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -3880,7 +4844,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 6.0,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 6.4,
+    "nws_error_kt": 0.4
   },
   {
     "station": "APAM2",
@@ -3891,7 +4857,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 2.6,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 6.6,
+    "nws_error_kt": 4.0
   },
   {
     "station": "SLIM2",
@@ -3902,7 +4870,9 @@
     "predicted_kt": 2.3,
     "actual_kt": 1.5,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 2.0,
+    "nws_error_kt": 0.5
   },
   {
     "station": "CAMM2",
@@ -3913,7 +4883,9 @@
     "predicted_kt": 5.0,
     "actual_kt": 1.7,
     "error_kt": 3.3,
-    "abs_error_kt": 3.3
+    "abs_error_kt": 3.3,
+    "nws_kt": 3.6,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -3924,7 +4896,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 6.0,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 3.0,
+    "nws_error_kt": -3.0
   },
   {
     "station": "APAM2",
@@ -3935,7 +4909,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 2.6,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 1.8,
+    "nws_error_kt": -0.8
   },
   {
     "station": "SLIM2",
@@ -3946,7 +4922,9 @@
     "predicted_kt": 1.6,
     "actual_kt": 1.5,
     "error_kt": 0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 2.2,
+    "nws_error_kt": 0.7
   },
   {
     "station": "CAMM2",
@@ -3957,7 +4935,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 1.7,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 3.0,
+    "nws_error_kt": 1.3
   },
   {
     "station": "TPLM2",
@@ -3968,7 +4948,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 6.0,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 7.5,
+    "nws_error_kt": 1.5
   },
   {
     "station": "APAM2",
@@ -3979,7 +4961,9 @@
     "predicted_kt": 2.6,
     "actual_kt": 2.6,
     "error_kt": -0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 7.4,
+    "nws_error_kt": 4.8
   },
   {
     "station": "SLIM2",
@@ -3990,7 +4974,9 @@
     "predicted_kt": 2.5,
     "actual_kt": 1.5,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 2.4,
+    "nws_error_kt": 0.9
   },
   {
     "station": "CAMM2",
@@ -4001,7 +4987,9 @@
     "predicted_kt": 2.0,
     "actual_kt": 1.7,
     "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 3.5,
+    "nws_error_kt": 1.8
   },
   {
     "station": "TPLM2",
@@ -4012,7 +5000,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 0.0,
     "error_kt": 6.4,
-    "abs_error_kt": 6.4
+    "abs_error_kt": 6.4,
+    "nws_kt": 7.0,
+    "nws_error_kt": 7.0
   },
   {
     "station": "APAM2",
@@ -4023,7 +5013,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 2.1,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 6.5,
+    "nws_error_kt": 4.4
   },
   {
     "station": "SLIM2",
@@ -4034,7 +5026,9 @@
     "predicted_kt": 2.7,
     "actual_kt": 1.0,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 1.3,
+    "nws_error_kt": 0.3
   },
   {
     "station": "CAMM2",
@@ -4045,7 +5039,9 @@
     "predicted_kt": 4.3,
     "actual_kt": 2.1,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 4.0,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -4056,7 +5052,9 @@
     "predicted_kt": 4.6,
     "actual_kt": 0.0,
     "error_kt": 4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 6.3,
+    "nws_error_kt": 6.3
   },
   {
     "station": "APAM2",
@@ -4067,7 +5065,9 @@
     "predicted_kt": 3.1,
     "actual_kt": 2.1,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 5.8,
+    "nws_error_kt": 3.7
   },
   {
     "station": "SLIM2",
@@ -4078,7 +5078,9 @@
     "predicted_kt": 2.9,
     "actual_kt": 1.0,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 4.2,
+    "nws_error_kt": 3.2
   },
   {
     "station": "CAMM2",
@@ -4089,7 +5091,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 2.1,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 3.6,
+    "nws_error_kt": 1.5
   },
   {
     "station": "TPLM2",
@@ -4100,7 +5104,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 0.0,
     "error_kt": 5.1,
-    "abs_error_kt": 5.1
+    "abs_error_kt": 5.1,
+    "nws_kt": 4.3,
+    "nws_error_kt": 4.3
   },
   {
     "station": "APAM2",
@@ -4111,7 +5117,9 @@
     "predicted_kt": 2.3,
     "actual_kt": 2.1,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 2.6,
+    "nws_error_kt": 0.5
   },
   {
     "station": "SLIM2",
@@ -4122,7 +5130,9 @@
     "predicted_kt": 4.5,
     "actual_kt": 1.0,
     "error_kt": 3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 2.4,
+    "nws_error_kt": 1.4
   },
   {
     "station": "CAMM2",
@@ -4133,7 +5143,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 2.1,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 1.6,
+    "nws_error_kt": -0.5
   },
   {
     "station": "TPLM2",
@@ -4144,7 +5156,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 5.1,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 8.0,
+    "nws_error_kt": 2.9
   },
   {
     "station": "APAM2",
@@ -4155,7 +5169,9 @@
     "predicted_kt": 3.3,
     "actual_kt": 0.8,
     "error_kt": 2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 6.6,
+    "nws_error_kt": 5.8
   },
   {
     "station": "SLIM2",
@@ -4166,7 +5182,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 3.6,
     "error_kt": 1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 2.3,
+    "nws_error_kt": -1.3
   },
   {
     "station": "CAMM2",
@@ -4177,7 +5195,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 4.7,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 4.6,
+    "nws_error_kt": -0.1
   },
   {
     "station": "TPLM2",
@@ -4188,7 +5208,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 5.1,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 5.5,
+    "nws_error_kt": 0.4
   },
   {
     "station": "APAM2",
@@ -4199,7 +5221,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 0.8,
     "error_kt": 2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 1.8,
+    "nws_error_kt": 1.0
   },
   {
     "station": "SLIM2",
@@ -4210,7 +5234,9 @@
     "predicted_kt": 4.2,
     "actual_kt": 3.6,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 3.8,
+    "nws_error_kt": 0.2
   },
   {
     "station": "CAMM2",
@@ -4221,7 +5247,9 @@
     "predicted_kt": 3.3,
     "actual_kt": 4.7,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 4.3,
+    "nws_error_kt": -0.4
   },
   {
     "station": "TPLM2",
@@ -4232,7 +5260,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 5.1,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 5.7,
+    "nws_error_kt": 0.6
   },
   {
     "station": "APAM2",
@@ -4243,7 +5273,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 0.8,
     "error_kt": 3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 1.8,
+    "nws_error_kt": 1.0
   },
   {
     "station": "SLIM2",
@@ -4254,7 +5286,9 @@
     "predicted_kt": 3.1,
     "actual_kt": 3.6,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 3.6,
+    "nws_error_kt": 0.0
   },
   {
     "station": "CAMM2",
@@ -4265,7 +5299,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 4.7,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 4.0,
+    "nws_error_kt": -0.7
   },
   {
     "station": "TPLM2",
@@ -4276,7 +5312,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 0.0,
     "error_kt": 6.7,
-    "abs_error_kt": 6.7
+    "abs_error_kt": 6.7,
+    "nws_kt": 7.4,
+    "nws_error_kt": 7.4
   },
   {
     "station": "APAM2",
@@ -4287,7 +5325,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 1.4,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 5.5,
+    "nws_error_kt": 4.1
   },
   {
     "station": "SLIM2",
@@ -4298,7 +5338,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 7.6,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 5.1,
+    "nws_error_kt": -2.5
   },
   {
     "station": "CAMM2",
@@ -4309,7 +5351,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 4.1,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 3.2,
+    "nws_error_kt": -0.9
   },
   {
     "station": "TPLM2",
@@ -4320,7 +5364,9 @@
     "predicted_kt": 5.2,
     "actual_kt": 0.0,
     "error_kt": 5.2,
-    "abs_error_kt": 5.2
+    "abs_error_kt": 5.2,
+    "nws_kt": 5.1,
+    "nws_error_kt": 5.1
   },
   {
     "station": "APAM2",
@@ -4331,7 +5377,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 1.4,
     "error_kt": 1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 4.4,
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -4342,7 +5390,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 7.6,
     "error_kt": -2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 4.6,
+    "nws_error_kt": -3.0
   },
   {
     "station": "CAMM2",
@@ -4353,7 +5403,9 @@
     "predicted_kt": 3.9,
     "actual_kt": 4.1,
     "error_kt": -0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 2.5,
+    "nws_error_kt": -1.6
   },
   {
     "station": "TPLM2",
@@ -4364,7 +5416,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 0.0,
     "error_kt": 4.7,
-    "abs_error_kt": 4.7
+    "abs_error_kt": 4.7,
+    "nws_kt": 2.8,
+    "nws_error_kt": 2.8
   },
   {
     "station": "APAM2",
@@ -4375,7 +5429,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 1.4,
     "error_kt": 1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 2.6,
+    "nws_error_kt": 1.2
   },
   {
     "station": "SLIM2",
@@ -4386,7 +5442,9 @@
     "predicted_kt": 3.7,
     "actual_kt": 7.6,
     "error_kt": -3.9,
-    "abs_error_kt": 3.9
+    "abs_error_kt": 3.9,
+    "nws_kt": 5.9,
+    "nws_error_kt": -1.7
   },
   {
     "station": "CAMM2",
@@ -4397,7 +5455,9 @@
     "predicted_kt": 3.1,
     "actual_kt": 4.1,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 4.3,
+    "nws_error_kt": 0.2
   },
   {
     "station": "TPLM2",
@@ -4408,7 +5468,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 0.0,
     "error_kt": 3.6,
-    "abs_error_kt": 3.6
+    "abs_error_kt": 3.6,
+    "nws_kt": 3.2,
+    "nws_error_kt": 3.2
   },
   {
     "station": "APAM2",
@@ -4419,7 +5481,9 @@
     "predicted_kt": 2.7,
     "actual_kt": 1.4,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 1.9,
+    "nws_error_kt": 0.5
   },
   {
     "station": "SLIM2",
@@ -4430,7 +5494,9 @@
     "predicted_kt": 3.8,
     "actual_kt": 7.6,
     "error_kt": -3.8,
-    "abs_error_kt": 3.8
+    "abs_error_kt": 3.8,
+    "nws_kt": 4.7,
+    "nws_error_kt": -2.9
   },
   {
     "station": "CAMM2",
@@ -4441,7 +5507,9 @@
     "predicted_kt": 3.5,
     "actual_kt": 4.1,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 3.8,
+    "nws_error_kt": -0.3
   },
   {
     "station": "TPLM2",
@@ -4452,7 +5520,9 @@
     "predicted_kt": 6.0,
     "actual_kt": 4.1,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 6.6,
+    "nws_error_kt": 2.5
   },
   {
     "station": "APAM2",
@@ -4463,7 +5533,9 @@
     "predicted_kt": 3.0,
     "actual_kt": 1.5,
     "error_kt": 1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 4.5,
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -4474,7 +5546,9 @@
     "predicted_kt": 2.6,
     "actual_kt": 3.4,
     "error_kt": -0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 3.1,
+    "nws_error_kt": -0.3
   },
   {
     "station": "CAMM2",
@@ -4485,7 +5559,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 3.7,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 4.8,
+    "nws_error_kt": 1.1
   },
   {
     "station": "TPLM2",
@@ -4496,7 +5572,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 4.1,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 1.4,
+    "nws_error_kt": -2.7
   },
   {
     "station": "APAM2",
@@ -4507,7 +5585,9 @@
     "predicted_kt": 2.4,
     "actual_kt": 1.5,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 4.4,
+    "nws_error_kt": 2.9
   },
   {
     "station": "SLIM2",
@@ -4518,7 +5598,9 @@
     "predicted_kt": 2.7,
     "actual_kt": 3.4,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 3.1,
+    "nws_error_kt": -0.3
   },
   {
     "station": "CAMM2",
@@ -4529,7 +5611,9 @@
     "predicted_kt": 3.1,
     "actual_kt": 3.7,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 3.8,
+    "nws_error_kt": 0.1
   },
   {
     "station": "TPLM2",
@@ -4540,7 +5624,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 7.0,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 10.1,
+    "nws_error_kt": 3.1
   },
   {
     "station": "APAM2",
@@ -4551,7 +5637,9 @@
     "predicted_kt": 3.4,
     "actual_kt": 1.7,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 6.7,
+    "nws_error_kt": 5.0
   },
   {
     "station": "SLIM2",
@@ -4562,7 +5650,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 1.0,
     "error_kt": 2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 4.0,
+    "nws_error_kt": 3.0
   },
   {
     "station": "CAMM2",
@@ -4573,7 +5663,9 @@
     "predicted_kt": 4.2,
     "actual_kt": 4.1,
     "error_kt": 0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 5.5,
+    "nws_error_kt": 1.4
   },
   {
     "station": "TPLM2",
@@ -4584,7 +5676,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 7.0,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 7.2,
+    "nws_error_kt": 0.2
   },
   {
     "station": "APAM2",
@@ -4595,7 +5689,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 1.7,
     "error_kt": 3.4,
-    "abs_error_kt": 3.4
+    "abs_error_kt": 3.4,
+    "nws_kt": 4.4,
+    "nws_error_kt": 2.7
   },
   {
     "station": "SLIM2",
@@ -4606,7 +5702,9 @@
     "predicted_kt": 5.2,
     "actual_kt": 1.0,
     "error_kt": 4.2,
-    "abs_error_kt": 4.2
+    "abs_error_kt": 4.2,
+    "nws_kt": 4.6,
+    "nws_error_kt": 3.6
   },
   {
     "station": "CAMM2",
@@ -4617,7 +5715,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 4.1,
     "error_kt": 1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 4.8,
+    "nws_error_kt": 0.7
   },
   {
     "station": "TPLM2",
@@ -4628,7 +5728,9 @@
     "predicted_kt": 2.9,
     "actual_kt": 7.0,
     "error_kt": -4.1,
-    "abs_error_kt": 4.1
+    "abs_error_kt": 4.1,
+    "nws_kt": 2.9,
+    "nws_error_kt": -4.1
   },
   {
     "station": "APAM2",
@@ -4639,7 +5741,9 @@
     "predicted_kt": 2.4,
     "actual_kt": 1.7,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 3.1,
+    "nws_error_kt": 1.4
   },
   {
     "station": "SLIM2",
@@ -4650,7 +5754,9 @@
     "predicted_kt": 3.2,
     "actual_kt": 1.0,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 3.3,
+    "nws_error_kt": 2.3
   },
   {
     "station": "CAMM2",
@@ -4661,7 +5767,9 @@
     "predicted_kt": 2.1,
     "actual_kt": 4.1,
     "error_kt": -2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 3.2,
+    "nws_error_kt": -0.9
   },
   {
     "station": "TPLM2",
@@ -4672,7 +5780,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 1.9,
     "error_kt": 4.0,
-    "abs_error_kt": 4.0
+    "abs_error_kt": 4.0,
+    "nws_kt": 8.7,
+    "nws_error_kt": 6.8
   },
   {
     "station": "APAM2",
@@ -4683,7 +5793,9 @@
     "predicted_kt": 3.6,
     "actual_kt": 1.4,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 6.5,
+    "nws_error_kt": 5.1
   },
   {
     "station": "SLIM2",
@@ -4694,7 +5806,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 2.1,
     "error_kt": 2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 4.2,
+    "nws_error_kt": 2.1
   },
   {
     "station": "CAMM2",
@@ -4705,7 +5819,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 2.8,
     "error_kt": 2.5,
-    "abs_error_kt": 2.5
+    "abs_error_kt": 2.5,
+    "nws_kt": 5.7,
+    "nws_error_kt": 2.9
   },
   {
     "station": "TPLM2",
@@ -4716,7 +5832,9 @@
     "predicted_kt": 4.2,
     "actual_kt": 1.9,
     "error_kt": 2.3,
-    "abs_error_kt": 2.3
+    "abs_error_kt": 2.3,
+    "nws_kt": 3.2,
+    "nws_error_kt": 1.3
   },
   {
     "station": "APAM2",
@@ -4727,7 +5845,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 1.4,
     "error_kt": 3.9,
-    "abs_error_kt": 3.9
+    "abs_error_kt": 3.9,
+    "nws_kt": 3.6,
+    "nws_error_kt": 2.2
   },
   {
     "station": "SLIM2",
@@ -4738,7 +5858,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 2.1,
     "error_kt": 2.7,
-    "abs_error_kt": 2.7
+    "abs_error_kt": 2.7,
+    "nws_kt": 2.9,
+    "nws_error_kt": 0.8
   },
   {
     "station": "CAMM2",
@@ -4749,7 +5871,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 2.8,
     "error_kt": 2.6,
-    "abs_error_kt": 2.6
+    "abs_error_kt": 2.6,
+    "nws_kt": 4.8,
+    "nws_error_kt": 2.0
   },
   {
     "station": "TPLM2",
@@ -4760,7 +5884,9 @@
     "predicted_kt": 8.1,
     "actual_kt": 7.0,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 8.9,
+    "nws_error_kt": 1.9
   },
   {
     "station": "APAM2",
@@ -4771,7 +5897,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 3.4,
     "error_kt": 1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 6.7,
+    "nws_error_kt": 3.3
   },
   {
     "station": "SLIM2",
@@ -4782,7 +5910,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 3.5,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 6.1,
+    "nws_error_kt": 2.6
   },
   {
     "station": "CAMM2",
@@ -4793,7 +5923,9 @@
     "predicted_kt": 5.2,
     "actual_kt": 4.4,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 6.6,
+    "nws_error_kt": 2.2
   },
   {
     "station": "TPLM2",
@@ -4804,7 +5936,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 7.0,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 7.8,
+    "nws_error_kt": 0.8
   },
   {
     "station": "APAM2",
@@ -4815,7 +5949,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 3.4,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 7.2,
+    "nws_error_kt": 3.8
   },
   {
     "station": "SLIM2",
@@ -4826,7 +5962,9 @@
     "predicted_kt": 5.7,
     "actual_kt": 3.5,
     "error_kt": 2.2,
-    "abs_error_kt": 2.2
+    "abs_error_kt": 2.2,
+    "nws_kt": 4.6,
+    "nws_error_kt": 1.1
   },
   {
     "station": "CAMM2",
@@ -4837,7 +5975,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 4.4,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 5.9,
+    "nws_error_kt": 1.5
   },
   {
     "station": "TPLM2",
@@ -4848,7 +5988,9 @@
     "predicted_kt": 7.9,
     "actual_kt": 7.0,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 7.2,
+    "nws_error_kt": 0.2
   },
   {
     "station": "APAM2",
@@ -4859,7 +6001,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 3.4,
     "error_kt": 1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 6.0,
+    "nws_error_kt": 2.6
   },
   {
     "station": "SLIM2",
@@ -4870,7 +6014,9 @@
     "predicted_kt": 5.2,
     "actual_kt": 3.5,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 4.0,
+    "nws_error_kt": 0.5
   },
   {
     "station": "CAMM2",
@@ -4881,7 +6027,9 @@
     "predicted_kt": 5.1,
     "actual_kt": 4.4,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 6.1,
+    "nws_error_kt": 1.7
   },
   {
     "station": "TPLM2",
@@ -4892,7 +6040,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 12.1,
     "error_kt": -3.1,
-    "abs_error_kt": 3.1
+    "abs_error_kt": 3.1,
+    "nws_kt": 11.0,
+    "nws_error_kt": -1.1
   },
   {
     "station": "APAM2",
@@ -4903,7 +6053,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 5.1,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 9.2,
+    "nws_error_kt": 4.1
   },
   {
     "station": "SLIM2",
@@ -4914,7 +6066,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 6.2,
     "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 6.7,
+    "nws_error_kt": 0.5
   },
   {
     "station": "CAMM2",
@@ -4925,7 +6079,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 5.7,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 7.6,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -4936,7 +6092,9 @@
     "predicted_kt": 7.7,
     "actual_kt": 12.1,
     "error_kt": -4.4,
-    "abs_error_kt": 4.4
+    "abs_error_kt": 4.4,
+    "nws_kt": 10.6,
+    "nws_error_kt": -1.5
   },
   {
     "station": "APAM2",
@@ -4947,7 +6105,9 @@
     "predicted_kt": 6.2,
     "actual_kt": 5.1,
     "error_kt": 1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 9.3,
+    "nws_error_kt": 4.2
   },
   {
     "station": "SLIM2",
@@ -4958,7 +6118,9 @@
     "predicted_kt": 7.4,
     "actual_kt": 6.2,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 5.2,
+    "nws_error_kt": -1.0
   },
   {
     "station": "CAMM2",
@@ -4969,7 +6131,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 5.7,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 8.3,
+    "nws_error_kt": 2.6
   },
   {
     "station": "TPLM2",
@@ -4980,7 +6144,9 @@
     "predicted_kt": 7.4,
     "actual_kt": 12.1,
     "error_kt": -4.7,
-    "abs_error_kt": 4.7
+    "abs_error_kt": 4.7,
+    "nws_kt": 9.2,
+    "nws_error_kt": -2.9
   },
   {
     "station": "APAM2",
@@ -4991,7 +6157,9 @@
     "predicted_kt": 6.1,
     "actual_kt": 5.1,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 8.1,
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -5002,7 +6170,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 6.2,
     "error_kt": 0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 5.4,
+    "nws_error_kt": -0.8
   },
   {
     "station": "CAMM2",
@@ -5013,7 +6183,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 5.7,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 7.8,
+    "nws_error_kt": 2.1
   },
   {
     "station": "TPLM2",
@@ -5024,7 +6196,9 @@
     "predicted_kt": 9.3,
     "actual_kt": 12.1,
     "error_kt": -2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 11.5,
+    "nws_error_kt": -0.6
   },
   {
     "station": "APAM2",
@@ -5035,7 +6209,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 6.9,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 10.4,
+    "nws_error_kt": 3.5
   },
   {
     "station": "SLIM2",
@@ -5046,7 +6222,9 @@
     "predicted_kt": 8.3,
     "actual_kt": 8.1,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 7.5,
+    "nws_error_kt": -0.6
   },
   {
     "station": "CAMM2",
@@ -5057,7 +6235,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 6.4,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 8.4,
+    "nws_error_kt": 2.0
   },
   {
     "station": "TPLM2",
@@ -5068,7 +6248,9 @@
     "predicted_kt": 8.1,
     "actual_kt": 12.1,
     "error_kt": -4.0,
-    "abs_error_kt": 4.0
+    "abs_error_kt": 4.0,
+    "nws_kt": 10.4,
+    "nws_error_kt": -1.7
   },
   {
     "station": "APAM2",
@@ -5079,7 +6261,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 6.9,
     "error_kt": -0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 9.6,
+    "nws_error_kt": 2.7
   },
   {
     "station": "SLIM2",
@@ -5090,7 +6274,9 @@
     "predicted_kt": 7.6,
     "actual_kt": 8.1,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 7.3,
+    "nws_error_kt": -0.8
   },
   {
     "station": "CAMM2",
@@ -5101,7 +6287,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 6.4,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 8.2,
+    "nws_error_kt": 1.8
   },
   {
     "station": "TPLM2",
@@ -5112,7 +6300,9 @@
     "predicted_kt": 7.6,
     "actual_kt": 12.1,
     "error_kt": -4.5,
-    "abs_error_kt": 4.5
+    "abs_error_kt": 4.5,
+    "nws_kt": 9.7,
+    "nws_error_kt": -2.4
   },
   {
     "station": "APAM2",
@@ -5123,7 +6313,9 @@
     "predicted_kt": 6.6,
     "actual_kt": 6.9,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 9.4,
+    "nws_error_kt": 2.5
   },
   {
     "station": "SLIM2",
@@ -5134,7 +6326,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 8.1,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 6.1,
+    "nws_error_kt": -2.0
   },
   {
     "station": "CAMM2",
@@ -5145,7 +6339,9 @@
     "predicted_kt": 5.4,
     "actual_kt": 6.4,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 8.3,
+    "nws_error_kt": 1.9
   },
   {
     "station": "TPLM2",
@@ -5156,7 +6352,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 11.1,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 12.7,
+    "nws_error_kt": 1.6
   },
   {
     "station": "APAM2",
@@ -5167,7 +6365,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 8.1,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 11.3,
+    "nws_error_kt": 3.2
   },
   {
     "station": "SLIM2",
@@ -5178,7 +6378,9 @@
     "predicted_kt": 7.3,
     "actual_kt": 7.1,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 8.0,
+    "nws_error_kt": 0.9
   },
   {
     "station": "CAMM2",
@@ -5189,7 +6391,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 5.9,
     "error_kt": 1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 8.9,
+    "nws_error_kt": 3.0
   },
   {
     "station": "TPLM2",
@@ -5200,7 +6404,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 11.1,
     "error_kt": -2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 11.1,
+    "nws_error_kt": 0.0
   },
   {
     "station": "APAM2",
@@ -5211,7 +6417,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 8.1,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 10.0,
+    "nws_error_kt": 1.9
   },
   {
     "station": "SLIM2",
@@ -5222,7 +6430,9 @@
     "predicted_kt": 7.8,
     "actual_kt": 7.1,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 8.4,
+    "nws_error_kt": 1.3
   },
   {
     "station": "CAMM2",
@@ -5233,7 +6443,9 @@
     "predicted_kt": 7.3,
     "actual_kt": 5.9,
     "error_kt": 1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 9.7,
+    "nws_error_kt": 3.8
   },
   {
     "station": "TPLM2",
@@ -5244,7 +6456,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 11.1,
     "error_kt": -1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 10.7,
+    "nws_error_kt": -0.4
   },
   {
     "station": "APAM2",
@@ -5255,7 +6469,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 8.1,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 9.4,
+    "nws_error_kt": 1.3
   },
   {
     "station": "SLIM2",
@@ -5266,7 +6482,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 7.1,
     "error_kt": 0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 6.9,
+    "nws_error_kt": -0.2
   },
   {
     "station": "CAMM2",
@@ -5277,7 +6495,9 @@
     "predicted_kt": 6.3,
     "actual_kt": 5.9,
     "error_kt": 0.4,
-    "abs_error_kt": 0.4
+    "abs_error_kt": 0.4,
+    "nws_kt": 8.0,
+    "nws_error_kt": 2.1
   },
   {
     "station": "TPLM2",
@@ -5288,7 +6508,9 @@
     "predicted_kt": 9.4,
     "actual_kt": 14.0,
     "error_kt": -4.6,
-    "abs_error_kt": 4.6
+    "abs_error_kt": 4.6,
+    "nws_kt": 13.7,
+    "nws_error_kt": -0.3
   },
   {
     "station": "APAM2",
@@ -5299,7 +6521,9 @@
     "predicted_kt": 7.0,
     "actual_kt": 8.4,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 12.5,
+    "nws_error_kt": 4.1
   },
   {
     "station": "SLIM2",
@@ -5310,7 +6534,9 @@
     "predicted_kt": 9.1,
     "actual_kt": 8.4,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 9.4,
+    "nws_error_kt": 1.0
   },
   {
     "station": "CAMM2",
@@ -5321,7 +6547,9 @@
     "predicted_kt": 8.0,
     "actual_kt": 7.4,
     "error_kt": 0.6,
-    "abs_error_kt": 0.6
+    "abs_error_kt": 0.6,
+    "nws_kt": 10.2,
+    "nws_error_kt": 2.8
   },
   {
     "station": "TPLM2",
@@ -5332,7 +6560,9 @@
     "predicted_kt": 11.6,
     "actual_kt": 14.0,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 12.6,
+    "nws_error_kt": -1.4
   },
   {
     "station": "APAM2",
@@ -5343,7 +6573,9 @@
     "predicted_kt": 6.4,
     "actual_kt": 8.4,
     "error_kt": -2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 11.8,
+    "nws_error_kt": 3.4
   },
   {
     "station": "SLIM2",
@@ -5354,7 +6586,9 @@
     "predicted_kt": 8.9,
     "actual_kt": 8.4,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 7.7,
+    "nws_error_kt": -0.7
   },
   {
     "station": "CAMM2",
@@ -5365,7 +6599,9 @@
     "predicted_kt": 5.9,
     "actual_kt": 7.4,
     "error_kt": -1.5,
-    "abs_error_kt": 1.5
+    "abs_error_kt": 1.5,
+    "nws_kt": 10.5,
+    "nws_error_kt": 3.1
   },
   {
     "station": "TPLM2",
@@ -5376,7 +6612,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 19.1,
     "error_kt": -9.6,
-    "abs_error_kt": 9.6
+    "abs_error_kt": 9.6,
+    "nws_kt": 14.6,
+    "nws_error_kt": -4.5
   },
   {
     "station": "APAM2",
@@ -5387,7 +6625,9 @@
     "predicted_kt": 7.4,
     "actual_kt": 6.6,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 10.2,
+    "nws_error_kt": 3.6
   },
   {
     "station": "SLIM2",
@@ -5398,7 +6638,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 10.2,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 9.2,
+    "nws_error_kt": -1.0
   },
   {
     "station": "CAMM2",
@@ -5409,7 +6651,9 @@
     "predicted_kt": 8.8,
     "actual_kt": 8.3,
     "error_kt": 0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 10.6,
+    "nws_error_kt": 2.3
   },
   {
     "station": "TPLM2",
@@ -5420,7 +6664,9 @@
     "predicted_kt": 12.5,
     "actual_kt": 19.1,
     "error_kt": -6.6,
-    "abs_error_kt": 6.6
+    "abs_error_kt": 6.6,
+    "nws_kt": 16.4,
+    "nws_error_kt": -2.7
   },
   {
     "station": "APAM2",
@@ -5431,7 +6677,9 @@
     "predicted_kt": 7.6,
     "actual_kt": 6.6,
     "error_kt": 1.0,
-    "abs_error_kt": 1.0
+    "abs_error_kt": 1.0,
+    "nws_kt": 14.0,
+    "nws_error_kt": 7.4
   },
   {
     "station": "SLIM2",
@@ -5442,7 +6690,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 10.2,
     "error_kt": -0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 7.7,
+    "nws_error_kt": -2.5
   },
   {
     "station": "CAMM2",
@@ -5453,7 +6703,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 8.3,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 9.3,
+    "nws_error_kt": 1.0
   },
   {
     "station": "TPLM2",
@@ -5464,7 +6716,9 @@
     "predicted_kt": 10.5,
     "actual_kt": 18.1,
     "error_kt": -7.6,
-    "abs_error_kt": 7.6
+    "abs_error_kt": 7.6,
+    "nws_kt": 15.0,
+    "nws_error_kt": -3.1
   },
   {
     "station": "APAM2",
@@ -5475,7 +6729,9 @@
     "predicted_kt": 6.8,
     "actual_kt": 8.6,
     "error_kt": -1.8,
-    "abs_error_kt": 1.8
+    "abs_error_kt": 1.8,
+    "nws_kt": 11.1,
+    "nws_error_kt": 2.5
   },
   {
     "station": "SLIM2",
@@ -5486,7 +6742,9 @@
     "predicted_kt": 9.2,
     "actual_kt": 10.9,
     "error_kt": -1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 9.9,
+    "nws_error_kt": -1.0
   },
   {
     "station": "CAMM2",
@@ -5497,7 +6755,9 @@
     "predicted_kt": 9.2,
     "actual_kt": 8.4,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 11.5,
+    "nws_error_kt": 3.1
   },
   {
     "station": "TPLM2",
@@ -5508,7 +6768,9 @@
     "predicted_kt": 12.2,
     "actual_kt": 18.1,
     "error_kt": -5.9,
-    "abs_error_kt": 5.9
+    "abs_error_kt": 5.9,
+    "nws_kt": 17.2,
+    "nws_error_kt": -0.9
   },
   {
     "station": "APAM2",
@@ -5519,7 +6781,9 @@
     "predicted_kt": 8.6,
     "actual_kt": 8.6,
     "error_kt": 0.0,
-    "abs_error_kt": 0.0
+    "abs_error_kt": 0.0,
+    "nws_kt": 10.4,
+    "nws_error_kt": 1.8
   },
   {
     "station": "SLIM2",
@@ -5530,7 +6794,9 @@
     "predicted_kt": 10.8,
     "actual_kt": 10.9,
     "error_kt": -0.1,
-    "abs_error_kt": 0.1
+    "abs_error_kt": 0.1,
+    "nws_kt": 7.5,
+    "nws_error_kt": -3.4
   },
   {
     "station": "CAMM2",
@@ -5541,7 +6807,9 @@
     "predicted_kt": 7.1,
     "actual_kt": 8.4,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 9.5,
+    "nws_error_kt": 1.1
   },
   {
     "station": "TPLM2",
@@ -5552,7 +6820,9 @@
     "predicted_kt": 11.1,
     "actual_kt": 18.1,
     "error_kt": -7.0,
-    "abs_error_kt": 7.0
+    "abs_error_kt": 7.0,
+    "nws_kt": 12.4,
+    "nws_error_kt": -5.7
   },
   {
     "station": "APAM2",
@@ -5563,7 +6833,9 @@
     "predicted_kt": 6.5,
     "actual_kt": 10.1,
     "error_kt": -3.6,
-    "abs_error_kt": 3.6
+    "abs_error_kt": 3.6,
+    "nws_kt": 8.6,
+    "nws_error_kt": -1.5
   },
   {
     "station": "SLIM2",
@@ -5574,7 +6846,9 @@
     "predicted_kt": 8.4,
     "actual_kt": 12.1,
     "error_kt": -3.7,
-    "abs_error_kt": 3.7
+    "abs_error_kt": 3.7,
+    "nws_kt": 10.5,
+    "nws_error_kt": -1.6
   },
   {
     "station": "CAMM2",
@@ -5585,7 +6859,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 7.8,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 11.9,
+    "nws_error_kt": 4.1
   },
   {
     "station": "TPLM2",
@@ -5596,7 +6872,9 @@
     "predicted_kt": 12.6,
     "actual_kt": 19.1,
     "error_kt": -6.5,
-    "abs_error_kt": 6.5
+    "abs_error_kt": 6.5,
+    "nws_kt": 16.1,
+    "nws_error_kt": -3.0
   },
   {
     "station": "APAM2",
@@ -5607,7 +6885,9 @@
     "predicted_kt": 9.0,
     "actual_kt": 7.3,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 10.5,
+    "nws_error_kt": 3.2
   },
   {
     "station": "SLIM2",
@@ -5618,7 +6898,9 @@
     "predicted_kt": 10.2,
     "actual_kt": 9.9,
     "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 7.9,
+    "nws_error_kt": -2.0
   },
   {
     "station": "CAMM2",
@@ -5629,7 +6911,9 @@
     "predicted_kt": 9.8,
     "actual_kt": 11.4,
     "error_kt": -1.6,
-    "abs_error_kt": 1.6
+    "abs_error_kt": 1.6,
+    "nws_kt": 9.7,
+    "nws_error_kt": -1.7
   },
   {
     "station": "TPLM2",
@@ -5640,7 +6924,9 @@
     "predicted_kt": 11.6,
     "actual_kt": 14.0,
     "error_kt": -2.4,
-    "abs_error_kt": 2.4
+    "abs_error_kt": 2.4,
+    "nws_kt": 15.6,
+    "nws_error_kt": 1.6
   },
   {
     "station": "APAM2",
@@ -5651,7 +6937,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 6.6,
     "error_kt": -1.9,
-    "abs_error_kt": 1.9
+    "abs_error_kt": 1.9,
+    "nws_kt": 10.4,
+    "nws_error_kt": 3.8
   },
   {
     "station": "SLIM2",
@@ -5662,7 +6950,9 @@
     "predicted_kt": 9.5,
     "actual_kt": 9.3,
     "error_kt": 0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 8.2,
+    "nws_error_kt": -1.1
   },
   {
     "station": "CAMM2",
@@ -5673,7 +6963,9 @@
     "predicted_kt": 7.5,
     "actual_kt": 10.5,
     "error_kt": -3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 11.1,
+    "nws_error_kt": 0.6
   },
   {
     "station": "TPLM2",
@@ -5684,7 +6976,9 @@
     "predicted_kt": 10.1,
     "actual_kt": 8.0,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 11.9,
+    "nws_error_kt": 3.9
   },
   {
     "station": "APAM2",
@@ -5695,7 +6989,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 4.8,
     "error_kt": 0.8,
-    "abs_error_kt": 0.8
+    "abs_error_kt": 0.8,
+    "nws_kt": 9.0,
+    "nws_error_kt": 4.2
   },
   {
     "station": "SLIM2",
@@ -5706,7 +7002,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 7.8,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 8.2,
+    "nws_error_kt": 0.4
   },
   {
     "station": "CAMM2",
@@ -5717,7 +7015,9 @@
     "predicted_kt": 7.9,
     "actual_kt": 9.3,
     "error_kt": -1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 10.3,
+    "nws_error_kt": 1.0
   },
   {
     "station": "TPLM2",
@@ -5728,7 +7028,9 @@
     "predicted_kt": 9.9,
     "actual_kt": 14.0,
     "error_kt": -4.1,
-    "abs_error_kt": 4.1
+    "abs_error_kt": 4.1,
+    "nws_kt": 11.2,
+    "nws_error_kt": -2.8
   },
   {
     "station": "APAM2",
@@ -5739,7 +7041,9 @@
     "predicted_kt": 4.4,
     "actual_kt": 4.9,
     "error_kt": -0.5,
-    "abs_error_kt": 0.5
+    "abs_error_kt": 0.5,
+    "nws_kt": 8.1,
+    "nws_error_kt": 3.2
   },
   {
     "station": "SLIM2",
@@ -5750,7 +7054,9 @@
     "predicted_kt": 8.7,
     "actual_kt": 6.7,
     "error_kt": 2.0,
-    "abs_error_kt": 2.0
+    "abs_error_kt": 2.0,
+    "nws_kt": 8.0,
+    "nws_error_kt": 1.3
   },
   {
     "station": "CAMM2",
@@ -5761,7 +7067,9 @@
     "predicted_kt": 6.9,
     "actual_kt": 8.0,
     "error_kt": -1.1,
-    "abs_error_kt": 1.1
+    "abs_error_kt": 1.1,
+    "nws_kt": 7.5,
+    "nws_error_kt": -0.5
   },
   {
     "station": "TPLM2",
@@ -5772,7 +7080,9 @@
     "predicted_kt": 10.8,
     "actual_kt": 12.1,
     "error_kt": -1.3,
-    "abs_error_kt": 1.3
+    "abs_error_kt": 1.3,
+    "nws_kt": 9.6,
+    "nws_error_kt": -2.5
   },
   {
     "station": "APAM2",
@@ -5783,7 +7093,9 @@
     "predicted_kt": 4.4,
     "actual_kt": 5.6,
     "error_kt": -1.2,
-    "abs_error_kt": 1.2
+    "abs_error_kt": 1.2,
+    "nws_kt": 4.1,
+    "nws_error_kt": -1.5
   },
   {
     "station": "SLIM2",
@@ -5794,7 +7106,9 @@
     "predicted_kt": 7.3,
     "actual_kt": 10.8,
     "error_kt": -3.5,
-    "abs_error_kt": 3.5
+    "abs_error_kt": 3.5,
+    "nws_kt": 7.2,
+    "nws_error_kt": -3.6
   },
   {
     "station": "CAMM2",
@@ -5805,7 +7119,9 @@
     "predicted_kt": 6.7,
     "actual_kt": 6.3,
     "error_kt": 0.4,
-    "abs_error_kt": 0.4
+    "abs_error_kt": 0.4,
+    "nws_kt": 8.4,
+    "nws_error_kt": 2.1
   },
   {
     "station": "TPLM2",
@@ -5948,7 +7264,9 @@
     "predicted_kt": 5.8,
     "actual_kt": 4.1,
     "error_kt": 1.7,
-    "abs_error_kt": 1.7
+    "abs_error_kt": 1.7,
+    "nws_kt": 3.3,
+    "nws_error_kt": -0.8
   },
   {
     "station": "APAM2",
@@ -5959,7 +7277,9 @@
     "predicted_kt": 4.1,
     "actual_kt": 1.1,
     "error_kt": 3.0,
-    "abs_error_kt": 3.0
+    "abs_error_kt": 3.0,
+    "nws_kt": 3.5,
+    "nws_error_kt": 2.4
   },
   {
     "station": "SLIM2",
@@ -5970,7 +7290,9 @@
     "predicted_kt": 3.4,
     "actual_kt": 3.1,
     "error_kt": 0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 2.3,
+    "nws_error_kt": -0.8
   },
   {
     "station": "CAMM2",
@@ -5981,7 +7303,9 @@
     "predicted_kt": 3.3,
     "actual_kt": 2.4,
     "error_kt": 0.9,
-    "abs_error_kt": 0.9
+    "abs_error_kt": 0.9,
+    "nws_kt": 2.8,
+    "nws_error_kt": 0.4
   },
   {
     "station": "TPLM2",
@@ -6080,7 +7404,9 @@
     "predicted_kt": 4.3,
     "actual_kt": 2.9,
     "error_kt": 1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 2.5,
+    "nws_error_kt": -0.4
   },
   {
     "station": "APAM2",
@@ -6091,7 +7417,9 @@
     "predicted_kt": 2.8,
     "actual_kt": 3.1,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 2.1,
+    "nws_error_kt": -1.0
   },
   {
     "station": "SLIM2",
@@ -6102,7 +7430,9 @@
     "predicted_kt": 4.8,
     "actual_kt": 2.7,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 2.2,
+    "nws_error_kt": -0.5
   },
   {
     "station": "CAMM2",
@@ -6113,7 +7443,9 @@
     "predicted_kt": 4.0,
     "actual_kt": 1.9,
     "error_kt": 2.1,
-    "abs_error_kt": 2.1
+    "abs_error_kt": 2.1,
+    "nws_kt": 3.3,
+    "nws_error_kt": 1.4
   },
   {
     "station": "TPLM2",
@@ -6256,7 +7588,9 @@
     "predicted_kt": 4.9,
     "actual_kt": 5.1,
     "error_kt": -0.2,
-    "abs_error_kt": 0.2
+    "abs_error_kt": 0.2,
+    "nws_kt": 5.6,
+    "nws_error_kt": 0.5
   },
   {
     "station": "APAM2",
@@ -6267,7 +7601,9 @@
     "predicted_kt": 3.4,
     "actual_kt": 2.7,
     "error_kt": 0.7,
-    "abs_error_kt": 0.7
+    "abs_error_kt": 0.7,
+    "nws_kt": 4.9,
+    "nws_error_kt": 2.2
   },
   {
     "station": "SLIM2",
@@ -6278,7 +7614,9 @@
     "predicted_kt": 5.6,
     "actual_kt": 2.5,
     "error_kt": 3.1,
-    "abs_error_kt": 3.1
+    "abs_error_kt": 3.1,
+    "nws_kt": 3.6,
+    "nws_error_kt": 1.1
   },
   {
     "station": "CAMM2",
@@ -6289,7 +7627,9 @@
     "predicted_kt": 4.7,
     "actual_kt": 5.0,
     "error_kt": -0.3,
-    "abs_error_kt": 0.3
+    "abs_error_kt": 0.3,
+    "nws_kt": 4.5,
+    "nws_error_kt": -0.5
   },
   {
     "station": "TPLM2",
@@ -6300,7 +7640,9 @@
     "predicted_kt": 2.8,
     "actual_kt": 5.1,
     "error_kt": -2.3,
-    "abs_error_kt": 2.3
+    "abs_error_kt": 2.3,
+    "nws_kt": 5.2,
+    "nws_error_kt": 0.1
   },
   {
     "station": "APAM2",
@@ -6311,7 +7653,9 @@
     "predicted_kt": 4.1,
     "actual_kt": 2.7,
     "error_kt": 1.4,
-    "abs_error_kt": 1.4
+    "abs_error_kt": 1.4,
+    "nws_kt": 4.6,
+    "nws_error_kt": 1.9
   },
   {
     "station": "SLIM2",
@@ -6322,7 +7666,9 @@
     "predicted_kt": 5.3,
     "actual_kt": 2.5,
     "error_kt": 2.8,
-    "abs_error_kt": 2.8
+    "abs_error_kt": 2.8,
+    "nws_kt": 4.3,
+    "nws_error_kt": 1.8
   },
   {
     "station": "CAMM2",
@@ -6333,7 +7679,9 @@
     "predicted_kt": 1.8,
     "actual_kt": 5.0,
     "error_kt": -3.2,
-    "abs_error_kt": 3.2
+    "abs_error_kt": 3.2,
+    "nws_kt": 4.4,
+    "nws_error_kt": -0.6
   },
   {
     "station": "TPLM2",

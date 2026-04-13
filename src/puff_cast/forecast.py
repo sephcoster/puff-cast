@@ -513,7 +513,7 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
                     actual_kt = actual_ms * KT
                     error_kt = pred_kt - actual_kt
 
-                    verifications.append({
+                    v_record = {
                         "station": sid,
                         "station_name": sdata.get("name", sid),
                         "lead_hours": lead,
@@ -523,7 +523,13 @@ def verify_past_predictions(obs: pd.DataFrame) -> list[dict]:
                         "actual_kt": round(actual_kt, 1),
                         "error_kt": round(error_kt, 1),
                         "abs_error_kt": round(abs(error_kt), 1),
-                    })
+                    }
+                    # Include NWS prediction if available for comparison
+                    if "nws_kt" in ldata and ldata["nws_kt"] is not None:
+                        v_record["nws_kt"] = ldata["nws_kt"]
+                        nws_error = ldata["nws_kt"] - actual_kt
+                        v_record["nws_error_kt"] = round(nws_error, 1)
+                    verifications.append(v_record)
 
     # Deduplicate: keep only the latest verification per (station, valid_time, lead)
     seen = {}
@@ -578,10 +584,14 @@ def build_forecast_funnels(verifications: list[dict]) -> list[dict]:
                 "actual_kt": v["actual_kt"],
                 "predictions": {},
             }
-        groups[key]["predictions"][v["lead_hours"]] = {
+        pred_entry = {
             "predicted_kt": v["predicted_kt"],
             "error_kt": v["error_kt"],
         }
+        if "nws_kt" in v:
+            pred_entry["nws_kt"] = v["nws_kt"]
+            pred_entry["nws_error_kt"] = v.get("nws_error_kt")
+        groups[key]["predictions"][v["lead_hours"]] = pred_entry
 
     funnels = sorted(groups.values(), key=lambda x: x["valid_time"], reverse=True)
 
