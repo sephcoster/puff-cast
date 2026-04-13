@@ -240,6 +240,11 @@ function computeAccuracyStats(verifications: VerificationRecord[]) {
 }
 
 const LEAD_COLUMNS = [24, 18, 12, 6, 3, 1];
+
+/** Hide 24h/18h columns on small screens to fit mobile */
+function leadColClass(lead: number): string {
+  return lead >= 18 ? "hidden md:table-cell" : "";
+}
 const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2"];
 
 // -- page -----------------------------------------------------------------
@@ -393,11 +398,8 @@ export default async function Home() {
                     <th className="px-3 py-2 text-left">Station</th>
                     <th className="px-3 py-2 text-left">Next hour</th>
                     {LEAD_COLUMNS.map((l) => (
-                      <th key={l} className="px-2 py-2 text-center">
+                      <th key={l} className={`px-1 sm:px-2 py-2 text-center ${l >= 18 ? "hidden md:table-cell" : ""}`}>
                         <div>T-{l}h</div>
-                        <div className="text-[9px] font-normal normal-case tracking-normal text-slate-600">
-                          ours | nws
-                        </div>
                       </th>
                     ))}
                   </tr>
@@ -437,59 +439,40 @@ export default async function Home() {
                             return (
                               <td
                                 key={lead}
-                                className="px-2 py-2 text-center text-slate-700"
+                                className={`px-1 sm:px-2 py-2 text-center text-slate-700 ${leadColClass(lead)}`}
                               >
                                 ·
                               </td>
                             );
                           }
                           return (
-                            <td key={lead} className="px-2 py-1">
-                              <div className="flex justify-center gap-3">
-                                {/* Puff Cast prediction */}
-                                <div className="text-center min-w-[3rem]">
-                                  <div className="flex items-center justify-center gap-0.5">
-                                    {p.dir_arrow && (
-                                      <span className="text-slate-400">
-                                        {p.dir_arrow}
-                                      </span>
-                                    )}
-                                    <span
-                                      className={`font-bold text-lg ${windColor(p.predicted_kt)}`}
-                                    >
-                                      {Math.round(p.predicted_kt)}
-                                    </span>
-                                    {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
-                                      <span className="text-xs text-slate-400 ml-0.5">
-                                        G{Math.round(p.gust_kt)}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {p.dir_cardinal && (
-                                    <div className="text-[10px] text-slate-500">
-                                      {p.dir_cardinal}
-                                    </div>
-                                  )}
-                                </div>
-                                {/* NWS prediction */}
-                                {p.nws_kt != null && (
-                                  <div className="text-center min-w-[2.5rem] border-l border-slate-700 pl-2">
-                                    <div className="text-sm text-slate-500">
-                                      {Math.round(p.nws_kt)}
-                                      {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
-                                        <span className="text-[10px] ml-0.5">
-                                          G{Math.round(p.nws_gust_kt)}
-                                        </span>
-                                      )}
-                                    </div>
-                                    {p.nws_dir_cardinal && (
-                                      <div className="text-[10px] text-slate-600">
-                                        {p.nws_dir_cardinal}
-                                      </div>
-                                    )}
-                                  </div>
+                            <td key={lead} className={`px-1 sm:px-2 py-1 text-center ${leadColClass(lead)}`}>
+                              {/* Our prediction */}
+                              <div className={`font-bold ${windColor(p.predicted_kt)}`}>
+                                {Math.round(p.predicted_kt)}
+                                {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
+                                  <span className="text-xs font-normal text-slate-400">
+                                    {" "}G{Math.round(p.gust_kt)}
+                                  </span>
                                 )}
                               </div>
+                              {p.dir_cardinal && (
+                                <div className="text-[10px] text-slate-500">
+                                  {p.dir_arrow} {p.dir_cardinal}
+                                </div>
+                              )}
+                              {/* NWS below, dimmer */}
+                              {p.nws_kt != null && (
+                                <div className="text-[10px] text-slate-600 border-t border-slate-800 mt-0.5 pt-0.5">
+                                  NWS {Math.round(p.nws_kt)}
+                                  {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
+                                    <span> G{Math.round(p.nws_gust_kt)}</span>
+                                  )}
+                                  {p.nws_dir_cardinal && (
+                                    <span> {p.nws_dir_cardinal}</span>
+                                  )}
+                                </div>
+                              )}
                             </td>
                           );
                         })}
@@ -655,11 +638,8 @@ export default async function Home() {
                   <tr className="text-xs uppercase tracking-wider text-slate-500 bg-slate-900">
                     <th className="px-3 py-2 text-left">Hour</th>
                     {LEAD_COLUMNS.map((l) => (
-                      <th key={l} className="px-2 py-2 text-center">
+                      <th key={l} className={`px-1 sm:px-2 py-2 text-center ${l >= 18 ? "hidden md:table-cell" : ""}`}>
                         <div>T-{l}h</div>
-                        <div className="text-[9px] font-normal normal-case tracking-normal text-slate-600">
-                          ours | nws
-                        </div>
                       </th>
                     ))}
                   </tr>
@@ -687,7 +667,7 @@ export default async function Home() {
                           return (
                             <td
                               key={lead}
-                              className={`px-2 py-2 text-center ${
+                              className={`px-1 sm:px-2 py-2 text-center ${leadColClass(lead)} ${
                                 canPredict ? "text-slate-700" : "text-slate-900"
                               }`}
                             >
@@ -696,50 +676,31 @@ export default async function Home() {
                           );
                         }
                         return (
-                          <td key={lead} className="px-2 py-1">
-                            <div className="flex justify-center gap-2">
-                              <div className="text-center">
-                                <div className="flex items-center justify-center gap-0.5">
-                                  {p.dir_arrow && (
-                                    <span className="text-slate-400 text-sm">
-                                      {p.dir_arrow}
-                                    </span>
-                                  )}
-                                  <span
-                                    className={`font-bold ${windColor(p.predicted_kt)}`}
-                                  >
-                                    {Math.round(p.predicted_kt)}
-                                  </span>
-                                  {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
-                                    <span className="text-xs text-slate-400 ml-0.5">
-                                      G{Math.round(p.gust_kt)}
-                                    </span>
-                                  )}
-                                </div>
-                                {p.dir_cardinal && (
-                                  <div className="text-[10px] text-slate-500">
-                                    {p.dir_cardinal}
-                                  </div>
-                                )}
-                              </div>
-                              {p.nws_kt != null && (
-                                <div className="text-center border-l border-slate-700 pl-1.5">
-                                  <div className="text-xs text-slate-500">
-                                    {Math.round(p.nws_kt)}
-                                    {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
-                                      <span className="text-[10px] ml-0.5">
-                                        G{Math.round(p.nws_gust_kt)}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {p.nws_dir_cardinal && (
-                                    <div className="text-[10px] text-slate-600">
-                                      {p.nws_dir_cardinal}
-                                    </div>
-                                  )}
-                                </div>
+                          <td key={lead} className={`px-1 sm:px-2 py-1 text-center ${leadColClass(lead)}`}>
+                            <div className={`font-bold ${windColor(p.predicted_kt)}`}>
+                              {Math.round(p.predicted_kt)}
+                              {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
+                                <span className="text-xs font-normal text-slate-400">
+                                  {" "}G{Math.round(p.gust_kt)}
+                                </span>
                               )}
                             </div>
+                            {p.dir_cardinal && (
+                              <div className="text-[10px] text-slate-500">
+                                {p.dir_arrow} {p.dir_cardinal}
+                              </div>
+                            )}
+                            {p.nws_kt != null && (
+                              <div className="text-[10px] text-slate-600 border-t border-slate-800 mt-0.5 pt-0.5">
+                                NWS {Math.round(p.nws_kt)}
+                                {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
+                                  <span> G{Math.round(p.nws_gust_kt)}</span>
+                                )}
+                                {p.nws_dir_cardinal && (
+                                  <span> {p.nws_dir_cardinal}</span>
+                                )}
+                              </div>
+                            )}
                           </td>
                         );
                       })}
