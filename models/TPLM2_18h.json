@@ -143,7 +143,9 @@
   ],
   "n_train": 1357,
   "n_dir_train": 1220,
+  "n_gust_train": 1357,
   "has_dir_model": true,
+  "has_gust_model": true,
   "train_date_range": "all available data",
   "speed_params": {
     "n_estimators": 1000,
