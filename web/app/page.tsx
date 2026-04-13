@@ -440,8 +440,9 @@ export default async function Home() {
           });
         }
 
-        // Build chart data: past actuals + future predictions
-        const chartData: Array<{
+        // Build chart data: past actuals + past/future predictions
+        // Use a map keyed by epoch hour to merge all sources
+        type ChartRow = {
           time: string;
           timeLabel: string;
           actual?: number;
@@ -449,68 +450,57 @@ export default async function Home() {
           nws?: number;
           puffDir?: string;
           nwsDir?: string;
-        }> = [];
+        };
+        const chartMap = new Map<number, ChartRow>();
 
-        // Past actuals (from station.actuals)
+        function getOrCreate(isoOrDate: string | Date): ChartRow {
+          const d = typeof isoOrDate === "string" ? new Date(isoOrDate) : isoOrDate;
+          const epochH = Math.round(d.getTime() / 3600_000); // hour bucket
+          if (!chartMap.has(epochH)) {
+            chartMap.set(epochH, {
+              time: d.toISOString(),
+              timeLabel: formatHour(d.toISOString()),
+            });
+          }
+          return chartMap.get(epochH)!;
+        }
+
+        // Past actuals (from station.actuals — last 48h of observations)
         const actuals = station?.actuals ?? {};
-        const actualTimes = Object.keys(actuals).sort();
-        for (const t of actualTimes) {
-          chartData.push({
-            time: t,
-            timeLabel: formatHour(t),
-            actual: actuals[t],
-          });
+        for (const [t, kt] of Object.entries(actuals)) {
+          getOrCreate(t).actual = kt;
         }
 
-        // Future predictions (from upcoming funnels — use shortest lead = most recent prediction)
-        for (const h of hours) {
-          if (!h.funnel) continue;
-          const preds = h.funnel.predictions;
-          // Find the prediction with the shortest lead (most refined)
-          const sortedLeads = Object.keys(preds)
-            .map(Number)
-            .sort((a, b) => a - b);
-          if (sortedLeads.length === 0) continue;
-          const bestLead = String(sortedLeads[0]);
-          const best = preds[bestLead];
-          chartData.push({
-            time: h.date.toISOString(),
-            timeLabel: formatHour(h.date.toISOString()),
-            puffcast: best.predicted_kt,
-            nws: best.nws_kt ?? undefined,
-            puffDir: best.dir_cardinal,
-            nwsDir: best.nws_dir_cardinal,
-          });
-        }
-
-        // Also add past predictions from backtest funnels (use shortest lead for the line)
-        for (const bf of backtest.slice(0, 24)) {
+        // Past predictions from backtest funnels (use shortest lead = most refined)
+        for (const bf of backtest.slice(0, 48)) {
           const sortedLeads = Object.keys(bf.predictions)
             .map(Number)
             .sort((a, b) => a - b);
           if (sortedLeads.length === 0) continue;
-          const bestLead = String(sortedLeads[0]);
-          const best = bf.predictions[bestLead];
-          // Check if we already have this time from actuals
-          const existing = chartData.find(
-            (d) =>
-              d.time ===
-              new Date(bf.valid_time).toISOString(),
-          );
-          if (existing) {
-            existing.puffcast = best.predicted_kt;
-          } else {
-            chartData.push({
-              time: new Date(bf.valid_time).toISOString(),
-              timeLabel: formatHour(bf.valid_time),
-              actual: bf.actual_kt,
-              puffcast: best.predicted_kt,
-            });
-          }
+          const best = bf.predictions[String(sortedLeads[0])];
+          const row = getOrCreate(bf.valid_time);
+          row.puffcast = best.predicted_kt;
+          row.actual = bf.actual_kt;
         }
 
-        // Sort chart data by time
-        chartData.sort(
+        // Future predictions (from upcoming funnels — use shortest lead)
+        for (const h of hours) {
+          if (!h.funnel) continue;
+          const preds = h.funnel.predictions;
+          const sortedLeads = Object.keys(preds)
+            .map(Number)
+            .sort((a, b) => a - b);
+          if (sortedLeads.length === 0) continue;
+          const best = preds[String(sortedLeads[0])];
+          const row = getOrCreate(h.date);
+          row.puffcast = best.predicted_kt;
+          row.nws = best.nws_kt ?? undefined;
+          row.puffDir = best.dir_cardinal;
+          row.nwsDir = best.nws_dir_cardinal;
+        }
+
+        // Sort by time
+        const chartData = [...chartMap.values()].sort(
           (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime(),
         );
 

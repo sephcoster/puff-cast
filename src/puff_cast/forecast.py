@@ -275,7 +275,7 @@ def generate_forecast() -> dict:
                 forecasts[station]["current_time"] = latest.index[-1].isoformat()
 
             # Last 24 hours of actuals (for displaying alongside past predictions)
-            cutoff = obs.index.max() - pd.Timedelta(hours=24)
+            cutoff = obs.index.max() - pd.Timedelta(hours=48)
             recent = obs[wspd_col].dropna().loc[cutoff:]
             if len(recent) > 0:
                 actuals = {}
