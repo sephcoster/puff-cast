@@ -365,6 +365,26 @@ def generate_forecast() -> dict:
                     lead_data["nws_dir_deg"] = int(hrrr_wdir)
                     lead_data["nws_dir_cardinal"] = _deg_to_cardinal(hrrr_wdir)
 
+                # Gust prediction
+                gust_model_path = MODEL_DIR / f"{station}_{lead}h_gust.pkl"
+                if gust_model_path.exists():
+                    try:
+                        with open(gust_model_path, "rb") as gf:
+                            gust_model = pickle.load(gf)
+                        gust_ms = gust_model.predict(feat_df)[0]
+                        gust_kt = gust_ms * KT
+                        # Gust should be >= sustained, enforce floor
+                        gust_kt = max(gust_kt, pred_kt)
+                        lead_data["gust_kt"] = round(gust_kt, 1)
+                    except Exception:
+                        pass
+
+                # HRRR raw gust for NWS comparison
+                if len(hrrr_sub) > 0 and "hrrr_gust_ms" in hrrr_sub.columns:
+                    nws_gust = hrrr_sub.iloc[-1].get("hrrr_gust_ms")
+                    if nws_gust is not None and not pd.isna(nws_gust):
+                        lead_data["nws_gust_kt"] = round(nws_gust * KT, 1)
+
                 forecasts[station]["leads"][lead] = lead_data
 
     # Get current conditions and recent hourly actuals for display
@@ -810,7 +830,8 @@ def build_upcoming_funnels() -> list[dict]:
                             "nws_kt": ldata.get("nws_kt"),
                             "generated_at": pred["generated_at"],
                         }
-                        for dk in ["dir_cardinal", "dir_arrow", "nws_dir_cardinal"]:
+                        for dk in ["dir_cardinal", "dir_arrow", "nws_dir_cardinal",
+                                   "gust_kt", "nws_gust_kt"]:
                             if dk in ldata:
                                 entry[dk] = ldata[dk]
                         groups[key]["predictions"][lead_str] = entry

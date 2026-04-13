@@ -12,6 +12,8 @@ interface LeadForecast {
   wspd_kt: number;
   wspd_ms: number;
   nws_kt: number | null;
+  gust_kt?: number;
+  nws_gust_kt?: number;
   dir_deg?: number;
   dir_cardinal?: string;
   dir_arrow?: string;
@@ -53,6 +55,8 @@ interface BacktestFunnel {
 interface UpcomingPrediction {
   predicted_kt: number;
   nws_kt: number | null;
+  gust_kt?: number;
+  nws_gust_kt?: number;
   dir_cardinal?: string;
   dir_arrow?: string;
   nws_dir_cardinal?: string;
@@ -456,6 +460,11 @@ export default async function Home() {
                                     >
                                       {Math.round(p.predicted_kt)}
                                     </span>
+                                    {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
+                                      <span className="text-xs text-slate-400 ml-0.5">
+                                        G{Math.round(p.gust_kt)}
+                                      </span>
+                                    )}
                                   </div>
                                   {p.dir_cardinal && (
                                     <div className="text-[10px] text-slate-500">
@@ -468,6 +477,11 @@ export default async function Home() {
                                   <div className="text-center min-w-[2.5rem] border-l border-slate-700 pl-2">
                                     <div className="text-sm text-slate-500">
                                       {Math.round(p.nws_kt)}
+                                      {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
+                                        <span className="text-[10px] ml-0.5">
+                                          G{Math.round(p.nws_gust_kt)}
+                                        </span>
+                                      )}
                                     </div>
                                     {p.nws_dir_cardinal && (
                                       <div className="text-[10px] text-slate-600">
@@ -697,6 +711,11 @@ export default async function Home() {
                                   >
                                     {Math.round(p.predicted_kt)}
                                   </span>
+                                  {p.gust_kt != null && p.gust_kt > p.predicted_kt + 1 && (
+                                    <span className="text-xs text-slate-400 ml-0.5">
+                                      G{Math.round(p.gust_kt)}
+                                    </span>
+                                  )}
                                 </div>
                                 {p.dir_cardinal && (
                                   <div className="text-[10px] text-slate-500">
@@ -708,6 +727,11 @@ export default async function Home() {
                                 <div className="text-center border-l border-slate-700 pl-1.5">
                                   <div className="text-xs text-slate-500">
                                     {Math.round(p.nws_kt)}
+                                    {p.nws_gust_kt != null && p.nws_gust_kt > p.nws_kt + 1 && (
+                                      <span className="text-[10px] ml-0.5">
+                                        G{Math.round(p.nws_gust_kt)}
+                                      </span>
+                                    )}
                                   </div>
                                   {p.nws_dir_cardinal && (
                                     <div className="text-[10px] text-slate-600">

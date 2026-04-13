@@ -107,6 +107,50 @@ def train_and_save_all():
                     dir_trained = True
                     dir_n = int(dir_mask.sum())
 
+            # === Gust model (predicts actual GST directly) ===
+            gust_trained = False
+            gust_n = 0
+            gst_col = f"{station}_GST"
+            if gst_col in unified.columns and "_valid_time" in X.columns:
+                # impossible to have _valid_time here since we dropped it above
+                pass
+            # Get GST values by matching valid times from the original build
+            if gst_col in unified.columns:
+                # Re-extract valid times from hrrr data
+                target_hrrr = hrrr_reg[
+                    (hrrr_reg["station_id"] == station) & (hrrr_reg["lead_hours"] == lead)
+                ]
+                vt_to_gst = {}
+                for vt in target_hrrr["valid_time"].unique():
+                    if vt in unified.index and not pd.isna(unified.loc[vt, gst_col]):
+                        vt_to_gst[vt] = unified.loc[vt, gst_col]
+
+                # Match GST values to our training samples using the original valid_time ordering
+                # We need to rebuild valid_times — use the same logic as build_ensemble_features
+                all_hrrr = hrrr_reg[
+                    (hrrr_reg["station_id"] == station) & (hrrr_reg["lead_hours"] == lead)
+                ].sort_values(["valid_time", "init_time"])
+                obs_col = f"{station}_WSPD"
+
+                gst_values = []
+                for _, row in all_hrrr.iterrows():
+                    vt = row["valid_time"]
+                    if vt in unified.index and not pd.isna(unified.loc[vt, obs_col]):
+                        gst_val = vt_to_gst.get(vt, np.nan)
+                        gst_values.append(gst_val)
+
+                if len(gst_values) == len(X):
+                    actual_gst = pd.Series(gst_values, index=X.index)
+                    gst_mask = actual_gst.notna()
+                    if gst_mask.sum() >= 50:
+                        gust_model = GradientBoostingRegressor(**SPEED_PARAMS)
+                        gust_model.fit(X_filled[gst_mask], actual_gst[gst_mask])
+                        gust_path = MODEL_DIR / f"{station}_{lead}h_gust.pkl"
+                        with open(gust_path, "wb") as f:
+                            pickle.dump(gust_model, f)
+                        gust_trained = True
+                        gust_n = int(gst_mask.sum())
+
             # Save metadata
             meta = {
                 "station": station,
@@ -114,7 +158,9 @@ def train_and_save_all():
                 "features": list(X.columns),
                 "n_train": len(X),
                 "n_dir_train": dir_n,
+                "n_gust_train": gust_n,
                 "has_dir_model": dir_trained,
+                "has_gust_model": gust_trained,
                 "train_date_range": "all available data",
                 "speed_params": {k: v for k, v in SPEED_PARAMS.items() if k != "random_state"},
                 "dir_params": {k: v for k, v in DIR_PARAMS.items() if k != "random_state"} if dir_trained else None,
@@ -123,7 +169,9 @@ def train_and_save_all():
             with open(meta_path, "w") as f:
                 json.dump(meta, f, indent=2)
 
-            extras = f" + dir ({dir_n} samples)" if dir_trained else ""
+            extras = ""
+            if dir_trained: extras += f" + dir ({dir_n})"
+            if gust_trained: extras += f" + gust ({gust_n})"
             print(f"  Saved {speed_path.name} ({len(X)} samples, {len(X.columns)} features){extras}")
 
     print(f"\nAll models saved to {MODEL_DIR}/")
