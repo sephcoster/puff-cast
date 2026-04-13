@@ -100,7 +100,7 @@ def fetch_latest_asos() -> pd.DataFrame:
 
     now = datetime.now(timezone.utc)
     start = (now - pd.Timedelta(hours=48)).strftime("%Y-%m-%d")
-    end = now.strftime("%Y-%m-%d")
+    end = (now + pd.Timedelta(days=1)).strftime("%Y-%m-%d")  # Include today fully
 
     all_hourly = []
     for sid in ASOS_STATIONS:
@@ -178,6 +178,99 @@ def fetch_latest_hrrr(lead_hours: list[int] = LEAD_HOURS) -> pd.DataFrame:
     return pd.DataFrame(records) if records else pd.DataFrame()
 
 
+def fetch_latest_ecmwf() -> dict[str, float]:
+    """Fetch current ECMWF wind forecast from Open-Meteo for Thomas Point area."""
+    import requests as req
+    try:
+        # Open-Meteo ECMWF endpoint for Thomas Point coordinates
+        url = "https://api.open-meteo.com/v1/ecmwf"
+        params = {
+            "latitude": 38.899,
+            "longitude": -76.436,
+            "hourly": "wind_speed_10m,wind_direction_10m,wind_gusts_10m",
+            "forecast_hours": 48,
+        }
+        resp = req.get(url, params=params, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        hourly = data.get("hourly", {})
+        times = hourly.get("time", [])
+        wspd = hourly.get("wind_speed_10m", [])
+        wdir = hourly.get("wind_direction_10m", [])
+
+        # Build a dict keyed by ISO time
+        result = {}
+        for i, t in enumerate(times):
+            if i < len(wspd) and wspd[i] is not None:
+                # Open-Meteo returns km/h, convert to m/s
+                result[t] = {
+                    "wspd_ms": wspd[i] / 3.6,
+                    "wdir": wdir[i] if i < len(wdir) else None,
+                }
+        return result
+    except Exception as e:
+        logger.warning(f"ECMWF fetch failed: {e}")
+        return {}
+
+
+def fetch_latest_tidal() -> dict:
+    """Fetch recent tidal current + water level from NOAA CO-OPS."""
+    import requests as req
+    result = {}
+    now = datetime.now(timezone.utc)
+    start = (now - pd.Timedelta(hours=6)).strftime("%Y%m%d")
+    end = now.strftime("%Y%m%d")
+
+    try:
+        # Water level at Annapolis
+        url = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+        params = {
+            "station": "8575512",
+            "begin_date": start,
+            "end_date": end,
+            "product": "water_level",
+            "datum": "MLLW",
+            "units": "metric",
+            "time_zone": "gmt",
+            "format": "json",
+            "application": "puff_cast",
+        }
+        resp = req.get(url, params=params, timeout=15)
+        if resp.ok:
+            data = resp.json()
+            entries = data.get("data", [])
+            if entries:
+                latest = entries[-1]
+                result["water_level_m"] = float(latest.get("v", 0))
+                if len(entries) >= 2:
+                    result["water_level_diff1"] = float(entries[-1].get("v", 0)) - float(entries[-2].get("v", 0))
+                if len(entries) >= 4:
+                    result["water_level_diff3"] = float(entries[-1].get("v", 0)) - float(entries[-4].get("v", 0))
+    except Exception as e:
+        logger.warning(f"CO-OPS water level failed: {e}")
+
+    try:
+        # Tidal currents at Bay Bridge
+        params["station"] = "cb1102"
+        params["product"] = "currents"
+        del params["datum"]
+        resp = req.get(url, params=params, timeout=15)
+        if resp.ok:
+            data = resp.json()
+            entries = data.get("data", [])
+            if entries:
+                latest = entries[-1]
+                result["current_speed_ms"] = float(latest.get("s", 0))
+                cdir = float(latest.get("d", 0))
+                result["current_dir"] = cdir
+                result["current_dir_sin"] = np.sin(np.deg2rad(cdir))
+                result["current_dir_cos"] = np.cos(np.deg2rad(cdir))
+    except Exception as e:
+        logger.warning(f"CO-OPS currents failed: {e}")
+
+    return result
+
+
 def generate_forecast() -> dict:
     """Run the full forecast pipeline. Returns forecast dict."""
     now = datetime.now(timezone.utc)
@@ -195,6 +288,14 @@ def generate_forecast() -> dict:
 
     print("  Fetching ASOS airport data...")
     asos = fetch_latest_asos()
+
+    print("  Fetching ECMWF from Open-Meteo...")
+    ecmwf = fetch_latest_ecmwf()
+    logger.info(f"  ECMWF: {len(ecmwf)} hourly forecasts")
+
+    print("  Fetching tidal data from CO-OPS...")
+    tidal = fetch_latest_tidal()
+    logger.info(f"  Tidal: {list(tidal.keys())}")
 
     # Load models and generate predictions
     forecasts = {}
@@ -216,7 +317,8 @@ def generate_forecast() -> dict:
             # Build features for the latest HRRR init
             # For now, use a simplified feature builder from available data
             feat = build_realtime_features(
-                hrrr, obs, asos, station, lead, meta["features"]
+                hrrr, obs, asos, station, lead, meta["features"],
+                ecmwf=ecmwf, tidal=tidal,
             )
 
             if feat is not None:
@@ -295,7 +397,8 @@ def generate_forecast() -> dict:
     return result
 
 
-def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols):
+def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols,
+                            ecmwf=None, tidal=None):
     """Build feature vector matching the training feature set."""
     # Get HRRR forecast for this station/lead
     hrrr_sub = hrrr[(hrrr["station_id"] == station) & (hrrr["lead_hours"] == lead)]
@@ -430,6 +533,46 @@ def build_realtime_features(hrrr, obs, asos, station, lead, feature_cols):
                 col = f"{sid}_{col_suffix}"
                 if col in asos.columns:
                     feat[f"{sid}_{feat_name}"] = asos_row.get(col, np.nan)
+
+    # ECMWF forecast for this valid time
+    if ecmwf:
+        vt = hrrr_row["valid_time"]
+        # Match to nearest hour in ECMWF data
+        vt_key = vt.strftime("%Y-%m-%dT%H:00") if hasattr(vt, 'strftime') else str(vt)[:13] + ":00"
+        ec = ecmwf.get(vt_key)
+        if ec:
+            feat["ecmwf_wspd"] = ec["wspd_ms"]
+            if ec.get("wdir") is not None:
+                feat["ecmwf_wdir_sin"] = np.sin(np.deg2rad(ec["wdir"]))
+                feat["ecmwf_wdir_cos"] = np.cos(np.deg2rad(ec["wdir"]))
+            if "hrrr_wspd" in feat:
+                feat["hrrr_ecmwf_spread"] = feat["hrrr_wspd"] - ec["wspd_ms"]
+
+        # Model consensus and spread (if we have ECMWF + HRRR)
+        model_wspds = [v for k, v in feat.items()
+                       if k in ("hrrr_wspd", "ecmwf_wspd") and not pd.isna(v)]
+        if len(model_wspds) >= 2:
+            feat["model_consensus"] = np.mean(model_wspds)
+            feat["model_spread_std"] = np.std(model_wspds)
+
+    # Tidal / CO-OPS data
+    if tidal:
+        for key in ["water_level_m", "water_level_diff1", "water_level_diff3",
+                     "current_speed_ms", "current_dir", "current_dir_sin", "current_dir_cos"]:
+            if key in tidal:
+                feat[key] = tidal[key]
+
+        # Wind-current interaction
+        if "hrrr_wspd" in feat and "current_speed_ms" in tidal:
+            hrrr_wdir_deg = np.rad2deg(np.arctan2(
+                feat.get("hrrr_wdir_sin", 0), feat.get("hrrr_wdir_cos", 1)
+            )) % 360
+            curr_dir = tidal.get("current_dir")
+            if curr_dir is not None:
+                wind_current_angle = abs((hrrr_wdir_deg - curr_dir + 180) % 360 - 180)
+                feat["wind_current_angle"] = wind_current_angle
+                feat["wind_current_opposing"] = 1.0 if wind_current_angle > 90 else 0.0
+                feat["wind_current_product"] = feat["hrrr_wspd"] * tidal["current_speed_ms"]
 
     # Build DataFrame with correct column order
     feat_series = pd.Series(feat)
