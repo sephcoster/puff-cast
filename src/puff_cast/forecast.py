@@ -31,7 +31,6 @@ STATIONS = {
     "TPLM2": "Thomas Point Light",
     "APAM2": "Annapolis",
     "SLIM2": "Solomons Island",
-    "CAMM2": "Cambridge",
 }
 
 LEAD_HOURS = [1, 3, 6, 12, 18, 24]

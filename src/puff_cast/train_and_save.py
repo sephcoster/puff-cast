@@ -40,7 +40,7 @@ DIR_PARAMS = {
     "random_state": 42,
 }
 
-STATIONS = ["TPLM2", "APAM2", "SLIM2", "CAMM2"]
+STATIONS = ["TPLM2", "APAM2", "SLIM2"]
 LEAD_HOURS = [1, 3, 6, 12, 18, 24]
 
 

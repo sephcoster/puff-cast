@@ -163,12 +163,11 @@ const STATION_NAMES: Record<string, string> = {
   APAM2: "Annapolis",
   TPLM2: "Thomas Point",
   SLIM2: "Solomons",
-  CAMM2: "Cambridge",
 };
 
 function computeAccuracyStats(verifications: VerificationRecord[]) {
   const leads = [1, 3, 6, 12, 18, 24];
-  const stations = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
+  const stations = ["APAM2", "TPLM2", "SLIM2"];
 
   // Per-station overall
   const overall: Array<{
@@ -241,7 +240,7 @@ function computeAccuracyStats(verifications: VerificationRecord[]) {
 }
 
 const LEAD_COLUMNS = [24, 18, 12, 6, 3, 1];
-const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2", "CAMM2"];
+const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2"];
 
 // -- page -----------------------------------------------------------------
 
