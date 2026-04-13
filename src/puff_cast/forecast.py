@@ -36,6 +36,28 @@ STATIONS = {
 
 LEAD_HOURS = [1, 3, 6, 12, 18, 24]
 
+_CARDINALS = [
+    "N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
+    "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW",
+]
+
+# Arrows point in the direction the wind is COMING FROM
+_ARROWS = [
+    "\u2193", "\u2199", "\u2190", "\u2196",  # N NE E SE → ↓ ↙ ← ↖
+    "\u2191", "\u2197", "\u2192", "\u2198",  # S SW W NW → ↑ ↗ → ↘
+]
+
+
+def _deg_to_cardinal(deg: float) -> str:
+    idx = round(deg / 22.5) % 16
+    return _CARDINALS[idx]
+
+
+def _deg_to_arrow(deg: float) -> str:
+    # Map 0-360 to 8 compass points (N=0, NE=45, E=90, ...)
+    idx = round(deg / 45) % 8
+    return _ARROWS[idx]
+
 
 def fetch_latest_obs() -> pd.DataFrame:
     """Fetch latest station observations from NDBC realtime."""
@@ -198,7 +220,8 @@ def generate_forecast() -> dict:
             )
 
             if feat is not None:
-                pred_ms = model.predict(pd.DataFrame([feat.fillna(-999)]))[0]
+                feat_df = pd.DataFrame([feat.fillna(-999)])
+                pred_ms = model.predict(feat_df)[0]
                 pred_kt = pred_ms * KT
 
                 # Get raw HRRR forecast for this station/lead (the NWS baseline)
@@ -208,13 +231,39 @@ def generate_forecast() -> dict:
                 hrrr_raw_kt = round(hrrr_sub.iloc[-1]["hrrr_wspd_ms"] * KT, 1) if len(hrrr_sub) > 0 else None
                 valid_time = hrrr_sub.iloc[-1]["valid_time"] if len(hrrr_sub) > 0 else hrrr[hrrr["lead_hours"] == lead].iloc[0]["valid_time"]
 
-                forecasts[station]["leads"][lead] = {
+                # Raw HRRR direction
+                hrrr_wdir = round(hrrr_sub.iloc[-1]["hrrr_wdir"], 0) if len(hrrr_sub) > 0 else None
+
+                # Direction prediction (corrected from HRRR)
+                pred_dir = None
+                dir_model_path = MODEL_DIR / f"{station}_{lead}h_dir.pkl"
+                if dir_model_path.exists() and hrrr_wdir is not None and pred_kt >= 5:
+                    try:
+                        with open(dir_model_path, "rb") as df:
+                            dir_model = pickle.load(df)
+                        correction = dir_model.predict(feat_df)[0]
+                        pred_dir = round((hrrr_wdir + correction) % 360, 0)
+                    except Exception:
+                        pred_dir = hrrr_wdir
+                elif hrrr_wdir is not None:
+                    pred_dir = hrrr_wdir  # Fallback: use raw HRRR for light wind
+
+                lead_data = {
                     "wspd_kt": round(pred_kt, 1),
                     "wspd_ms": round(pred_ms, 2),
                     "nws_kt": hrrr_raw_kt,
                     "valid_time": valid_time.isoformat(),
                     "init_time": hrrr.iloc[0]["init_time"].isoformat(),
                 }
+                if pred_dir is not None:
+                    lead_data["dir_deg"] = int(pred_dir)
+                    lead_data["dir_cardinal"] = _deg_to_cardinal(pred_dir)
+                    lead_data["dir_arrow"] = _deg_to_arrow(pred_dir)
+                if hrrr_wdir is not None:
+                    lead_data["nws_dir_deg"] = int(hrrr_wdir)
+                    lead_data["nws_dir_cardinal"] = _deg_to_cardinal(hrrr_wdir)
+
+                forecasts[station]["leads"][lead] = lead_data
 
     # Get current conditions and recent hourly actuals for display
     for station in STATIONS:
@@ -603,11 +652,15 @@ def build_upcoming_funnels() -> list[dict]:
                     # Keep most recent forecast for this lead
                     existing = groups[key]["predictions"].get(lead_str)
                     if existing is None or gen_time > pd.Timestamp(existing["generated_at"]):
-                        groups[key]["predictions"][lead_str] = {
+                        entry = {
                             "predicted_kt": ldata["wspd_kt"],
                             "nws_kt": ldata.get("nws_kt"),
                             "generated_at": pred["generated_at"],
                         }
+                        for dk in ["dir_cardinal", "dir_arrow", "nws_dir_cardinal"]:
+                            if dk in ldata:
+                                entry[dk] = ldata[dk]
+                        groups[key]["predictions"][lead_str] = entry
 
     # Sort by valid_time ascending (soonest first)
     upcoming = sorted(groups.values(), key=lambda x: x["valid_time"])

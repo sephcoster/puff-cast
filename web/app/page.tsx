@@ -11,6 +11,11 @@ interface LeadForecast {
   wspd_kt: number;
   wspd_ms: number;
   nws_kt: number | null;
+  dir_deg?: number;
+  dir_cardinal?: string;
+  dir_arrow?: string;
+  nws_dir_deg?: number;
+  nws_dir_cardinal?: string;
   valid_time: string;
   init_time: string;
 }
@@ -45,6 +50,9 @@ interface BacktestFunnel {
 interface UpcomingPrediction {
   predicted_kt: number;
   nws_kt: number | null;
+  dir_cardinal?: string;
+  dir_arrow?: string;
+  nws_dir_cardinal?: string;
   generated_at: string;
 }
 
@@ -343,14 +351,27 @@ export default async function Home() {
                           }
                           return (
                             <td key={lead} className="px-2 py-2 text-center">
-                              <span
-                                className={`font-bold text-lg ${windColor(p.predicted_kt)}`}
-                              >
-                                {Math.round(p.predicted_kt)}
-                              </span>
+                              <div className="flex items-center justify-center gap-1">
+                                {p.dir_arrow && (
+                                  <span className="text-slate-400 text-lg" title={`${p.dir_cardinal ?? ""}`}>
+                                    {p.dir_arrow}
+                                  </span>
+                                )}
+                                <span
+                                  className={`font-bold text-lg ${windColor(p.predicted_kt)}`}
+                                >
+                                  {Math.round(p.predicted_kt)}
+                                </span>
+                              </div>
+                              {p.dir_cardinal && (
+                                <div className="text-xs text-slate-500">
+                                  {p.dir_cardinal}
+                                </div>
+                              )}
                               {p.nws_kt != null && (
                                 <div className="text-xs text-slate-600">
                                   {Math.round(p.nws_kt)}
+                                  {p.nws_dir_cardinal ? ` ${p.nws_dir_cardinal}` : ""}
                                 </div>
                               )}
                             </td>
@@ -471,14 +492,22 @@ export default async function Home() {
                         }
                         return (
                           <td key={lead} className="px-2 py-2 text-center">
-                            <span
-                              className={`font-bold ${windColor(p.predicted_kt)}`}
-                            >
-                              {Math.round(p.predicted_kt)}
-                            </span>
+                            <div className="flex items-center justify-center gap-0.5">
+                              {p.dir_arrow && (
+                                <span className="text-slate-400" title={p.dir_cardinal ?? ""}>
+                                  {p.dir_arrow}
+                                </span>
+                              )}
+                              <span
+                                className={`font-bold ${windColor(p.predicted_kt)}`}
+                              >
+                                {Math.round(p.predicted_kt)}
+                              </span>
+                            </div>
                             {p.nws_kt != null && (
                               <div className="text-xs text-slate-600">
                                 {Math.round(p.nws_kt)}
+                                {p.nws_dir_cardinal ? ` ${p.nws_dir_cardinal}` : ""}
                               </div>
                             )}
                           </td>
