@@ -30,8 +30,8 @@
         "nws_error_kt": -0.6
       },
       "1": {
-        "predicted_kt": 8.5,
-        "error_kt": 0.5,
+        "predicted_kt": 9.0,
+        "error_kt": 1.0,
         "nws_kt": 7.8,
         "nws_error_kt": -0.2
       }
@@ -68,8 +68,8 @@
         "nws_error_kt": 0.9
       },
       "1": {
-        "predicted_kt": 3.7,
-        "error_kt": 0.8,
+        "predicted_kt": 3.5,
+        "error_kt": 0.6,
         "nws_kt": 3.8,
         "nws_error_kt": 0.9
       }
@@ -106,8 +106,8 @@
         "nws_error_kt": 1.6
       },
       "1": {
-        "predicted_kt": 4.9,
-        "error_kt": 0.8,
+        "predicted_kt": 4.3,
+        "error_kt": 0.2,
         "nws_kt": 2.5,
         "nws_error_kt": -1.6
       }
