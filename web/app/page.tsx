@@ -247,6 +247,109 @@ function leadColClass(lead: number): string {
 }
 const STATION_ORDER = ["APAM2", "TPLM2", "SLIM2"];
 
+interface HourlyPoint {
+  time: Date;
+  kt: number | null;
+  gust: number | null;
+  dirCardinal?: string;
+  dirArrow?: string;
+  /** true = linearly interpolated between neighbors (gap filler) */
+  interpolated: boolean;
+  /** smallest lead (hrs) used for the anchor prediction, if known */
+  leadHours?: number;
+}
+
+/**
+ * Build a 24-hour hourly forecast for one station from upcoming funnels.
+ *
+ * Anchors the window at the most recent forecast run (or now, whichever is
+ * later) so stale data still renders meaningfully during dev.
+ */
+function buildHourlyForecast(
+  upcoming: UpcomingFunnel[],
+  anchorMs: number,
+): HourlyPoint[] {
+  // For each entry, pick the freshest prediction (smallest lead = most recent run)
+  const known = upcoming
+    .map((e) => {
+      const leads = Object.keys(e.predictions)
+        .map(Number)
+        .sort((a, b) => a - b);
+      if (leads.length === 0) return null;
+      const bestLead = leads[0];
+      const p = e.predictions[String(bestLead)];
+      return {
+        timeMs: new Date(e.valid_time).getTime(),
+        kt: p.predicted_kt,
+        gust: p.gust_kt ?? null,
+        dirCardinal: p.dir_cardinal,
+        dirArrow: p.dir_arrow,
+        leadHours: bestLead,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null)
+    .sort((a, b) => a.timeMs - b.timeMs);
+
+  // Start at the next whole hour after anchor
+  const startHourMs = Math.ceil(anchorMs / 3600_000) * 3600_000;
+  const points: HourlyPoint[] = [];
+
+  for (let i = 0; i < 24; i++) {
+    const t = startHourMs + i * 3600_000;
+    const exact = known.find((k) => k.timeMs === t);
+    if (exact) {
+      points.push({
+        time: new Date(t),
+        kt: exact.kt,
+        gust: exact.gust,
+        dirCardinal: exact.dirCardinal,
+        dirArrow: exact.dirArrow,
+        interpolated: false,
+        leadHours: exact.leadHours,
+      });
+      continue;
+    }
+    const before = [...known].reverse().find((k) => k.timeMs < t);
+    const after = known.find((k) => k.timeMs > t);
+    if (before && after) {
+      const frac = (t - before.timeMs) / (after.timeMs - before.timeMs);
+      const kt = before.kt + (after.kt - before.kt) * frac;
+      const gust =
+        before.gust != null && after.gust != null
+          ? before.gust + (after.gust - before.gust) * frac
+          : null;
+      // Direction is circular — take nearest anchor rather than lerping degrees
+      const nearest = frac < 0.5 ? before : after;
+      points.push({
+        time: new Date(t),
+        kt,
+        gust,
+        dirCardinal: nearest.dirCardinal,
+        dirArrow: nearest.dirArrow,
+        interpolated: true,
+      });
+    } else if (before || after) {
+      const p = (before ?? after)!;
+      points.push({
+        time: new Date(t),
+        kt: p.kt,
+        gust: p.gust,
+        dirCardinal: p.dirCardinal,
+        dirArrow: p.dirArrow,
+        interpolated: true,
+      });
+    } else {
+      points.push({
+        time: new Date(t),
+        kt: null,
+        gust: null,
+        interpolated: true,
+      });
+    }
+  }
+  return points;
+}
+
 // -- page -----------------------------------------------------------------
 
 export default async function Home() {
@@ -356,6 +459,118 @@ export default async function Home() {
           </div>
         </div>
       )}
+
+      {/* 24-hour forecast strip per station */}
+      {(() => {
+        // Normally anchor at "now". If all available forecast valid_times are
+        // already in the past (dev / stale data), anchor at the earliest valid
+        // hour instead so the strip still shows something meaningful.
+        const nowMs = Date.now();
+        let latestRunMs = 0;
+        let earliestValidMs = Infinity;
+        let latestValidMs = 0;
+        for (const e of upcomingFunnels) {
+          const vt = new Date(e.valid_time).getTime();
+          if (vt < earliestValidMs) earliestValidMs = vt;
+          if (vt > latestValidMs) latestValidMs = vt;
+          for (const p of Object.values(e.predictions)) {
+            const t = new Date(p.generated_at).getTime();
+            if (t > latestRunMs) latestRunMs = t;
+          }
+        }
+        const isStale =
+          latestValidMs > 0 && latestValidMs < nowMs - 3600_000;
+        const anchorMs = isStale ? earliestValidMs - 3600_000 : nowMs;
+
+        const stripByStation: Record<string, HourlyPoint[]> = {};
+        let anyData = false;
+        for (const sid of orderedStationIds) {
+          const pts = buildHourlyForecast(
+            upcomingByStation[sid] ?? [],
+            anchorMs,
+          );
+          stripByStation[sid] = pts;
+          if (pts.some((p) => p.kt != null)) anyData = true;
+        }
+        if (!anyData) return null;
+
+        return (
+          <div className="bg-slate-900 rounded-lg overflow-hidden">
+            <div className="bg-slate-800 px-4 py-2 flex items-baseline justify-between">
+              <span className="text-xs uppercase tracking-wider text-slate-500">
+                Next 24 hours
+              </span>
+              <span className="text-[10px] text-slate-600">
+                {isStale
+                  ? `as of latest run · ${formatUpdated(new Date(latestRunMs).toISOString())}`
+                  : "freshest prediction per hour · gaps interpolated"}
+              </span>
+            </div>
+            <div className="divide-y divide-slate-800">
+              {orderedStationIds.map((sid) => {
+                const name = forecast?.stations[sid]?.name ?? sid;
+                const points = stripByStation[sid];
+                if (!points.some((p) => p.kt != null)) return null;
+                return (
+                  <div key={sid} className="px-3 py-3">
+                    <div className="flex items-baseline gap-2 mb-2 px-1">
+                      <span className="font-medium text-slate-300 text-sm">
+                        {name}
+                      </span>
+                      <span className="text-xs text-slate-600">{sid}</span>
+                    </div>
+                    <div className="flex overflow-x-auto gap-1 pb-1">
+                      {points.map((p, i) => {
+                        const ktRounded =
+                          p.kt != null ? Math.round(p.kt) : null;
+                        const gustRounded =
+                          p.gust != null ? Math.round(p.gust) : null;
+                        const showGust =
+                          gustRounded != null &&
+                          ktRounded != null &&
+                          gustRounded > ktRounded + 1;
+                        return (
+                          <div
+                            key={i}
+                            className={`flex-shrink-0 w-14 text-center py-1.5 rounded bg-slate-950/40 ${
+                              p.interpolated ? "opacity-60" : ""
+                            }`}
+                          >
+                            <div className="text-[10px] text-slate-500">
+                              {formatHour(p.time.toISOString())}
+                            </div>
+                            {ktRounded != null ? (
+                              <>
+                                <div
+                                  className={`text-lg font-bold leading-tight ${windColor(ktRounded)}`}
+                                >
+                                  {ktRounded}
+                                </div>
+                                <div className="text-[10px] text-slate-500 h-3">
+                                  {showGust ? `G${gustRounded}` : ""}
+                                </div>
+                                <div className="text-[10px] text-slate-500 h-3">
+                                  {p.dirArrow
+                                    ? `${p.dirArrow} ${p.dirCardinal ?? ""}`
+                                    : ""}
+                                </div>
+                              </>
+                            ) : (
+                              <div className="text-slate-700 text-lg leading-tight">
+                                —
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Next hour summary — one row per station */}
       {(() => {

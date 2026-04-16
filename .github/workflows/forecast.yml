@@ -8,6 +8,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   forecast:
@@ -36,7 +42,7 @@ jobs:
       - name: Generate forecast
         run: python -m puff_cast.forecast
 
-      - name: Copy data for Vercel
+      - name: Copy data for web build
         run: |
           mkdir -p web/public/data
           cp docs/*.json web/public/data/ 2>/dev/null || true
@@ -49,3 +55,32 @@ jobs:
           git diff --cached --quiet || git commit -m "Forecast $(date -u +%Y-%m-%d\ %H:%M\ UTC)"
           git pull --rebase origin main || true
           git push
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build static site
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/out
+
+  deploy:
+    needs: forecast
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
