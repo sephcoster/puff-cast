@@ -30,8 +30,8 @@
         "nws_error_kt": -1.3
       },
       "1": {
-        "predicted_kt": 8.3,
-        "error_kt": 0.3,
+        "predicted_kt": 7.5,
+        "error_kt": -0.5,
         "nws_kt": 9.8,
         "nws_error_kt": 1.8
       }
@@ -68,8 +68,8 @@
         "nws_error_kt": 4.9
       },
       "1": {
-        "predicted_kt": 2.4,
-        "error_kt": 2.4,
+        "predicted_kt": 2.0,
+        "error_kt": 2.0,
         "nws_kt": 6.4,
         "nws_error_kt": 6.4
       }
@@ -79,37 +79,37 @@
     "station": "SLIM2",
     "station_name": "Solomons Island",
     "valid_time": "2026-04-16T08:00:00",
-    "actual_kt": 13.3,
+    "actual_kt": 9.7,
     "predictions": {
       "18": {
         "predicted_kt": 11.0,
-        "error_kt": -2.3,
+        "error_kt": 1.3,
         "nws_kt": 8.0,
-        "nws_error_kt": -5.3
+        "nws_error_kt": -1.7
       },
       "12": {
         "predicted_kt": 7.8,
-        "error_kt": -5.5,
+        "error_kt": -1.9,
         "nws_kt": 5.9,
-        "nws_error_kt": -7.4
+        "nws_error_kt": -3.8
       },
       "6": {
         "predicted_kt": 7.5,
-        "error_kt": -5.8,
+        "error_kt": -2.2,
         "nws_kt": 5.9,
-        "nws_error_kt": -7.4
+        "nws_error_kt": -3.8
       },
       "3": {
         "predicted_kt": 8.7,
-        "error_kt": -4.6,
+        "error_kt": -1.0,
         "nws_kt": 5.2,
-        "nws_error_kt": -8.1
+        "nws_error_kt": -4.5
       },
       "1": {
-        "predicted_kt": 12.2,
-        "error_kt": -1.1,
+        "predicted_kt": 10.8,
+        "error_kt": 1.1,
         "nws_kt": 5.1,
-        "nws_error_kt": -8.2
+        "nws_error_kt": -4.6
       }
     }
   },
@@ -181,31 +181,31 @@
     "station": "SLIM2",
     "station_name": "Solomons Island",
     "valid_time": "2026-04-16T07:00:00",
-    "actual_kt": 13.3,
+    "actual_kt": 11.9,
     "predictions": {
       "18": {
         "predicted_kt": 11.0,
-        "error_kt": -2.3,
+        "error_kt": -0.9,
         "nws_kt": 5.7,
-        "nws_error_kt": -7.6
+        "nws_error_kt": -6.2
       },
       "12": {
         "predicted_kt": 7.7,
-        "error_kt": -5.6,
+        "error_kt": -4.2,
         "nws_kt": 6.2,
-        "nws_error_kt": -7.1
+        "nws_error_kt": -5.7
       },
       "6": {
         "predicted_kt": 7.0,
-        "error_kt": -6.3,
+        "error_kt": -4.9,
         "nws_kt": 5.9,
-        "nws_error_kt": -7.4
+        "nws_error_kt": -6.0
       },
       "3": {
         "predicted_kt": 9.5,
-        "error_kt": -3.8,
+        "error_kt": -2.4,
         "nws_kt": 5.5,
-        "nws_error_kt": -7.8
+        "nws_error_kt": -6.4
       }
     }
   },
