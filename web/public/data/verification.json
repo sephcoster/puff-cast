@@ -6,11 +6,11 @@
     "forecast_time": "2026-04-18T07:43:40.783281+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 4.5,
-    "actual_kt": 14.0,
-    "error_kt": -9.5,
-    "abs_error_kt": 9.5,
+    "actual_kt": 17.1,
+    "error_kt": -12.6,
+    "abs_error_kt": 12.6,
     "nws_kt": 1.8,
-    "nws_error_kt": -12.2
+    "nws_error_kt": -15.3
   },
   {
     "station": "APAM2",
@@ -19,11 +19,11 @@
     "forecast_time": "2026-04-18T07:43:40.783281+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 1.8,
-    "actual_kt": 7.7,
-    "error_kt": -5.9,
-    "abs_error_kt": 5.9,
+    "actual_kt": 7.0,
+    "error_kt": -5.2,
+    "abs_error_kt": 5.2,
     "nws_kt": 2.3,
-    "nws_error_kt": -5.4
+    "nws_error_kt": -4.7
   },
   {
     "station": "SLIM2",
@@ -32,11 +32,11 @@
     "forecast_time": "2026-04-18T07:43:40.783281+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 7.2,
-    "actual_kt": 6.0,
-    "error_kt": 1.2,
-    "abs_error_kt": 1.2,
+    "actual_kt": 19.1,
+    "error_kt": -11.9,
+    "abs_error_kt": 11.9,
     "nws_kt": 5.6,
-    "nws_error_kt": -0.4
+    "nws_error_kt": -13.5
   },
   {
     "station": "TPLM2",
@@ -45,11 +45,11 @@
     "forecast_time": "2026-04-18T13:43:46.330652+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 4.2,
-    "actual_kt": 14.0,
-    "error_kt": -9.8,
-    "abs_error_kt": 9.8,
+    "actual_kt": 17.1,
+    "error_kt": -12.9,
+    "abs_error_kt": 12.9,
     "nws_kt": 5.9,
-    "nws_error_kt": -8.1
+    "nws_error_kt": -11.2
   },
   {
     "station": "APAM2",
@@ -58,11 +58,11 @@
     "forecast_time": "2026-04-18T13:43:46.330652+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 2.4,
-    "actual_kt": 7.7,
-    "error_kt": -5.3,
-    "abs_error_kt": 5.3,
+    "actual_kt": 7.0,
+    "error_kt": -4.6,
+    "abs_error_kt": 4.6,
     "nws_kt": 7.4,
-    "nws_error_kt": -0.3
+    "nws_error_kt": 0.4
   },
   {
     "station": "SLIM2",
@@ -71,11 +71,11 @@
     "forecast_time": "2026-04-18T13:43:46.330652+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 5.3,
-    "actual_kt": 6.0,
-    "error_kt": -0.7,
-    "abs_error_kt": 0.7,
+    "actual_kt": 19.1,
+    "error_kt": -13.8,
+    "abs_error_kt": 13.8,
     "nws_kt": 4.3,
-    "nws_error_kt": -1.7
+    "nws_error_kt": -14.8
   },
   {
     "station": "TPLM2",
@@ -84,11 +84,11 @@
     "forecast_time": "2026-04-18T19:33:04.207095+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 5.2,
-    "actual_kt": 14.0,
-    "error_kt": -8.8,
-    "abs_error_kt": 8.8,
+    "actual_kt": 17.1,
+    "error_kt": -11.9,
+    "abs_error_kt": 11.9,
     "nws_kt": 12.7,
-    "nws_error_kt": -1.3
+    "nws_error_kt": -4.4
   },
   {
     "station": "APAM2",
@@ -97,11 +97,11 @@
     "forecast_time": "2026-04-18T19:33:04.207095+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 3.9,
-    "actual_kt": 7.7,
-    "error_kt": -3.8,
-    "abs_error_kt": 3.8,
+    "actual_kt": 7.0,
+    "error_kt": -3.1,
+    "abs_error_kt": 3.1,
     "nws_kt": 5.9,
-    "nws_error_kt": -1.8
+    "nws_error_kt": -1.1
   },
   {
     "station": "SLIM2",
@@ -110,11 +110,11 @@
     "forecast_time": "2026-04-18T19:33:04.207095+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 8.2,
-    "actual_kt": 6.0,
-    "error_kt": 2.2,
-    "abs_error_kt": 2.2,
+    "actual_kt": 19.1,
+    "error_kt": -10.9,
+    "abs_error_kt": 10.9,
     "nws_kt": 8.9,
-    "nws_error_kt": 2.9
+    "nws_error_kt": -10.2
   },
   {
     "station": "TPLM2",
@@ -123,11 +123,11 @@
     "forecast_time": "2026-04-19T01:06:56.625645+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 9.9,
-    "actual_kt": 14.0,
-    "error_kt": -4.1,
-    "abs_error_kt": 4.1,
+    "actual_kt": 17.1,
+    "error_kt": -7.2,
+    "abs_error_kt": 7.2,
     "nws_kt": 11.8,
-    "nws_error_kt": -2.2
+    "nws_error_kt": -5.3
   },
   {
     "station": "APAM2",
@@ -136,11 +136,11 @@
     "forecast_time": "2026-04-19T01:06:56.625645+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 4.4,
-    "actual_kt": 7.7,
-    "error_kt": -3.3,
-    "abs_error_kt": 3.3,
+    "actual_kt": 7.0,
+    "error_kt": -2.6,
+    "abs_error_kt": 2.6,
     "nws_kt": 6.8,
-    "nws_error_kt": -0.9
+    "nws_error_kt": -0.2
   },
   {
     "station": "SLIM2",
@@ -149,11 +149,50 @@
     "forecast_time": "2026-04-19T01:06:56.625645+00:00",
     "valid_time": "2026-04-19T06:00:00",
     "predicted_kt": 7.6,
-    "actual_kt": 6.0,
-    "error_kt": 1.6,
-    "abs_error_kt": 1.6,
+    "actual_kt": 19.1,
+    "error_kt": -11.5,
+    "abs_error_kt": 11.5,
     "nws_kt": 4.8,
-    "nws_error_kt": -1.2
+    "nws_error_kt": -14.3
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-19T06:53:53.049834+00:00",
+    "valid_time": "2026-04-19T06:00:00",
+    "predicted_kt": 12.1,
+    "actual_kt": 17.1,
+    "error_kt": -5.0,
+    "abs_error_kt": 5.0,
+    "nws_kt": 14.2,
+    "nws_error_kt": -2.9
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-19T06:53:53.049834+00:00",
+    "valid_time": "2026-04-19T06:00:00",
+    "predicted_kt": 6.2,
+    "actual_kt": 7.0,
+    "error_kt": -0.8,
+    "abs_error_kt": 0.8,
+    "nws_kt": 9.1,
+    "nws_error_kt": 2.1
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-19T06:53:53.049834+00:00",
+    "valid_time": "2026-04-19T06:00:00",
+    "predicted_kt": 4.8,
+    "actual_kt": 19.1,
+    "error_kt": -14.3,
+    "abs_error_kt": 14.3,
+    "nws_kt": 3.3,
+    "nws_error_kt": -15.8
   },
   {
     "station": "TPLM2",
@@ -175,11 +214,11 @@
     "forecast_time": "2026-04-18T12:32:51.390593+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 2.3,
-    "actual_kt": 7.7,
-    "error_kt": -5.4,
-    "abs_error_kt": 5.4,
+    "actual_kt": 9.0,
+    "error_kt": -6.7,
+    "abs_error_kt": 6.7,
     "nws_kt": 1.7,
-    "nws_error_kt": -6.0
+    "nws_error_kt": -7.3
   },
   {
     "station": "SLIM2",
@@ -188,11 +227,11 @@
     "forecast_time": "2026-04-18T12:32:51.390593+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 5.4,
-    "actual_kt": 6.0,
-    "error_kt": -0.6,
-    "abs_error_kt": 0.6,
+    "actual_kt": 5.2,
+    "error_kt": 0.2,
+    "abs_error_kt": 0.2,
     "nws_kt": 5.9,
-    "nws_error_kt": -0.1
+    "nws_error_kt": 0.7
   },
   {
     "station": "TPLM2",
@@ -214,11 +253,11 @@
     "forecast_time": "2026-04-18T18:32:24.950681+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 3.6,
-    "actual_kt": 7.7,
-    "error_kt": -4.1,
-    "abs_error_kt": 4.1,
+    "actual_kt": 9.0,
+    "error_kt": -5.4,
+    "abs_error_kt": 5.4,
     "nws_kt": 2.8,
-    "nws_error_kt": -4.9
+    "nws_error_kt": -6.2
   },
   {
     "station": "SLIM2",
@@ -227,11 +266,11 @@
     "forecast_time": "2026-04-18T18:32:24.950681+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 9.5,
-    "actual_kt": 6.0,
-    "error_kt": 3.5,
-    "abs_error_kt": 3.5,
+    "actual_kt": 5.2,
+    "error_kt": 4.3,
+    "abs_error_kt": 4.3,
     "nws_kt": 4.9,
-    "nws_error_kt": -1.1
+    "nws_error_kt": -0.3
   },
   {
     "station": "TPLM2",
@@ -253,11 +292,11 @@
     "forecast_time": "2026-04-19T03:29:24.936559+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 5.5,
-    "actual_kt": 7.7,
-    "error_kt": -2.2,
-    "abs_error_kt": 2.2,
+    "actual_kt": 9.0,
+    "error_kt": -3.5,
+    "abs_error_kt": 3.5,
     "nws_kt": 7.5,
-    "nws_error_kt": -0.2
+    "nws_error_kt": -1.5
   },
   {
     "station": "SLIM2",
@@ -266,11 +305,11 @@
     "forecast_time": "2026-04-19T03:29:24.936559+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 7.4,
-    "actual_kt": 6.0,
-    "error_kt": 1.4,
-    "abs_error_kt": 1.4,
+    "actual_kt": 5.2,
+    "error_kt": 2.2,
+    "abs_error_kt": 2.2,
     "nws_kt": 6.8,
-    "nws_error_kt": 0.8
+    "nws_error_kt": 1.6
   },
   {
     "station": "TPLM2",
@@ -292,11 +331,11 @@
     "forecast_time": "2026-04-19T05:59:55.708618+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 5.5,
-    "actual_kt": 7.7,
-    "error_kt": -2.2,
-    "abs_error_kt": 2.2,
+    "actual_kt": 9.0,
+    "error_kt": -3.5,
+    "abs_error_kt": 3.5,
     "nws_kt": 8.0,
-    "nws_error_kt": 0.3
+    "nws_error_kt": -1.0
   },
   {
     "station": "SLIM2",
@@ -305,11 +344,11 @@
     "forecast_time": "2026-04-19T05:59:55.708618+00:00",
     "valid_time": "2026-04-19T05:00:00",
     "predicted_kt": 5.2,
-    "actual_kt": 6.0,
-    "error_kt": -0.8,
-    "abs_error_kt": 0.8,
+    "actual_kt": 5.2,
+    "error_kt": -0.0,
+    "abs_error_kt": 0.0,
     "nws_kt": 5.9,
-    "nws_error_kt": -0.1
+    "nws_error_kt": 0.7
   },
   {
     "station": "TPLM2",
