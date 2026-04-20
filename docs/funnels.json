@@ -2,6 +2,38 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-04-20T21:00:00",
+    "actual_kt": 24.1,
+    "predictions": {
+      "12": {
+        "predicted_kt": 16.8,
+        "error_kt": -7.3,
+        "nws_kt": 14.6,
+        "nws_error_kt": -9.5
+      },
+      "6": {
+        "predicted_kt": 13.3,
+        "error_kt": -10.8,
+        "nws_kt": 9.3,
+        "nws_error_kt": -14.8
+      },
+      "3": {
+        "predicted_kt": 15.4,
+        "error_kt": -8.7,
+        "nws_kt": 8.1,
+        "nws_error_kt": -16.0
+      },
+      "1": {
+        "predicted_kt": 16.2,
+        "error_kt": -7.9,
+        "nws_kt": 9.5,
+        "nws_error_kt": -14.6
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-04-20T20:00:00",
     "actual_kt": 19.1,
     "predictions": {
@@ -28,6 +60,70 @@
         "error_kt": -2.0,
         "nws_kt": 13.6,
         "nws_error_kt": -5.5
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-04-20T20:00:00",
+    "actual_kt": 14.8,
+    "predictions": {
+      "18": {
+        "predicted_kt": 6.9,
+        "error_kt": -7.9,
+        "nws_kt": 3.8,
+        "nws_error_kt": -11.0
+      },
+      "6": {
+        "predicted_kt": 12.1,
+        "error_kt": -2.7,
+        "nws_kt": 7.6,
+        "nws_error_kt": -7.2
+      },
+      "3": {
+        "predicted_kt": 12.5,
+        "error_kt": -2.3,
+        "nws_kt": 10.8,
+        "nws_error_kt": -4.0
+      },
+      "1": {
+        "predicted_kt": 14.6,
+        "error_kt": -0.2,
+        "nws_kt": 11.0,
+        "nws_error_kt": -3.8
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-04-20T20:00:00",
+    "actual_kt": 12.8,
+    "predictions": {
+      "18": {
+        "predicted_kt": 10.0,
+        "error_kt": -2.8,
+        "nws_kt": 7.6,
+        "nws_error_kt": -5.2
+      },
+      "6": {
+        "predicted_kt": 12.3,
+        "error_kt": -0.5,
+        "nws_kt": 11.2,
+        "nws_error_kt": -1.6
+      },
+      "3": {
+        "predicted_kt": 11.6,
+        "error_kt": -1.2,
+        "nws_kt": 7.9,
+        "nws_error_kt": -4.9
+      },
+      "1": {
+        "predicted_kt": 14.9,
+        "error_kt": 2.1,
+        "nws_kt": 11.4,
+        "nws_error_kt": -1.4
       }
     }
   },
