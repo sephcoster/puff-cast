@@ -24,8 +24,8 @@
         "nws_error_kt": -2.1
       },
       "1": {
-        "predicted_kt": 8.1,
-        "error_kt": 0.1,
+        "predicted_kt": 7.1,
+        "error_kt": -0.9,
         "nws_kt": 8.3,
         "nws_error_kt": 0.3
       }
