@@ -2,6 +2,162 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-24T20:33:02.938187+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 10.0,
+    "actual_kt": 12.1,
+    "error_kt": -2.1,
+    "abs_error_kt": 2.1,
+    "nws_kt": 8.8,
+    "nws_error_kt": -3.3
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-24T20:33:02.938187+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 5.1,
+    "actual_kt": 12.1,
+    "error_kt": -7.0,
+    "abs_error_kt": 7.0,
+    "nws_kt": 6.5,
+    "nws_error_kt": -5.6
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-24T20:33:02.938187+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 10.5,
+    "actual_kt": 14.0,
+    "error_kt": -3.5,
+    "abs_error_kt": 3.5,
+    "nws_kt": 8.2,
+    "nws_error_kt": -5.8
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-25T08:36:24.168439+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 10.9,
+    "actual_kt": 12.1,
+    "error_kt": -1.2,
+    "abs_error_kt": 1.2,
+    "nws_kt": 6.2,
+    "nws_error_kt": -5.9
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-25T08:36:24.168439+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 7.2,
+    "actual_kt": 12.1,
+    "error_kt": -4.9,
+    "abs_error_kt": 4.9,
+    "nws_kt": 4.5,
+    "nws_error_kt": -7.6
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-25T08:36:24.168439+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 12.6,
+    "actual_kt": 14.0,
+    "error_kt": -1.4,
+    "abs_error_kt": 1.4,
+    "nws_kt": 10.7,
+    "nws_error_kt": -3.3
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-25T11:32:06.499235+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 9.7,
+    "actual_kt": 12.1,
+    "error_kt": -2.4,
+    "abs_error_kt": 2.4,
+    "nws_kt": 7.6,
+    "nws_error_kt": -4.5
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-25T11:32:06.499235+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 8.5,
+    "actual_kt": 12.1,
+    "error_kt": -3.6,
+    "abs_error_kt": 3.6,
+    "nws_kt": 5.9,
+    "nws_error_kt": -6.2
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-25T11:32:06.499235+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 11.3,
+    "actual_kt": 14.0,
+    "error_kt": -2.7,
+    "abs_error_kt": 2.7,
+    "nws_kt": 7.7,
+    "nws_error_kt": -6.3
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-25T13:44:46.260830+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 13.4,
+    "actual_kt": 12.1,
+    "error_kt": 1.3,
+    "abs_error_kt": 1.3,
+    "nws_kt": 10.9,
+    "nws_error_kt": -1.2
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-25T13:44:46.260830+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 11.1,
+    "actual_kt": 12.1,
+    "error_kt": -1.0,
+    "abs_error_kt": 1.0,
+    "nws_kt": 7.5,
+    "nws_error_kt": -4.6
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-25T13:44:46.260830+00:00",
+    "valid_time": "2026-04-25T13:00:00",
+    "predicted_kt": 14.4,
+    "actual_kt": 14.0,
+    "error_kt": 0.4,
+    "abs_error_kt": 0.4,
+    "nws_kt": 7.0,
+    "nws_error_kt": -7.0
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "lead_hours": 24,
     "forecast_time": "2026-04-24T13:59:26.983803+00:00",
     "valid_time": "2026-04-25T12:00:00",
@@ -11,6 +167,32 @@
     "abs_error_kt": 0.4,
     "nws_kt": 7.3,
     "nws_error_kt": -4.8
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 24,
+    "forecast_time": "2026-04-24T13:59:26.983803+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 4.2,
+    "actual_kt": 11.6,
+    "error_kt": -7.4,
+    "abs_error_kt": 7.4,
+    "nws_kt": 5.3,
+    "nws_error_kt": -6.3
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 24,
+    "forecast_time": "2026-04-24T13:59:26.983803+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 9.7,
+    "actual_kt": 14.2,
+    "error_kt": -4.5,
+    "abs_error_kt": 4.5,
+    "nws_kt": 8.9,
+    "nws_error_kt": -5.3
   },
   {
     "station": "TPLM2",
@@ -26,6 +208,32 @@
     "nws_error_kt": -4.2
   },
   {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-24T19:38:58.479497+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 4.3,
+    "actual_kt": 11.6,
+    "error_kt": -7.3,
+    "abs_error_kt": 7.3,
+    "nws_kt": 4.8,
+    "nws_error_kt": -6.8
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 18,
+    "forecast_time": "2026-04-24T19:38:58.479497+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 8.9,
+    "actual_kt": 14.2,
+    "error_kt": -5.3,
+    "abs_error_kt": 5.3,
+    "nws_kt": 7.0,
+    "nws_error_kt": -7.2
+  },
+  {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
     "lead_hours": 6,
@@ -37,6 +245,32 @@
     "abs_error_kt": 1.0,
     "nws_kt": 7.5,
     "nws_error_kt": -4.6
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-25T07:49:05.214650+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 6.2,
+    "actual_kt": 11.6,
+    "error_kt": -5.4,
+    "abs_error_kt": 5.4,
+    "nws_kt": 5.2,
+    "nws_error_kt": -6.4
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 6,
+    "forecast_time": "2026-04-25T07:49:05.214650+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 8.6,
+    "actual_kt": 14.2,
+    "error_kt": -5.6,
+    "abs_error_kt": 5.6,
+    "nws_kt": 10.2,
+    "nws_error_kt": -4.0
   },
   {
     "station": "TPLM2",
@@ -52,6 +286,32 @@
     "nws_error_kt": -4.9
   },
   {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-25T10:32:34.787907+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 8.2,
+    "actual_kt": 11.6,
+    "error_kt": -3.4,
+    "abs_error_kt": 3.4,
+    "nws_kt": 5.1,
+    "nws_error_kt": -6.5
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 3,
+    "forecast_time": "2026-04-25T10:32:34.787907+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 11.0,
+    "actual_kt": 14.2,
+    "error_kt": -3.2,
+    "abs_error_kt": 3.2,
+    "nws_kt": 9.2,
+    "nws_error_kt": -5.0
+  },
+  {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
     "lead_hours": 1,
@@ -63,6 +323,32 @@
     "abs_error_kt": 2.2,
     "nws_kt": 7.5,
     "nws_error_kt": -4.6
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-25T12:33:16.447078+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 9.7,
+    "actual_kt": 11.6,
+    "error_kt": -1.9,
+    "abs_error_kt": 1.9,
+    "nws_kt": 6.6,
+    "nws_error_kt": -5.0
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "lead_hours": 1,
+    "forecast_time": "2026-04-25T12:33:16.447078+00:00",
+    "valid_time": "2026-04-25T12:00:00",
+    "predicted_kt": 14.3,
+    "actual_kt": 14.2,
+    "error_kt": 0.1,
+    "abs_error_kt": 0.1,
+    "nws_kt": 8.1,
+    "nws_error_kt": -6.1
   },
   {
     "station": "TPLM2",
@@ -84,11 +370,11 @@
     "forecast_time": "2026-04-24T18:33:31.391917+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 5.7,
-    "actual_kt": 11.6,
-    "error_kt": -5.9,
-    "abs_error_kt": 5.9,
+    "actual_kt": 11.2,
+    "error_kt": -5.5,
+    "abs_error_kt": 5.5,
     "nws_kt": 6.8,
-    "nws_error_kt": -4.8
+    "nws_error_kt": -4.4
   },
   {
     "station": "SLIM2",
@@ -97,11 +383,11 @@
     "forecast_time": "2026-04-24T18:33:31.391917+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 9.5,
-    "actual_kt": 14.8,
-    "error_kt": -5.3,
-    "abs_error_kt": 5.3,
+    "actual_kt": 14.5,
+    "error_kt": -5.0,
+    "abs_error_kt": 5.0,
     "nws_kt": 8.3,
-    "nws_error_kt": -6.5
+    "nws_error_kt": -6.2
   },
   {
     "station": "TPLM2",
@@ -123,11 +409,11 @@
     "forecast_time": "2026-04-25T06:48:43.929942+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 6.0,
-    "actual_kt": 11.6,
-    "error_kt": -5.6,
-    "abs_error_kt": 5.6,
+    "actual_kt": 11.2,
+    "error_kt": -5.2,
+    "abs_error_kt": 5.2,
     "nws_kt": 4.5,
-    "nws_error_kt": -7.1
+    "nws_error_kt": -6.7
   },
   {
     "station": "SLIM2",
@@ -136,11 +422,11 @@
     "forecast_time": "2026-04-25T06:48:43.929942+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 8.6,
-    "actual_kt": 14.8,
-    "error_kt": -6.2,
-    "abs_error_kt": 6.2,
+    "actual_kt": 14.5,
+    "error_kt": -5.9,
+    "abs_error_kt": 5.9,
     "nws_kt": 8.9,
-    "nws_error_kt": -5.9
+    "nws_error_kt": -5.6
   },
   {
     "station": "TPLM2",
@@ -162,11 +448,11 @@
     "forecast_time": "2026-04-25T09:37:59.542422+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 6.7,
-    "actual_kt": 11.6,
-    "error_kt": -4.9,
-    "abs_error_kt": 4.9,
+    "actual_kt": 11.2,
+    "error_kt": -4.5,
+    "abs_error_kt": 4.5,
     "nws_kt": 4.7,
-    "nws_error_kt": -6.9
+    "nws_error_kt": -6.5
   },
   {
     "station": "SLIM2",
@@ -175,11 +461,11 @@
     "forecast_time": "2026-04-25T09:37:59.542422+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 9.5,
-    "actual_kt": 14.8,
-    "error_kt": -5.3,
-    "abs_error_kt": 5.3,
+    "actual_kt": 14.5,
+    "error_kt": -5.0,
+    "abs_error_kt": 5.0,
     "nws_kt": 8.0,
-    "nws_error_kt": -6.8
+    "nws_error_kt": -6.5
   },
   {
     "station": "TPLM2",
@@ -201,11 +487,11 @@
     "forecast_time": "2026-04-25T11:32:06.499235+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 9.7,
-    "actual_kt": 11.6,
-    "error_kt": -1.9,
-    "abs_error_kt": 1.9,
+    "actual_kt": 11.2,
+    "error_kt": -1.5,
+    "abs_error_kt": 1.5,
     "nws_kt": 6.0,
-    "nws_error_kt": -5.6
+    "nws_error_kt": -5.2
   },
   {
     "station": "SLIM2",
@@ -214,11 +500,11 @@
     "forecast_time": "2026-04-25T11:32:06.499235+00:00",
     "valid_time": "2026-04-25T11:00:00",
     "predicted_kt": 13.2,
-    "actual_kt": 14.8,
-    "error_kt": -1.6,
-    "abs_error_kt": 1.6,
+    "actual_kt": 14.5,
+    "error_kt": -1.3,
+    "abs_error_kt": 1.3,
     "nws_kt": 9.1,
-    "nws_error_kt": -5.7
+    "nws_error_kt": -5.4
   },
   {
     "station": "TPLM2",
