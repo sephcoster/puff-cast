@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-04-28T16:03:28.865762+00:00",
+  "generated_at": "2026-04-28T16:59:12.299961+00:00",
   "hrrr_init": "2026-04-28T15:00:00+00:00",
   "stations": {
     "TPLM2": {
       "name": "Thomas Point Light",
       "leads": {
         "1": {
-          "wspd_kt": 9.9,
-          "wspd_ms": 5.09,
+          "wspd_kt": 9.1,
+          "wspd_ms": 4.69,
           "nws_kt": 8.9,
           "valid_time": "2026-04-28T16:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
-          "dir_deg": 128,
+          "dir_deg": 138,
           "dir_cardinal": "SE",
           "dir_arrow": "\u2196",
           "nws_dir_deg": 142,
           "nws_dir_cardinal": "SE",
-          "gust_kt": 10.3,
+          "gust_kt": 9.1,
           "nws_gust_kt": 12.7
         },
         "3": {
-          "wspd_kt": 11.7,
-          "wspd_ms": 6.04,
+          "wspd_kt": 11.9,
+          "wspd_ms": 6.11,
           "nws_kt": 8.8,
           "valid_time": "2026-04-28T18:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
-          "dir_deg": 158,
+          "dir_deg": 160,
           "dir_cardinal": "SSE",
           "dir_arrow": "\u2191",
           "nws_dir_deg": 177,
           "nws_dir_cardinal": "S",
-          "gust_kt": 12.9,
+          "gust_kt": 13.1,
           "nws_gust_kt": 14.3
         },
         "6": {
           "wspd_kt": 11.9,
-          "wspd_ms": 6.1,
+          "wspd_ms": 6.15,
           "nws_kt": 8.6,
           "valid_time": "2026-04-28T21:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
@@ -46,12 +46,39 @@
           "nws_dir_cardinal": "SE",
           "gust_kt": 13.2,
           "nws_gust_kt": 16.1
+        },
+        "12": {
+          "wspd_kt": 10.7,
+          "wspd_ms": 5.52,
+          "nws_kt": 5.9,
+          "valid_time": "2026-04-29T03:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 123,
+          "dir_cardinal": "ESE",
+          "dir_arrow": "\u2196",
+          "nws_dir_deg": 133,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 11.8,
+          "nws_gust_kt": 12.3
+        },
+        "18": {
+          "wspd_kt": 9.1,
+          "wspd_ms": 4.67,
+          "nws_kt": 9.1,
+          "valid_time": "2026-04-29T09:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 129,
+          "dir_cardinal": "SE",
+          "dir_arrow": "\u2196",
+          "nws_dir_deg": 134,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 9.2,
+          "nws_gust_kt": 14.3
         }
       },
-      "current_kt": 11.1,
-      "current_time": "2026-04-28T15:00:00",
+      "current_kt": 4.1,
+      "current_time": "2026-04-28T16:00:00",
       "actuals": {
-        "2026-04-26T15:00:00": 17.1,
         "2026-04-26T16:00:00": 15.9,
         "2026-04-26T17:00:00": 18.1,
         "2026-04-26T18:00:00": 15.9,
@@ -98,15 +125,16 @@
         "2026-04-28T12:00:00": 11.1,
         "2026-04-28T13:00:00": 13.0,
         "2026-04-28T14:00:00": 13.0,
-        "2026-04-28T15:00:00": 11.1
+        "2026-04-28T15:00:00": 11.1,
+        "2026-04-28T16:00:00": 4.1
       }
     },
     "APAM2": {
       "name": "Annapolis",
       "leads": {
         "1": {
-          "wspd_kt": 2.4,
-          "wspd_ms": 1.26,
+          "wspd_kt": 2.6,
+          "wspd_ms": 1.33,
           "nws_kt": 6.9,
           "valid_time": "2026-04-28T16:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
@@ -115,17 +143,17 @@
           "dir_arrow": "\u2196",
           "nws_dir_deg": 152,
           "nws_dir_cardinal": "SSE",
-          "gust_kt": 4.3,
+          "gust_kt": 4.9,
           "nws_gust_kt": 10.6
         },
         "3": {
-          "wspd_kt": 6.9,
-          "wspd_ms": 3.55,
+          "wspd_kt": 6.8,
+          "wspd_ms": 3.47,
           "nws_kt": 9.2,
           "valid_time": "2026-04-28T18:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
-          "dir_deg": 138,
-          "dir_cardinal": "SE",
+          "dir_deg": 149,
+          "dir_cardinal": "SSE",
           "dir_arrow": "\u2196",
           "nws_dir_deg": 164,
           "nws_dir_cardinal": "SSE",
@@ -133,24 +161,51 @@
           "nws_gust_kt": 14.9
         },
         "6": {
-          "wspd_kt": 6.7,
-          "wspd_ms": 3.46,
+          "wspd_kt": 6.8,
+          "wspd_ms": 3.48,
           "nws_kt": 5.8,
           "valid_time": "2026-04-28T21:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
-          "dir_deg": 129,
+          "dir_deg": 130,
           "dir_cardinal": "SE",
           "dir_arrow": "\u2196",
           "nws_dir_deg": 150,
           "nws_dir_cardinal": "SSE",
           "gust_kt": 10.4,
           "nws_gust_kt": 15.4
+        },
+        "12": {
+          "wspd_kt": 4.2,
+          "wspd_ms": 2.17,
+          "nws_kt": 4.6,
+          "valid_time": "2026-04-29T03:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 133,
+          "dir_cardinal": "SE",
+          "dir_arrow": "\u2196",
+          "nws_dir_deg": 133,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 8.0,
+          "nws_gust_kt": 13.2
+        },
+        "18": {
+          "wspd_kt": 2.4,
+          "wspd_ms": 1.23,
+          "nws_kt": 6.5,
+          "valid_time": "2026-04-29T09:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 144,
+          "dir_cardinal": "SE",
+          "dir_arrow": "\u2196",
+          "nws_dir_deg": 144,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 4.1,
+          "nws_gust_kt": 11.6
         }
       },
-      "current_kt": 1.8,
-      "current_time": "2026-04-28T15:00:00",
+      "current_kt": 1.7,
+      "current_time": "2026-04-28T16:00:00",
       "actuals": {
-        "2026-04-26T15:00:00": 8.8,
         "2026-04-26T16:00:00": 9.0,
         "2026-04-26T17:00:00": 7.5,
         "2026-04-26T18:00:00": 7.3,
@@ -198,15 +253,16 @@
         "2026-04-28T12:00:00": 3.4,
         "2026-04-28T13:00:00": 5.2,
         "2026-04-28T14:00:00": 3.7,
-        "2026-04-28T15:00:00": 1.8
+        "2026-04-28T15:00:00": 1.4,
+        "2026-04-28T16:00:00": 1.7
       }
     },
     "SLIM2": {
       "name": "Solomons Island",
       "leads": {
         "1": {
-          "wspd_kt": 3.9,
-          "wspd_ms": 2.01,
+          "wspd_kt": 3.8,
+          "wspd_ms": 1.98,
           "nws_kt": 4.5,
           "valid_time": "2026-04-28T16:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
@@ -215,26 +271,26 @@
           "dir_arrow": "\u2190",
           "nws_dir_deg": 72,
           "nws_dir_cardinal": "ENE",
-          "gust_kt": 4.7,
+          "gust_kt": 4.5,
           "nws_gust_kt": 4.8
         },
         "3": {
-          "wspd_kt": 9.6,
-          "wspd_ms": 4.93,
+          "wspd_kt": 9.8,
+          "wspd_ms": 5.05,
           "nws_kt": 9.3,
           "valid_time": "2026-04-28T18:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
-          "dir_deg": 128,
+          "dir_deg": 126,
           "dir_cardinal": "SE",
           "dir_arrow": "\u2196",
           "nws_dir_deg": 109,
           "nws_dir_cardinal": "ESE",
-          "gust_kt": 11.3,
+          "gust_kt": 11.6,
           "nws_gust_kt": 12.0
         },
         "6": {
-          "wspd_kt": 10.4,
-          "wspd_ms": 5.37,
+          "wspd_kt": 10.5,
+          "wspd_ms": 5.43,
           "nws_kt": 8.0,
           "valid_time": "2026-04-28T21:00:00+00:00",
           "init_time": "2026-04-28T15:00:00+00:00",
@@ -243,14 +299,41 @@
           "dir_arrow": "\u2196",
           "nws_dir_deg": 112,
           "nws_dir_cardinal": "ESE",
-          "gust_kt": 12.4,
+          "gust_kt": 12.6,
           "nws_gust_kt": 11.2
+        },
+        "12": {
+          "wspd_kt": 6.7,
+          "wspd_ms": 3.44,
+          "nws_kt": 4.9,
+          "valid_time": "2026-04-29T03:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 98,
+          "dir_cardinal": "E",
+          "dir_arrow": "\u2190",
+          "nws_dir_deg": 132,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 7.9,
+          "nws_gust_kt": 12.4
+        },
+        "18": {
+          "wspd_kt": 4.9,
+          "wspd_ms": 2.51,
+          "nws_kt": 4.6,
+          "valid_time": "2026-04-29T09:00:00+00:00",
+          "init_time": "2026-04-28T15:00:00+00:00",
+          "dir_deg": 137,
+          "dir_cardinal": "SE",
+          "dir_arrow": "\u2196",
+          "nws_dir_deg": 137,
+          "nws_dir_cardinal": "SE",
+          "gust_kt": 6.4,
+          "nws_gust_kt": 9.3
         }
       },
-      "current_kt": 1.3,
-      "current_time": "2026-04-28T15:00:00",
+      "current_kt": 1.5,
+      "current_time": "2026-04-28T16:00:00",
       "actuals": {
-        "2026-04-26T15:00:00": 12.2,
         "2026-04-26T16:00:00": 11.3,
         "2026-04-26T17:00:00": 10.6,
         "2026-04-26T18:00:00": 12.2,
@@ -298,7 +381,8 @@
         "2026-04-28T12:00:00": 6.5,
         "2026-04-28T13:00:00": 7.1,
         "2026-04-28T14:00:00": 4.3,
-        "2026-04-28T15:00:00": 1.3
+        "2026-04-28T15:00:00": 1.8,
+        "2026-04-28T16:00:00": 1.5
       }
     }
   }
