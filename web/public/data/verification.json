@@ -3,6 +3,71 @@
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
     "lead_hours": 18,
+    "forecast_time": "2026-04-30T19:51:52.634182+00:00",
+    "valid_time": "2026-05-01T12:00:00",
+    "predicted_kt": 6.2,
+    "actual_kt": 7.0,
+    "error_kt": -0.8,
+    "abs_error_kt": 0.8,
+    "nws_kt": 9.6,
+    "nws_error_kt": 2.6
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 12,
+    "forecast_time": "2026-05-01T01:17:05.598080+00:00",
+    "valid_time": "2026-05-01T12:00:00",
+    "predicted_kt": 5.9,
+    "actual_kt": 7.0,
+    "error_kt": -1.1,
+    "abs_error_kt": 1.1,
+    "nws_kt": 4.0,
+    "nws_error_kt": -3.0
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 6,
+    "forecast_time": "2026-05-01T07:14:21.224340+00:00",
+    "valid_time": "2026-05-01T12:00:00",
+    "predicted_kt": 6.7,
+    "actual_kt": 7.0,
+    "error_kt": -0.3,
+    "abs_error_kt": 0.3,
+    "nws_kt": 8.9,
+    "nws_error_kt": 1.9
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 3,
+    "forecast_time": "2026-05-01T10:49:20.898870+00:00",
+    "valid_time": "2026-05-01T12:00:00",
+    "predicted_kt": 7.3,
+    "actual_kt": 7.0,
+    "error_kt": 0.3,
+    "abs_error_kt": 0.3,
+    "nws_kt": 9.4,
+    "nws_error_kt": 2.4
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 1,
+    "forecast_time": "2026-05-01T12:40:40.600545+00:00",
+    "valid_time": "2026-05-01T12:00:00",
+    "predicted_kt": 7.2,
+    "actual_kt": 7.0,
+    "error_kt": 0.2,
+    "abs_error_kt": 0.2,
+    "nws_kt": 8.1,
+    "nws_error_kt": 1.1
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "lead_hours": 18,
     "forecast_time": "2026-04-30T18:49:52.043253+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 7.4,
@@ -19,11 +84,11 @@
     "forecast_time": "2026-04-30T18:49:52.043253+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 4.3,
-    "actual_kt": 4.1,
-    "error_kt": 0.2,
-    "abs_error_kt": 0.2,
+    "actual_kt": 4.9,
+    "error_kt": -0.6,
+    "abs_error_kt": 0.6,
     "nws_kt": 7.9,
-    "nws_error_kt": 3.8
+    "nws_error_kt": 3.0
   },
   {
     "station": "SLIM2",
@@ -32,11 +97,11 @@
     "forecast_time": "2026-04-30T18:49:52.043253+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 5.6,
-    "actual_kt": 2.9,
-    "error_kt": 2.7,
-    "abs_error_kt": 2.7,
+    "actual_kt": 4.4,
+    "error_kt": 1.2,
+    "abs_error_kt": 1.2,
     "nws_kt": 4.8,
-    "nws_error_kt": 1.9
+    "nws_error_kt": 0.4
   },
   {
     "station": "TPLM2",
@@ -58,11 +123,11 @@
     "forecast_time": "2026-05-01T09:57:07.675568+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 3.9,
-    "actual_kt": 4.1,
-    "error_kt": -0.2,
-    "abs_error_kt": 0.2,
+    "actual_kt": 4.9,
+    "error_kt": -1.0,
+    "abs_error_kt": 1.0,
     "nws_kt": 7.5,
-    "nws_error_kt": 3.4
+    "nws_error_kt": 2.6
   },
   {
     "station": "SLIM2",
@@ -71,11 +136,11 @@
     "forecast_time": "2026-05-01T09:57:07.675568+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 4.8,
-    "actual_kt": 2.9,
-    "error_kt": 1.9,
-    "abs_error_kt": 1.9,
+    "actual_kt": 4.4,
+    "error_kt": 0.4,
+    "abs_error_kt": 0.4,
     "nws_kt": 4.4,
-    "nws_error_kt": 1.5
+    "nws_error_kt": 0.0
   },
   {
     "station": "TPLM2",
@@ -97,11 +162,11 @@
     "forecast_time": "2026-05-01T11:41:55.016392+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 4.0,
-    "actual_kt": 4.1,
-    "error_kt": -0.1,
-    "abs_error_kt": 0.1,
+    "actual_kt": 4.9,
+    "error_kt": -0.9,
+    "abs_error_kt": 0.9,
     "nws_kt": 7.7,
-    "nws_error_kt": 3.6
+    "nws_error_kt": 2.8
   },
   {
     "station": "SLIM2",
@@ -110,11 +175,11 @@
     "forecast_time": "2026-05-01T11:41:55.016392+00:00",
     "valid_time": "2026-05-01T11:00:00",
     "predicted_kt": 4.7,
-    "actual_kt": 2.9,
-    "error_kt": 1.8,
-    "abs_error_kt": 1.8,
+    "actual_kt": 4.4,
+    "error_kt": 0.3,
+    "abs_error_kt": 0.3,
     "nws_kt": 4.6,
-    "nws_error_kt": 1.7
+    "nws_error_kt": 0.2
   },
   {
     "station": "TPLM2",
