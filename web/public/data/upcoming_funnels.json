@@ -2,147 +2,6 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
-    "valid_time": "2026-05-19T22:00:00+00:00",
-    "predictions": {
-      "18": {
-        "predicted_kt": 17.4,
-        "nws_kt": 16.7,
-        "generated_at": "2026-05-19T05:43:57.612094+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 17.6,
-        "nws_gust_kt": 26.4
-      },
-      "12": {
-        "predicted_kt": 16.6,
-        "nws_kt": 17.7,
-        "generated_at": "2026-05-19T11:29:00.347592+00:00",
-        "dir_cardinal": "SSE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 17.0,
-        "nws_gust_kt": 28.4
-      },
-      "6": {
-        "predicted_kt": 15.1,
-        "nws_kt": 16.6,
-        "generated_at": "2026-05-19T17:20:05.800362+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 16.5,
-        "nws_gust_kt": 25.7
-      },
-      "3": {
-        "predicted_kt": 15.3,
-        "nws_kt": 14.1,
-        "generated_at": "2026-05-19T20:52:07.010847+00:00",
-        "dir_cardinal": "SSE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 15.8,
-        "nws_gust_kt": 24.4
-      }
-    }
-  },
-  {
-    "station": "APAM2",
-    "station_name": "Annapolis",
-    "valid_time": "2026-05-19T22:00:00+00:00",
-    "predictions": {
-      "18": {
-        "predicted_kt": 5.7,
-        "nws_kt": 13.3,
-        "generated_at": "2026-05-19T05:43:57.612094+00:00",
-        "dir_cardinal": "SSE",
-        "dir_arrow": "\u2191",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 11.1,
-        "nws_gust_kt": 25.3
-      },
-      "12": {
-        "predicted_kt": 7.4,
-        "nws_kt": 14.0,
-        "generated_at": "2026-05-19T11:29:00.347592+00:00",
-        "dir_cardinal": "SSE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SSE",
-        "gust_kt": 13.1,
-        "nws_gust_kt": 27.6
-      },
-      "6": {
-        "predicted_kt": 5.9,
-        "nws_kt": 11.7,
-        "generated_at": "2026-05-19T17:20:05.800362+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "S",
-        "gust_kt": 9.0,
-        "nws_gust_kt": 24.1
-      },
-      "3": {
-        "predicted_kt": 6.5,
-        "nws_kt": 12.9,
-        "generated_at": "2026-05-19T20:52:07.010847+00:00",
-        "dir_cardinal": "SSE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "S",
-        "gust_kt": 11.6,
-        "nws_gust_kt": 23.3
-      }
-    }
-  },
-  {
-    "station": "SLIM2",
-    "station_name": "Solomons Island",
-    "valid_time": "2026-05-19T22:00:00+00:00",
-    "predictions": {
-      "18": {
-        "predicted_kt": 11.6,
-        "nws_kt": 11.6,
-        "generated_at": "2026-05-19T05:43:57.612094+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SE",
-        "gust_kt": 14.3,
-        "nws_gust_kt": 14.5
-      },
-      "12": {
-        "predicted_kt": 12.2,
-        "nws_kt": 12.2,
-        "generated_at": "2026-05-19T11:29:00.347592+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SE",
-        "gust_kt": 14.4,
-        "nws_gust_kt": 16.5
-      },
-      "6": {
-        "predicted_kt": 11.5,
-        "nws_kt": 11.5,
-        "generated_at": "2026-05-19T17:20:05.800362+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "SE",
-        "gust_kt": 14.9,
-        "nws_gust_kt": 15.9
-      },
-      "3": {
-        "predicted_kt": 11.7,
-        "nws_kt": 11.7,
-        "generated_at": "2026-05-19T20:52:07.010847+00:00",
-        "dir_cardinal": "SE",
-        "dir_arrow": "\u2196",
-        "nws_dir_cardinal": "ESE",
-        "gust_kt": 14.9,
-        "nws_gust_kt": 16.1
-      }
-    }
-  },
-  {
-    "station": "TPLM2",
-    "station_name": "Thomas Point Light",
     "valid_time": "2026-05-19T23:00:00+00:00",
     "predictions": {
       "6": {
@@ -265,6 +124,16 @@
         "nws_dir_cardinal": "SSE",
         "gust_kt": 10.5,
         "nws_gust_kt": 17.5
+      },
+      "3": {
+        "predicted_kt": 13.4,
+        "nws_kt": 16.3,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "S",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "S",
+        "gust_kt": 14.2,
+        "nws_gust_kt": 18.9
       }
     }
   },
@@ -312,6 +181,16 @@
         "nws_dir_cardinal": "SSE",
         "gust_kt": 4.6,
         "nws_gust_kt": 5.8
+      },
+      "3": {
+        "predicted_kt": 5.3,
+        "nws_kt": 5.1,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "S",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SW",
+        "gust_kt": 8.1,
+        "nws_gust_kt": 14.1
       }
     }
   },
@@ -359,6 +238,16 @@
         "nws_dir_cardinal": "SE",
         "gust_kt": 7.3,
         "nws_gust_kt": 10.8
+      },
+      "3": {
+        "predicted_kt": 7.0,
+        "nws_kt": 3.7,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "NE",
+        "dir_arrow": "\u2199",
+        "nws_dir_cardinal": "NE",
+        "gust_kt": 7.9,
+        "nws_gust_kt": 3.7
       }
     }
   },
@@ -521,6 +410,57 @@
         "nws_dir_cardinal": "SE",
         "gust_kt": 10.2,
         "nws_gust_kt": 4.4
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-05-20T03:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 6.6,
+        "nws_kt": 4.2,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SSW",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SW",
+        "gust_kt": 6.6,
+        "nws_gust_kt": 4.3
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-05-20T03:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 2.2,
+        "nws_kt": 5.9,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SSW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SSW",
+        "gust_kt": 4.8,
+        "nws_gust_kt": 8.0
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-05-20T03:00:00+00:00",
+    "predictions": {
+      "6": {
+        "predicted_kt": 7.7,
+        "nws_kt": 1.1,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SSW",
+        "gust_kt": 9.9,
+        "nws_gust_kt": 6.2
       }
     }
   },
@@ -851,6 +791,57 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-05-20T09:00:00+00:00",
+    "predictions": {
+      "12": {
+        "predicted_kt": 9.1,
+        "nws_kt": 8.8,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "S",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SSW",
+        "gust_kt": 9.7,
+        "nws_gust_kt": 14.8
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-05-20T09:00:00+00:00",
+    "predictions": {
+      "12": {
+        "predicted_kt": 2.6,
+        "nws_kt": 3.9,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "WSW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "WSW",
+        "gust_kt": 3.8,
+        "nws_gust_kt": 11.8
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-05-20T09:00:00+00:00",
+    "predictions": {
+      "12": {
+        "predicted_kt": 9.6,
+        "nws_kt": 8.0,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SW",
+        "dir_arrow": "\u2197",
+        "nws_dir_cardinal": "SSW",
+        "gust_kt": 12.0,
+        "nws_gust_kt": 15.7
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-05-20T12:00:00+00:00",
     "predictions": {
       "24": {
@@ -1028,6 +1019,57 @@
         "nws_dir_cardinal": "WSW",
         "gust_kt": 8.6,
         "nws_gust_kt": 8.8
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-05-20T15:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 9.1,
+        "nws_kt": 4.8,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "ESE",
+        "dir_arrow": "\u2190",
+        "nws_dir_cardinal": "SSE",
+        "gust_kt": 9.1,
+        "nws_gust_kt": 5.7
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-05-20T15:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 4.3,
+        "nws_kt": 3.6,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SE",
+        "dir_arrow": "\u2196",
+        "nws_dir_cardinal": "SE",
+        "gust_kt": 6.2,
+        "nws_gust_kt": 6.3
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-05-20T15:00:00+00:00",
+    "predictions": {
+      "18": {
+        "predicted_kt": 5.8,
+        "nws_kt": 2.1,
+        "generated_at": "2026-05-19T22:45:13.728115+00:00",
+        "dir_cardinal": "SSE",
+        "dir_arrow": "\u2191",
+        "nws_dir_cardinal": "SSE",
+        "gust_kt": 7.7,
+        "nws_gust_kt": 4.0
       }
     }
   },
