@@ -2,6 +2,32 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
+    "valid_time": "2026-05-23T03:00:00",
+    "actual_kt": 11.1,
+    "predictions": {
+      "6": {
+        "predicted_kt": 13.4,
+        "error_kt": 2.3,
+        "nws_kt": 11.5,
+        "nws_error_kt": 0.4
+      },
+      "3": {
+        "predicted_kt": 13.2,
+        "error_kt": 2.1,
+        "nws_kt": 13.3,
+        "nws_error_kt": 2.2
+      },
+      "1": {
+        "predicted_kt": 10.5,
+        "error_kt": -0.6,
+        "nws_kt": 9.9,
+        "nws_error_kt": -1.2
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
     "valid_time": "2026-05-23T02:00:00",
     "actual_kt": 12.1,
     "predictions": {
