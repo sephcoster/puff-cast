@@ -2,57 +2,6 @@
   {
     "station": "TPLM2",
     "station_name": "Thomas Point Light",
-    "valid_time": "2026-05-28T21:00:00+00:00",
-    "predictions": {
-      "3": {
-        "predicted_kt": 15.7,
-        "nws_kt": 14.1,
-        "generated_at": "2026-05-28T19:14:11.279383+00:00",
-        "dir_cardinal": "NW",
-        "dir_arrow": "\u2198",
-        "nws_dir_cardinal": "NNW",
-        "gust_kt": 17.5,
-        "nws_gust_kt": 25.0
-      }
-    }
-  },
-  {
-    "station": "APAM2",
-    "station_name": "Annapolis",
-    "valid_time": "2026-05-28T21:00:00+00:00",
-    "predictions": {
-      "3": {
-        "predicted_kt": 9.8,
-        "nws_kt": 12.1,
-        "generated_at": "2026-05-28T19:14:11.279383+00:00",
-        "dir_cardinal": "NW",
-        "dir_arrow": "\u2198",
-        "nws_dir_cardinal": "NW",
-        "gust_kt": 13.9,
-        "nws_gust_kt": 22.5
-      }
-    }
-  },
-  {
-    "station": "SLIM2",
-    "station_name": "Solomons Island",
-    "valid_time": "2026-05-28T21:00:00+00:00",
-    "predictions": {
-      "3": {
-        "predicted_kt": 10.0,
-        "nws_kt": 9.4,
-        "generated_at": "2026-05-28T19:14:11.279383+00:00",
-        "dir_cardinal": "NNE",
-        "dir_arrow": "\u2193",
-        "nws_dir_cardinal": "N",
-        "gust_kt": 13.5,
-        "nws_gust_kt": 15.6
-      }
-    }
-  },
-  {
-    "station": "TPLM2",
-    "station_name": "Thomas Point Light",
     "valid_time": "2026-05-28T22:00:00+00:00",
     "predictions": {
       "18": {
@@ -188,6 +137,57 @@
         "nws_dir_cardinal": "N",
         "gust_kt": 12.9,
         "nws_gust_kt": 13.8
+      }
+    }
+  },
+  {
+    "station": "TPLM2",
+    "station_name": "Thomas Point Light",
+    "valid_time": "2026-05-28T23:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 14.8,
+        "nws_kt": 10.2,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "NNW",
+        "dir_arrow": "\u2198",
+        "nws_dir_cardinal": "NNW",
+        "gust_kt": 15.9,
+        "nws_gust_kt": 23.2
+      }
+    }
+  },
+  {
+    "station": "APAM2",
+    "station_name": "Annapolis",
+    "valid_time": "2026-05-28T23:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 8.8,
+        "nws_kt": 8.4,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "NNW",
+        "dir_arrow": "\u2193",
+        "nws_dir_cardinal": "N",
+        "gust_kt": 12.8,
+        "nws_gust_kt": 21.2
+      }
+    }
+  },
+  {
+    "station": "SLIM2",
+    "station_name": "Solomons Island",
+    "valid_time": "2026-05-28T23:00:00+00:00",
+    "predictions": {
+      "3": {
+        "predicted_kt": 7.9,
+        "nws_kt": 6.0,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "N",
+        "dir_arrow": "\u2193",
+        "nws_dir_cardinal": "N",
+        "gust_kt": 12.2,
+        "nws_gust_kt": 13.0
       }
     }
   },
@@ -377,6 +377,16 @@
         "nws_dir_cardinal": "NNW",
         "gust_kt": 16.1,
         "nws_gust_kt": 22.9
+      },
+      "6": {
+        "predicted_kt": 15.1,
+        "nws_kt": 14.1,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "NNW",
+        "dir_arrow": "\u2193",
+        "nws_dir_cardinal": "N",
+        "gust_kt": 15.7,
+        "nws_gust_kt": 23.0
       }
     }
   },
@@ -404,6 +414,16 @@
         "nws_dir_cardinal": "NNW",
         "gust_kt": 10.5,
         "nws_gust_kt": 20.8
+      },
+      "6": {
+        "predicted_kt": 8.6,
+        "nws_kt": 11.3,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "NW",
+        "dir_arrow": "\u2198",
+        "nws_dir_cardinal": "N",
+        "gust_kt": 12.7,
+        "nws_gust_kt": 21.6
       }
     }
   },
@@ -431,6 +451,16 @@
         "nws_dir_cardinal": "N",
         "gust_kt": 12.9,
         "nws_gust_kt": 22.3
+      },
+      "6": {
+        "predicted_kt": 7.6,
+        "nws_kt": 7.8,
+        "generated_at": "2026-05-28T21:02:53.359853+00:00",
+        "dir_cardinal": "NNE",
+        "dir_arrow": "\u2193",
+        "nws_dir_cardinal": "N",
+        "gust_kt": 11.0,
+        "nws_gust_kt": 19.9
       }
     }
   },
